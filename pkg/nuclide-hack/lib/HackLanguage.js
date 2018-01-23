@@ -183,7 +183,7 @@ export let hackLanguageService: Promise<
 export function resetHackLanguageService(): void {
   hackLanguageService.then(value => value.dispose());
   // Reset to an unactivated LanguageService when the Hack package is deactivated.
-  // TODO: Sort out the dependencies between the HHVM toolbar, quick-open and Hack.
+  // TODO: Sort out the dependencies between the HHVM toolbar, quick-open and Hack. id:703 gh:704
   hackLanguageService = createLanguageService();
 }
 

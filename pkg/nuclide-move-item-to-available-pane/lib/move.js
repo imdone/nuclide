@@ -78,7 +78,7 @@ function findNearestPane(el_: HTMLElement): ?atom$Pane {
   }
 }
 
-// TODO: Replace this once our lowest supported version is 1.17
+// TODO: Replace this once our lowest supported version is 1.17 id:425 gh:426
 const getCenter = () =>
   atom.workspace.getCenter ? atom.workspace.getCenter() : atom.workspace;
 

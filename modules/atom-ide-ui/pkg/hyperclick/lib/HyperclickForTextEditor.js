@@ -51,7 +51,7 @@ export default class HyperclickForTextEditor {
   _triggerKeys: Set<'shiftKey' | 'ctrlKey' | 'altKey' | 'metaKey'>;
 
   // A central "event bus" for all fetch events.
-  // TODO: Rx-ify all incoming events to avoid using a subject.
+  // TODO: Rx-ify all incoming events to avoid using a subject. id:37 gh:38
   _fetchStream: Subject<?MouseEvent>;
   // Stored for testing.
   _suggestionStream: Observable<?HyperclickSuggestion>;

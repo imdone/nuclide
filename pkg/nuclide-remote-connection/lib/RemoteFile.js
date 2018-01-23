@@ -63,7 +63,7 @@ export class RemoteFile {
   }
 
   onDidRename(callback: () => mixed): IDisposable {
-    // TODO: this is not supported by the Watchman API.
+    // TODO: this is not supported by the Watchman API. id:741 gh:742
     return new UniversalDisposable();
   }
 
@@ -300,7 +300,7 @@ export class RemoteFile {
     const data = await this._getFileSystemService().readFile(this._path);
     const contents = data.toString();
     this._setDigest(contents);
-    // TODO: respect encoding
+    // TODO: respect encoding id:535 gh:535
     return contents;
   }
 
@@ -394,7 +394,7 @@ export class RemoteFile {
       },
     });
     const originalEnd = stream.end;
-    // TODO: (hansonw) T20364274 Override final() in Node 8 and above.
+    // TODO: (hansonw) T20364274 Override final() in Node 8 and above. id:513 gh:514
     // For now, we'll overwrite the end function manually.
     // $FlowIgnore
     stream.end = cb => {

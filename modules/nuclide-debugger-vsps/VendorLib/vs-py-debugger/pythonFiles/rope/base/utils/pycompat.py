@@ -22,7 +22,7 @@ except NameError:  # PY3
             exec(code, global_vars or {}, local_vars)
 
     def get_ast_arg_arg(node):
-        if isinstance(node, string_types):  # TODO: G21: Understand the Algorithm (Where it's used?)
+        if isinstance(node, string_types):  # TODO: G21: Understand the Algorithm (Where it's used?) id:168 gh:169
             return node
         return node.arg
 

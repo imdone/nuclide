@@ -183,9 +183,9 @@ export function findIncludingSourceFile(
       pattern,
       nuclideUri.dirname(headerFile),
     ],
-    {/* TODO(T17353599) */ isExitError: () => false},
+    {/* TODO (T17353599) id:312 gh:313*/ isExitError: () => false},
   )
-    .catch(error => Observable.of({kind: 'error', error})) // TODO(T17463635)
+    .catch(error => Observable.of({kind: 'error', error})) // TODO (T17463635) id:199 gh:200
     .flatMap(message => {
       switch (message.kind) {
         case 'stdout':

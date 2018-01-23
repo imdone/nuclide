@@ -61,7 +61,7 @@ export default class DiagnosticUpdater {
     callback: (update: DiagnosticMessages) => mixed,
   ): IDisposable => {
     return new UniversalDisposable(
-      // TODO: As a potential perf improvement, we could cache so the mapping only happens once.
+      // TODO: As a potential perf improvement, we could cache so the mapping only happens once. id:25 gh:26
       // Whether that's worth it depends on how often this is actually called with the same path.
       this._states
         .distinctUntilChanged((a, b) => a.messages === b.messages)

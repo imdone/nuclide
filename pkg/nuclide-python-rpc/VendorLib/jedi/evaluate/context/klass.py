@@ -64,7 +64,7 @@ class ClassName(TreeNameDefinition):
 
     @iterator_to_context_set
     def infer(self):
-        # TODO this _name_to_types might get refactored and be a part of the
+        # TODO this _name_to_types might get refactored and be a part of the id:478 gh:479
         # parent class. Once it is, we can probably just overwrite method to
         # achieve this.
         from jedi.evaluate.syntax_tree import tree_name_to_contexts
@@ -102,18 +102,18 @@ class ClassContext(use_metaclass(CachedMetaClass, TreeContext)):
                 mro.append(cls)
 
         mro = [self]
-        # TODO Do a proper mro resolution. Currently we are just listing
+        # TODO Do a proper mro resolution. Currently we are just listing id:475 gh:476
         # classes. However, it's a complicated algorithm.
         for lazy_cls in self.py__bases__():
-            # TODO there's multiple different mro paths possible if this yields
+            # TODO there's multiple different mro paths possible if this yields id:619 gh:620
             # multiple possibilities. Could be changed to be more correct.
             for cls in lazy_cls.infer():
-                # TODO detect for TypeError: duplicate base class str,
+                # TODO detect for TypeError: duplicate base class str, id:727 gh:728
                 # e.g.  `class X(str, str): pass`
                 try:
                     mro_method = cls.py__mro__
                 except AttributeError:
-                    # TODO add a TypeError like:
+                    # TODO add a TypeError like: id:457 gh:458
                     """
                     >>> class Y(lambda: test): pass
                     Traceback (most recent call last):

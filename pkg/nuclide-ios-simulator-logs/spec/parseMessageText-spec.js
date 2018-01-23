@@ -14,7 +14,7 @@ import {parseMessageText} from '../lib/parseMessageText';
 describe('parseMessageText', () => {
   /* eslint-disable max-len */
   const lines = [
-    // TODO: Test no tags?
+    // TODO: Test no tags? id:415 gh:416
     '2016-08-24 15:58:33.113 [info][tid:com.facebook.react.JavaScript] This is info',
     '2016-08-24 15:58:33.113 [warn][tid:com.facebook.react.JavaScript] This is warn',
     '2016-08-24 15:58:33.114 [error][tid:com.facebook.react.JavaScript] This is error',

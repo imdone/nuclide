@@ -46,7 +46,7 @@ class RuntimeDomain(HandlerDomain):
             self.debugger_store.debugger.GetCommandInterpreter().HandleCommand(expression, result)
             # Swig sometimes creates a malformed inner object of SBCommandReturnObject that, when
             # trying to resolve .GetError(), crashes.
-            # TODO(wallace): Check when this bug is fixed on lldb upstream.
+            # TODO (wallace): Check when this bug is fixed on lldb upstream. id:339 gh:340
             try:
                 value = result.GetOutput() + result.GetError()
             except:
@@ -61,7 +61,7 @@ class RuntimeDomain(HandlerDomain):
         elif params['objectGroup'] == 'watch-group':
             frame = self.debugger_store.debugger.GetSelectedTarget(). \
                 process.GetSelectedThread().GetSelectedFrame()
-            # TODO: investigate why "EvaluateExpression"
+            # TODO: investigate why "EvaluateExpression" id:232 gh:233
             # is not working for some scenarios on Linux.
             if sys.platform.startswith('linux'):
                 value = frame.GetValueForVariablePath(expression)

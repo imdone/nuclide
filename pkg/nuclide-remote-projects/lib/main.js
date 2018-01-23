@@ -191,7 +191,7 @@ function closeOpenFilesForRemoteProject(connection: RemoteConnection): void {
 }
 
 function getRemoteRootDirectories(): Array<atom$Directory> {
-  // TODO: Use nuclideUri instead.
+  // TODO: Use nuclideUri instead. id:651 gh:652
   return atom.project
     .getDirectories()
     .filter(directory => directory.getPath().startsWith('nuclide:'));
@@ -524,7 +524,7 @@ export function consumeStatusBar(statusBar: atom$StatusBar): void {
   }
 }
 
-// TODO: All of the elements of the array are non-null, but it does not seem possible to convince
+// TODO: All of the elements of the array are non-null, but it does not seem possible to convince id:743 gh:744
 // Flow of that.
 export function serialize(): {
   remoteProjectsConfig: Array<?SerializableRemoteConnectionConfiguration>,

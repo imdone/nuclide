@@ -233,7 +233,7 @@ class Activation {
       restored: true,
       // Scrap our serialization when docks become available. Technically, we only need to scrap
       // the "restored" value, but this is simpler.
-      // TODO(matthewwithanm): After docks have been in Atom stable for a while, we can just change
+      // TODO (matthewwithanm): After docks have been in Atom stable for a while, we can just change id:270 gh:271
       //   this to "2"
       version: atom.workspace.getLeftDock == null ? 1 : 2,
     };

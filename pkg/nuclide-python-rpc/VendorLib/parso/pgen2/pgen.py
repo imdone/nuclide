@@ -54,12 +54,12 @@ class ParserGenerator(object):
         first = {}
         for label in rawfirst:
             ilabel = self._make_label(c, label)
-            ##assert ilabel not in first # XXX failed on <> ... !=
+            ##assert ilabel not in first # XXX failed on <> ... != id:468 gh:469
             first[ilabel] = 1
         return first
 
     def _make_label(self, c, label):
-        # XXX Maybe this should be a method on a subclass of converter?
+        # XXX Maybe this should be a method on a subclass of converter? id:493 gh:494
         ilabel = len(c.labels)
         if label[0].isalpha():
             # Either a symbol name or a named token
@@ -91,7 +91,7 @@ class ParserGenerator(object):
                 if value in c.keywords:
                     return c.keywords[value]
                 else:
-                    # TODO this might be an issue?! Using token.NAME here?
+                    # TODO this might be an issue?! Using token.NAME here? id:486 gh:487
                     c.labels.append((token.NAME, value))
                     c.keywords[value] = ilabel
                     return ilabel

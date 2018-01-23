@@ -152,7 +152,7 @@ export default class SignatureHelpManager {
         // Stop once we get a null result.
         .takeWhile(Boolean)
         // Stop once the escape key is pressed.
-        // NOTE: we can't use core:cancel because plugins like vim-mode-plus override it.
+        // NOTE: we can't use core:cancel because plugins like vim-mode-plus override it. id:36 gh:37
         .takeUntil(
           Observable.fromEvent(editor.getElement(), 'keydown').filter(
             (evt: KeyboardEvent) => evt.keyCode === 27,

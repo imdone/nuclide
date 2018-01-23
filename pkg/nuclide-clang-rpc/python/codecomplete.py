@@ -83,7 +83,7 @@ class CompletionResult:
             # Function argument completions return a special cursor kind:
             #   CXCursor_OverloadCandidate = 700
             # This isn't declared in the LLVM Python bindings (yet).
-            # TODO(hansonw): remove when this is upstreamed
+            # TODO (hansonw): remove when this is upstreamed id:203 gh:204
             if self._result.cursorKind == 700:
                 return 'OVERLOAD_CANDIDATE'
             return 'UNKNOWN'

@@ -207,7 +207,7 @@ class CompiledObject(Base):
             else:
                 if bltn_obj is None:
                     # We want to evaluate everything except None.
-                    # TODO do we?
+                    # TODO do we? id:97 gh:98
                     continue
                 bltn_obj = create(self._evaluator, bltn_obj)
                 for result in self._evaluator.execute(bltn_obj, params):
@@ -508,7 +508,7 @@ def compiled_objects_cache(attribute_name):
             try:
                 return cache[key][0]
             except KeyError:
-                # TODO this whole decorator looks way too ugly and this if
+                # TODO this whole decorator looks way too ugly and this if id:213 gh:214
                 # doesn't make it better. Find a more generic solution.
                 if parent or module:
                     result = func(evaluator, obj, parent, module)

@@ -156,9 +156,9 @@ class TestResultDisplay {
         if (reason !== contracts_1.CANCELLATION_REASON) {
             this.statusBar.text = `$(alert) Test discovery failed`;
             this.statusBar.tooltip = `Discovering Tests failed (view 'Python Test Log' output panel for details)`;
-            // TODO: ignore this quitemode, always display the error message (inform the user)
+            // TODO: ignore this quitemode, always display the error message (inform the user) id:87 gh:88
             if (!helpers_1.isNotInstalledError(reason)) {
-                // TODO: show an option that will invoke a command 'python.test.configureTest' or similar
+                // TODO: show an option that will invoke a command 'python.test.configureTest' or similar id:201 gh:202
                 // This will be hanlded by main.ts that will capture input from user and configure the tests
                 vscode.window.showErrorMessage('There was an error in discovering tests, please check the configuration settings for the tests.');
             }

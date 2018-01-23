@@ -86,9 +86,9 @@ export default class QuickOpenHelpers {
       return [];
     }
 
-    // HACK: Ctags results typically just duplicate Hack results when they're present.
+    // HACK: Ctags results typically just duplicate Hack results when they're present. id:335 gh:336
     // Filter out results from PHP files when the Hack service is available.
-    // TODO(hansonw): Remove this when quick-open has proper ranking/de-duplication.
+    // TODO (hansonw): Remove this when quick-open has proper ranking/de-duplication. id:227 gh:228
     let isHackProject;
     if (featureConfig.get('nuclide-ctags.disableWithHack') !== false) {
       isHackProject = await isFileInHackProject(directory.getPath());

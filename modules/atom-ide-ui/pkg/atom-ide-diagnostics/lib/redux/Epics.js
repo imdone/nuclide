@@ -66,7 +66,7 @@ export function applyFix(
     }),
     actions.ofType(Actions.APPLY_FIXES_FOR_FILE).map(action => {
       invariant(action.type === Actions.APPLY_FIXES_FOR_FILE);
-      // TODO: Be consistent about file/filePath/path.
+      // TODO: Be consistent about file/filePath/path. id:33 gh:34
       const {file: filePath} = action.payload;
       return Selectors.getFileMessages(store.getState(), filePath);
     }),
@@ -125,7 +125,7 @@ export function fetchCodeActions(
   actions: ActionsObservable<Action>,
   store: Store,
 ): Observable<Action> {
-  // TODO(hansonw): Until we have have a UI for it, only handle one request at a time.
+  // TODO (hansonw): Until we have have a UI for it, only handle one request at a time. id:60 gh:61
   return actions.ofType(Actions.FETCH_CODE_ACTIONS).switchMap(action => {
     invariant(action.type === Actions.FETCH_CODE_ACTIONS);
     const {codeActionFetcher} = store.getState();

@@ -10,7 +10,7 @@
  */
 
 describe('main', () => {
-  // TODO: Loading packages is rightfully slow; it `require`s a lot of files. Possible to inject
+  // TODO: Loading packages is rightfully slow; it `require`s a lot of files. Possible to inject id:568 gh:569
   // the `activation` class or move it to its own package to mock `require` it?
   it("disables Atom's builtin tree-view package on activation", () => {
     waitsForPromise(async () => {

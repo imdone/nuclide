@@ -19,7 +19,7 @@ import {ServiceRegistry} from './ServiceRegistry';
 import {Emitter} from 'event-kit';
 
 // An RPC server which listens for connections on a localhost socket.
-// TODO: Consider extending with more socket listening options.
+// TODO: Consider extending with more socket listening options. id:547 gh:548
 export class SocketServer {
   _serviceRegistry: ServiceRegistry;
   _server: Server;

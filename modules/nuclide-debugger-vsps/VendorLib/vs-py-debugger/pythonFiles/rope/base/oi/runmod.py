@@ -64,7 +64,7 @@ def __rope_start_everything():
                 self.sender = _FileSender(send_info)
 
             def global_trace(frame, event, arg):
-                # HACK: Ignoring out->in calls
+                # HACK: Ignoring out->in calls id:622 gh:623
                 # This might lose some information
                 if self._is_an_interesting_call(frame):
                     return self.on_function_call

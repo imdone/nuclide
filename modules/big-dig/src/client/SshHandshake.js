@@ -39,7 +39,7 @@ export type {
   PackageParams as ServerExecutable,
 } from './RemotePackage';
 
-// TODO
+// TODO id:40 gh:41
 function restoreBigDigClient(address: string) {}
 
 export type RemoteConnectionConfiguration = {
@@ -221,7 +221,7 @@ const SshConnectionErrorLevelMap: Map<
 interface ServerInfo {
   success?: boolean | any;
   hostname?: string | any;
-  // TODO(siegebell): `port` should probably be `any` in case we're in "insecure" mode.
+  // TODO (siegebell): `port` should probably be `any` in case we're in "insecure" mode. id:46 gh:47
   //   See: `_updateServerInfo`.
   port?: number;
   /** Certificate authority. */
@@ -611,7 +611,7 @@ export class SshHandshake {
   }
 
   _updateServerInfo(serverInfo: ServerInfo) {
-    // TODO(siegebell): `serverInfo` may not define `port` if in "insecure" mode.
+    // TODO (siegebell): `serverInfo` may not define `port` if in "insecure" mode. id:78 gh:79
     invariant(typeof serverInfo.port === 'number');
     this._remotePort = serverInfo.port || 0;
     this._remoteHost =

@@ -24,7 +24,7 @@ const ERROR_LINE = /^\s*ERROR\s*(.*?)\s*$/;
 export function parseRegularLine(line: string): Message {
   const normalMatch = line.match(NORMAL_LINE);
   if (normalMatch != null) {
-    // TODO (matthewwithanm): Add support for showing timestamps and include that in the message.
+    // TODO (matthewwithanm): Add support for showing timestamps and include that in the message. id:459 gh:460
     return {
       level: 'log',
       text: normalMatch[1],

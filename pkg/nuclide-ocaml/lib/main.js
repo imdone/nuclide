@@ -51,7 +51,7 @@ export function provideLinter(): LinterProvider {
 }
 
 export function provideOutlines(): OutlineProvider {
-  // TODO: (chenglou) get back the ability to output Reason outline.
+  // TODO: (chenglou) get back the ability to output Reason outline. id:427 gh:428
   return {
     grammarScopes: Array.from(GRAMMARS),
     priority: 1,

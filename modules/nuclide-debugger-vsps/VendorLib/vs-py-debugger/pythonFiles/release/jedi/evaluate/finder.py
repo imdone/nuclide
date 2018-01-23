@@ -82,14 +82,14 @@ class NameFinder(object):
 
     @debug.increase_indent
     def find(self, scopes, search_global=False):
-        # TODO rename scopes to names_dicts
+        # TODO rename scopes to names_dicts id:247 gh:248
         names = self.filter_name(scopes)
         types = self._names_to_types(names, search_global)
 
         if not names and not types \
                 and not (isinstance(self.name_str, tree.Name)
                          and isinstance(self.name_str.parent.parent, tree.Param)):
-            if not isinstance(self.name_str, (str, unicode)):  # TODO Remove?
+            if not isinstance(self.name_str, (str, unicode)):  # TODO Remove? id:602 gh:603
                 if search_global:
                     message = ("NameError: name '%s' is not defined."
                                % self.name_str)
@@ -138,7 +138,7 @@ class NameFinder(object):
                 continue
 
             if isinstance(name_scope, compiled.CompiledObject):
-                # Let's test this. TODO need comment. shouldn't this be
+                # Let's test this. TODO need comment. shouldn't this be id:149 gh:150
                 # filtered before?
                 last_names.append(name)
                 continue
@@ -153,7 +153,7 @@ class NameFinder(object):
             else:
                 origin_scope = None
             if isinstance(stmt.parent, compiled.CompiledObject):
-                # TODO seriously? this is stupid.
+                # TODO seriously? this is stupid. id:210 gh:211
                 continue
             check = flow_analysis.break_check(self._evaluator, name_scope,
                                               stmt, origin_scope)
@@ -223,7 +223,7 @@ class NameFinder(object):
                 flow_scope = flow_scope.get_parent_scope(include_flows=True)
                 if flow_scope is None:
                     break
-                # TODO check if result is in scope -> no evaluation necessary
+                # TODO check if result is in scope -> no evaluation necessary id:140 gh:141
                 n = check_flow_information(self._evaluator, flow_scope,
                                            self.name_str, self.position)
                 if n:
@@ -281,7 +281,7 @@ def _name_to_types(evaluator, name, scope):
     elif isinstance(typ, tree.Import):
         types += imports.ImportWrapper(evaluator, name).follow()
     elif isinstance(typ, tree.GlobalStmt):
-        # TODO theoretically we shouldn't be using search_global here, it
+        # TODO theoretically we shouldn't be using search_global here, it id:251 gh:252
         # doesn't make sense, because it's a local search (for that name)!
         # However, globals are not that important and resolving them doesn't
         # guarantee correctness in any way, because we don't check for when
@@ -289,8 +289,8 @@ def _name_to_types(evaluator, name, scope):
         types += evaluator.find_types(typ.get_parent_scope(), str(name),
                                       search_global=True)
     elif isinstance(typ, tree.TryStmt):
-        # TODO an exception can also be a tuple. Check for those.
-        # TODO check for types that are not classes and add it to
+        # TODO an exception can also be a tuple. Check for those. id:604 gh:605
+        # TODO check for types that are not classes and add it to id:151 gh:152
         # the static analysis report.
         exceptions = evaluator.eval_element(name.prev_sibling().prev_sibling())
         types = list(chain.from_iterable(

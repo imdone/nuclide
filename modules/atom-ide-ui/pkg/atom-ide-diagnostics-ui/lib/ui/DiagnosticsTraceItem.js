@@ -20,7 +20,7 @@ type DiagnosticsTraceItemProps = {
   goToLocation: (path: string, line: number) => mixed,
 };
 
-// TODO move LESS styles to nuclide-ui
+// TODO move LESS styles to nuclide-ui id:16 gh:17
 export const DiagnosticsTraceItem = (props: DiagnosticsTraceItemProps) => {
   const {trace, goToLocation} = props;
   let locSpan = null;

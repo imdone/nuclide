@@ -109,7 +109,7 @@ export default (async function runCommand(
   return 0;
 });
 
-// TODO(mbolin): Consider using fs-plus to ensure this handles ~ in fileName correctly.
+// TODO (mbolin): Consider using fs-plus to ensure this handles ~ in fileName correctly. id:320 gh:321
 function resolvePath(fileName): string {
   if (!nuclideUri.isAbsolute(fileName)) {
     const pwd = process.env.PWD;

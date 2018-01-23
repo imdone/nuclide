@@ -112,7 +112,7 @@ export type BuckWebSocketMessage =
   | {
       type: 'CompilerErrorEvent',
       error: string,
-      suggestions: Array<mixed>, // TODO: use this?
+      suggestions: Array<mixed>, // TODO: use this? id:288 gh:289
       compilerType: string,
     };
 
@@ -180,7 +180,7 @@ export async function getBuckConfig(
 }
 
 /**
- * TODO(natthu): Also load .buckconfig.local. Consider loading .buckconfig from the home directory
+ * TODO (natthu): Also load .buckconfig.local. Consider loading .buckconfig from the home directory id:183 gh:185
  * and ~/.buckconfig.d/ directory.
  */
 async function _loadBuckConfig(rootPath: string): Promise<BuckConfig> {
@@ -240,7 +240,7 @@ export function install(
  * @return An Observable with the following implementations:
  *   onNext: Calls the Observer with successive strings from stdout and stderr.
  *     Each update will be of the form: {stdout: string;} | {stderr: string;}
- *     TODO: Use a union to exactly match `{stdout: string;} | {stderr: string;}` when the service
+ *     TODO: Use a union to exactly match `{stdout: string;} | {stderr: string;}` when the service id:324 gh:325
  *     framework supports it. Use an object with optional keys to mimic the union.
  *   onError: If the build fails, calls the Observer with the string output
  *     from stderr.
@@ -251,7 +251,7 @@ export function buildWithOutput(
   buildTargets: Array<string>,
   extraArguments: Array<string>,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:646 gh:647
   return _buildWithOutput(rootPath, buildTargets, {extraArguments}).publish();
 }
 
@@ -260,7 +260,7 @@ export function buildWithOutput(
  * @return An Observable with the following implementations:
  *   onNext: Calls the Observer with successive strings from stdout and stderr.
  *     Each update will be of the form: {stdout: string;} | {stderr: string;}
- *     TODO: Use a union to exactly match `{stdout: string;} | {stderr: string;}` when the service
+ *     TODO: Use a union to exactly match `{stdout: string;} | {stderr: string;}` when the service id:187 gh:188
  *     framework supports it. Use an object with optional keys to mimic the union.
  *   onError: If the build fails, calls the Observer with the string output
  *     from stderr.
@@ -272,7 +272,7 @@ export function testWithOutput(
   extraArguments: Array<string>,
   debug: boolean,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:293 gh:294
   return _buildWithOutput(rootPath, buildTargets, {
     test: true,
     extraArguments,
@@ -285,7 +285,7 @@ export function testWithOutput(
  * @return An Observable with the following implementations:
  *   onNext: Calls the Observer with successive strings from stdout and stderr.
  *     Each update will be of the form: {stdout: string;} | {stderr: string;}
- *     TODO: Use a union to exactly match `{stdout: string;} | {stderr: string;}` when the service
+ *     TODO: Use a union to exactly match `{stdout: string;} | {stderr: string;}` when the service id:185 gh:186
  *     framework supports it. Use an object with optional keys to mimic the union.
  *   onError: If the install fails, calls the Observer with the string output
  *     from stderr.
@@ -299,7 +299,7 @@ export function installWithOutput(
   run: boolean,
   debug: boolean,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:326 gh:327
   return _buildWithOutput(rootPath, buildTargets, {
     install: true,
     simulator,
@@ -315,7 +315,7 @@ export function runWithOutput(
   extraArguments: Array<string>,
   simulator: ?string,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:648 gh:650
   return _buildWithOutput(rootPath, buildTargets, {
     run: true,
     simulator,
@@ -333,7 +333,7 @@ function _buildWithOutput(
   buildTargets: Array<string>,
   options: BaseBuckBuildOptions,
 ): Observable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:189 gh:190
   const args = BuckServiceImpl._translateOptionsToBuckBuildArgs({
     baseOptions: {...options},
     buildTargets,
@@ -343,9 +343,9 @@ function _buildWithOutput(
   ).switchMap(({pathToBuck, buckCommandOptions}) =>
     observeProcess(pathToBuck, args, {
       ...buckCommandOptions,
-      /* TODO(T17353599) */ isExitError: () => false,
+      /* TODO (T17353599) id:298 gh:299*/ isExitError: () => false,
     })
-      .catch(error => Observable.of({kind: 'error', error})) // TODO(T17463635)
+      .catch(error => Observable.of({kind: 'error', error})) // TODO (T17463635) id:188 gh:189
       .startWith({
         kind: 'stdout',
         data: `Starting "${pathToBuck} ${_getArgsStringSkipClientId(args)}"`,
@@ -584,7 +584,7 @@ export async function queryWithArgs(
   return json;
 }
 
-// TODO: Nuclide's RPC framework won't allow BuckWebSocketMessage here unless we cover
+// TODO: Nuclide's RPC framework won't allow BuckWebSocketMessage here unless we cover id:328 gh:329
 // all possible message types. For now, we'll manually typecast at the callsite.
 export function getWebSocketStream(
   rootPath: NuclideUri,

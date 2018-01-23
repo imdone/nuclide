@@ -202,7 +202,7 @@ class LLDBListenerThread(Thread):
                 }
                 self._send_notification('Debugger.breakpointResolved', params)
         else:
-            # TODO: handle other breakpoint event types.
+            # TODO: handle other breakpoint event types. id:230 gh:231
             pass
 
     def _get_description_from_object(self, lldb_object):
@@ -214,7 +214,7 @@ class LLDBListenerThread(Thread):
         self._debugger_store.chrome_channel.send_notification(method, params)
 
     def _handle_watchpoint_event(self, event):
-        # TODO(williamsc) Add support for sending watchpoint change events.
+        # TODO (williamsc) Add support for sending watchpoint change events. id:358 gh:359
         pass
 
     def _handle_unknown_event(self, event):

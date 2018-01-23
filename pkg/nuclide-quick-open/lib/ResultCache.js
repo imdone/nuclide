@@ -16,7 +16,7 @@ import invariant from 'assert';
 
 import debounce from 'nuclide-commons/debounce';
 
-// TODO use maps
+// TODO use maps id:641 gh:642
 type CachedDirectoryResults = {[query: string]: ProviderResults};
 type CachedProviderResults = {[directory: string]: CachedDirectoryResults};
 export type CachedResults = {[providerName: string]: CachedProviderResults};

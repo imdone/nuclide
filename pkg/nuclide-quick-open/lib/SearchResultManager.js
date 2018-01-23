@@ -539,7 +539,7 @@ export default class SearchResultManager {
             sanitizedQuery,
             providerName,
           );
-          // TODO replace this with a ranking algorithm.
+          // TODO replace this with a ranking algorithm. id:738 gh:739
           for (const dir in resultForProvider.results) {
             resultForProvider.totalResults +=
               resultForProvider.results[dir].results.length;

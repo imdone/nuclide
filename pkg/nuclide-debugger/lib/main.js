@@ -647,7 +647,7 @@ class Activation {
   }
 
   _continue() {
-    // TODO(jeffreytan): when we figured out the launch lifecycle story
+    // TODO (jeffreytan): when we figured out the launch lifecycle story id:558 gh:559
     // we may bind this to start-debugging too.
     if (!this._isReadonlyTarget()) {
       track(AnalyticsEvents.DEBUGGER_STEP_CONTINUE);

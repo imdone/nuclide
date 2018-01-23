@@ -67,7 +67,7 @@ export class WorkspaceSymbols {
           .map(jsExport => {
             const position = {
               line: jsExport.line - 1,
-              character: 0, // TODO: not really needed for now.
+              character: 0, // TODO: not really needed for now. id:419 gh:420
             };
             return {
               name: id,

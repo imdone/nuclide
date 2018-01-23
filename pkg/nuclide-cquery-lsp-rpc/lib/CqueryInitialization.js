@@ -17,7 +17,7 @@ import fsPromise from 'nuclide-commons/fsPromise';
 
 const CQUERY_CACHE_DIR = '.cquery_cache';
 
-// TODO pelmers: expose some of these in the atom config
+// TODO pelmers: expose some of these in the atom config id:330 gh:331
 function staticInitializationOptions(): Object {
   // Copied from the corresponding vs-code plugin
   return {

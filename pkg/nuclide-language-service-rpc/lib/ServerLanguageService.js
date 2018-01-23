@@ -184,7 +184,7 @@ export class ServerLanguageService<
     const filePath = fileVersion.filePath;
     const buffer = await getBufferAtVersion(fileVersion);
     if (buffer == null) {
-      // TODO: this should return null so the empty list doesn't get cached
+      // TODO: this should return null so the empty list doesn't get cached id:424 gh:425
       return {isIncomplete: false, items: []};
     }
     return this._service.getAutocompleteSuggestions(
@@ -225,7 +225,7 @@ export class ServerLanguageService<
   }
 
   async getAdditionalLogFiles(): Promise<Array<AdditionalLogFile>> {
-    // TODO (if it's ever needed): push this request to the this._service
+    // TODO (if it's ever needed): push this request to the this._service id:456 gh:457
     return [];
   }
 

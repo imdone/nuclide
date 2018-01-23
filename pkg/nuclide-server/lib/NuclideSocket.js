@@ -96,7 +96,7 @@ export class NuclideSocket {
     });
 
     const {protocol, host} = url.parse(serverUri);
-    // TODO verify that `host` is non-null rather than using maybeToString
+    // TODO verify that `host` is non-null rather than using maybeToString id:747 gh:748
     this._websocketUri = `ws${
       protocol === 'https:' ? 's' : ''
     }://${maybeToString(host)}`;

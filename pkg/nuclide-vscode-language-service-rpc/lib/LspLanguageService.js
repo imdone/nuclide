@@ -786,7 +786,7 @@ export class LspLanguageService {
           // events about fileVersions that themselves point directly back to the _fileCache.
           // (It's a convenience so that folks can pass around just a fileVersion on its own.)
 
-          // TODO: if LSP responds with error to any of the file events, then we'll become
+          // TODO: if LSP responds with error to any of the file events, then we'll become id:571 gh:572
           // out of sync, and we must stop. (potentially restart).
           switch (fileEvent.kind) {
             case FileEventKind.OPEN:
@@ -1870,7 +1870,7 @@ export class LspLanguageService {
           return {type: 'snippet', value: h};
         }
       } else {
-        // TODO: would be nice if there was some way to pass the language
+        // TODO: would be nice if there was some way to pass the language id:546 gh:547
         // through too.
         return {type: 'snippet', value: h.value};
       }

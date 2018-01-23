@@ -11,7 +11,7 @@
 
 const STATUS_BAR_PRIORITY = 500;
 
-// TODO: Allow the user to toggle this feature.
+// TODO: Allow the user to toggle this feature. id:601 gh:602
 import invariant from 'assert';
 import * as React from 'react';
 import ReactDOM from 'react-dom';

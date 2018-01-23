@@ -38,7 +38,7 @@ export async function getStartCommandFromBuck(
   if (buckProjectRoot == null) {
     return null;
   }
-  // TODO(matthewwithanm): Move this to BuckUtils?
+  // TODO (matthewwithanm): Move this to BuckUtils? id:428 gh:429
   const filePath = nuclideUri.join(buckProjectRoot, '.buckconfig');
   const content = await fsPromise.readFile(filePath, 'utf8');
   const parsed = ini.parse(`scope = global\n${content}`);

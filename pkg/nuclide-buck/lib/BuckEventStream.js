@@ -100,7 +100,7 @@ export function getEventsFromSocket(
             progress: message.progressValue,
           });
         case 'CompilerErrorEvent':
-          // TODO: forward suggestions to diagnostics as autofixes
+          // TODO: forward suggestions to diagnostics as autofixes id:190 gh:191
           return log(message.error, 'error');
       }
       return Observable.empty();
@@ -136,7 +136,7 @@ export function getEventsFromSocket(
 }
 
 export function getEventsFromProcess(
-  processStream: Observable<LegacyProcessMessage>, // TODO(T17463635)
+  processStream: Observable<LegacyProcessMessage>, // TODO (T17463635) id:329 gh:330
 ): Observable<BuckEvent> {
   return processStream.map(message => {
     switch (message.kind) {
@@ -176,7 +176,7 @@ export function getEventsFromProcess(
             // Some Buck steps output ansi escape codes regardless of terminal setting.
             message: stripAnsi(message.data),
             // Build failure messages typically do not show up in the web socket.
-            // TODO(hansonw): fix this on the Buck side
+            // TODO (hansonw): fix this on the Buck side id:652 gh:653
             level:
               message.data.indexOf(BUILD_FAILED_MESSAGE) === -1
                 ? 'log'

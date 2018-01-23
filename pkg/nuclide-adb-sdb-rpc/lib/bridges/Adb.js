@@ -145,13 +145,13 @@ export class Adb extends DebugBridge {
   }
 
   installPackage(packagePath: NuclideUri): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:180 gh:181
     invariant(!nuclideUri.isRemote(packagePath));
     return this.runLongCommand('install', '-r', packagePath);
   }
 
   uninstallPackage(packageName: string): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:278 gh:279
     return this.runLongCommand('uninstall', packageName);
   }
 

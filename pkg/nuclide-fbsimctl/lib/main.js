@@ -90,7 +90,7 @@ function parseFbsimctlJsonOutput(output: string): Array<Device> {
     const device = event.subject;
     const {state, name, udid} = device;
 
-    // TODO (#21958483): Remove this hack when `fbsimctl` produces the right
+    // TODO (#21958483): Remove this hack when `fbsimctl` produces the right id:266 gh:267
     // information for new OS devices.
     let {os, arch} = device;
     if (!os && !arch && /^(iPhone|iPad)/.test(name)) {

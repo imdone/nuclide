@@ -57,7 +57,7 @@ class Parser(BaseParser):
         self._omit_dedent_list = []
         self._indent_counter = 0
 
-        # TODO do print absolute import detection here.
+        # TODO do print absolute import detection here. id:488 gh:489
         # try:
         #     del python_grammar_no_print_statement.keywords["print"]
         # except KeyError:
@@ -95,7 +95,7 @@ class Parser(BaseParser):
         grammar rule produces a new complete node, so that the tree is build
         strictly bottom-up.
         """
-        # TODO REMOVE symbol, we don't want type here.
+        # TODO REMOVE symbol, we don't want type here. id:633 gh:634
         symbol = pgen_grammar.number2symbol[type]
         try:
             return self.node_map[symbol](children)

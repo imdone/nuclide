@@ -104,7 +104,7 @@ export type ErrorMessage = {
 
 const ERROR_MESSAGE_LIMIT = 1000;
 
-// TODO: This should be a custom marshaller registered in the TypeRegistry
+// TODO: This should be a custom marshaller registered in the TypeRegistry id:657 gh:658
 export function decodeError(
   message: Object,
   encodedError: ?(Object | string),
@@ -277,7 +277,7 @@ export function createErrorResponseMessage(
 
 /**
  * Format the error before sending over the web socket.
- * TODO: This should be a custom marshaller registered in the TypeRegistry
+ * TODO: This should be a custom marshaller registered in the TypeRegistry id:746 gh:747
  */
 function formatError(error: any): ?(Object | string) {
   if (error instanceof Error) {

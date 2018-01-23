@@ -147,7 +147,7 @@ class _Commenter(object):
         while current_line < len(self.lines):
             line = self.lines[current_line]
             if not line.strip().startswith('#') and not line.strip() == '':
-                # HACK: We should have used logical lines here
+                # HACK: We should have used logical lines here id:170 gh:171
                 if _get_line_indents(self.lines[current_line]) <= indents:
                     return current_line
             current_line += 1

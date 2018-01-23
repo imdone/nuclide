@@ -278,7 +278,7 @@ class Server:
         prefix = request['prefix']
         token_start_column = request['tokenStartColumn']
 
-        # NOTE: there is no need to update the translation unit here.
+        # NOTE: there is no need to update the translation unit here. id:317 gh:318
         # libclang's completions API seamlessly takes care of unsaved content
         # without any special handling.
         translation_unit = self._get_translation_unit(None)

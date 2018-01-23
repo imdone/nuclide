@@ -108,7 +108,7 @@ class GeneratorMethod(IterableWrapper):
         self._generator = generator
 
     def py__call__(self, evaluator, params):
-        # TODO add TypeError if params are given.
+        # TODO add TypeError if params are given. id:254 gh:255
         return self._generator.iter_content()
 
     def __getattr__(self, name):
@@ -413,7 +413,7 @@ def get_iterator_types(inputs):
             except KeyError:
                 debug.warning('Instance has no __next__ function in %s.', it)
         else:
-            # TODO this is not correct, __iter__ can return arbitrary input!
+            # TODO this is not correct, __iter__ can return arbitrary input! id:607 gh:608
             # Is a generator.
             result += it.iter_content()
     return result
@@ -422,7 +422,7 @@ def get_iterator_types(inputs):
 def check_array_additions(evaluator, array):
     """ Just a mapper function for the internal _check_array_additions """
     if array.type not in ('list', 'set'):
-        # TODO also check for dict updates
+        # TODO also check for dict updates id:153 gh:154
         return []
 
     is_list = array.type == 'list'

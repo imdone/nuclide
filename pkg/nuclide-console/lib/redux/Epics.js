@@ -60,7 +60,7 @@ export function executeEpic(
     const executor = store.getState().executors.get(currentExecutorId);
     invariant(executor != null);
 
-    // TODO: Is this the best way to do this? Might want to go through nuclide-executors and have
+    // TODO: Is this the best way to do this? Might want to go through nuclide-executors and have id:325 gh:326
     //       that register output sources?
     return (
       Observable.of(
@@ -93,11 +93,11 @@ export function registerRecordProviderEpic(
     const {recordProvider} = action.payload;
 
     // Transform the messages into actions and merge them into the action stream.
-    // TODO: Add enabling/disabling of registered source and only subscribe when enabled. That
+    // TODO: Add enabling/disabling of registered source and only subscribe when enabled. That id:217 gh:218
     //       way, we won't trigger cold observer side-effects when we don't need the results.
     const messageActions = recordProvider.records.map(Actions.recordReceived);
 
-    // TODO: Can this be delayed until sometime after registration?
+    // TODO: Can this be delayed until sometime after registration? id:347 gh:348
     const statusActions =
       typeof recordProvider.observeStatus === 'function'
         ? observableFromSubscribeFunction(recordProvider.observeStatus).map(

@@ -275,7 +275,7 @@ class HostServicesRelay {
     title: string,
     options?: {|debounce?: boolean|},
   ): Promise<Progress> {
-    // TODO: this whole function would work better with CancellationToken,
+    // TODO: this whole function would work better with CancellationToken, id:717 gh:718
     // particularly in the case where a HostAggregator is disposed after the
     // request has already been sent out to its parent. In the absence of
     // CancellationToken, we can't cancel the parent, and instead have to

@@ -64,7 +64,7 @@ class BaseParser(object):
             raise ParserSyntaxError('SyntaxError: invalid syntax', error_leaf)
 
     def convert_node(self, pgen_grammar, type_, children):
-        # TODO REMOVE symbol, we don't want type here.
+        # TODO REMOVE symbol, we don't want type here. id:732 gh:733
         symbol = pgen_grammar.number2symbol[type_]
         try:
             return self.node_map[symbol](children)

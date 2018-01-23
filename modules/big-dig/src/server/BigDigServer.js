@@ -57,7 +57,7 @@ export default class BigDigServer {
   addSubscriber(tag: string, subscriber: Subscriber) {
     const existingSubscriber = this._tagToSubscriber.get(tag);
     if (existingSubscriber == null) {
-      // TODO(mbolin): WS connections that were created before this subscriber
+      // TODO (mbolin): WS connections that were created before this subscriber id:43 gh:44
       // were added will not be able to leverage this subscriber because no
       // InternalTransport was created for it. We should probably add a new
       // entry for all valid tagToTransport maps.
@@ -108,7 +108,7 @@ export default class BigDigServer {
       }
     });
 
-    // TODO(mbolin): When ws disconnects, do we explicitly have to clear out
+    // TODO (mbolin): When ws disconnects, do we explicitly have to clear out id:45 gh:46
     // tagToTransport? It seems like it should get garbage-collected
     // automatically, assuming this._webSocketServer no longer has a reference
     // to ws. But we should probably call InternalTransport.close() on all of
@@ -137,7 +137,7 @@ class InternalTransport {
     this._ws.send(`${this._tag}\0${message}`, err => {
       if (err != null) {
         // This may happen if the client disconnects.
-        // TODO: use the reliable transport from Nuclide when that's ready.
+        // TODO: use the reliable transport from Nuclide when that's ready. id:48 gh:49
         getLogger().warn('Error sending websocket message', err);
       }
     });

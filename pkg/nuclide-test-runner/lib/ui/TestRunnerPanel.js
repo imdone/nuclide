@@ -142,7 +142,7 @@ export default class TestRunnerPanel extends React.Component<Props, State> {
       // `key` is set to force React to treat this as a new element when the `value` attr should be
       // removed. Currently it just sets `value="0"`, which is styled differently from no `value`
       // attr at all.
-      // TODO: Remove the `key` once https://github.com/facebook/react/issues/1448 is resolved.
+      // TODO: Remove the `key` once https://github.com/facebook/react/issues/1448 is resolved. id:667 gh:668
       progressAttrs = {
         key: 1,
         value: this.props.progressValue,

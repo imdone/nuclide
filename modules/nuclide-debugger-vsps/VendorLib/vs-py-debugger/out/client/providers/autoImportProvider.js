@@ -72,7 +72,7 @@ function addImport(ed, import_string) {
 }
 exports.addImport = addImport;
 function getPositionForNewImport(import_string) {
-    // TODO: figure out better position:
+    // TODO: figure out better position: id:106 gh:107
     return new vscode.Position(0, 0);
 }
 exports.getPositionForNewImport = getPositionForNewImport;

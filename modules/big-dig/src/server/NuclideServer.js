@@ -53,7 +53,7 @@ export function launchServer(options: NuclideServerOptions): Promise<number> {
   const webServer = https.createServer(options.webServer);
 
   return new Promise((resolve, reject) => {
-    // TODO(mbolin): Once the webServer is up and running and this Promise is resolved,
+    // TODO (mbolin): Once the webServer is up and running and this Promise is resolved, id:85 gh:86
     // rejecting the Promise will be a noop. We need better error handling here.
     const onError = error => {
       if (error.errno === 'EADDRINUSE') {
@@ -65,7 +65,7 @@ export function launchServer(options: NuclideServerOptions): Promise<number> {
       webServer.removeAllListeners();
       reject(error);
     };
-    // TODO(mbolin): If we want the new WebSocketServer to get the 'connection' event,
+    // TODO (mbolin): If we want the new WebSocketServer to get the 'connection' event, id:47 gh:48
     // then we need to get it wired up before the webServer is connected.
     webServer.on('listening', () => {
       const webSocketServer = new WS.Server({

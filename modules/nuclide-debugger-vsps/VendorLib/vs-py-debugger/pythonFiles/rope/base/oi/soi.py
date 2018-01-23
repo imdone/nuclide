@@ -118,7 +118,7 @@ def get_passed_objects(pyfunction, parameter_index):
 
 def _infer_returned(pyobject, args):
     if args:
-        # HACK: Setting parameter objects manually
+        # HACK: Setting parameter objects manually id:159 gh:160
         # This is not thread safe and might cause problems if `args`
         # does not come from a good call site
         pyobject.get_scope().invalidate_data()

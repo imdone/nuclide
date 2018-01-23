@@ -46,7 +46,7 @@ export type RemoteConnectionConfiguration = {
 // A RemoteConnection represents a directory which has been opened in Nuclide on a remote machine.
 // This corresponds to what atom calls a 'root path' in a project.
 //
-// TODO: The _entries and _hgRepositoryDescription should not be here.
+// TODO: The _entries and _hgRepositoryDescription should not be here. id:647 gh:648
 // Nuclide behaves badly when remote directories are opened which are parent/child of each other.
 // And there needn't be a 1:1 relationship between RemoteConnections and hg repos.
 export class RemoteConnection {

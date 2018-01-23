@@ -58,7 +58,7 @@ def add_methods(pymodule, class_scope, methods_sources):
 
 def get_body(pyfunction):
     """Return unindented function body"""
-    # FIXME scope = pyfunction.get_scope()
+    # FIXME scope = pyfunction.get_scope() id:271 gh:272
     pymodule = pyfunction.get_module()
     start, end = get_body_region(pyfunction)
     return fix_indentation(pymodule.source_code[start:end], 0)
@@ -79,7 +79,7 @@ def get_body_region(defined):
     scope_start = pymodule.logical_lines.logical_line_in(scope.start)
     if scope_start[1] >= start_line:
         # a one-liner!
-        # XXX: what if colon appears in a string
+        # XXX: what if colon appears in a string id:165 gh:166
         start = pymodule.source_code.index(':', start) + 1
         while pymodule.source_code[start].isspace():
             start += 1

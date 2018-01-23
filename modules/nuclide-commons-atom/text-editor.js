@@ -112,7 +112,7 @@ export function observeEditorDestroy(
 // subclass TextEditor to create a ReadOnlyTextEditor. Instead, the way to achieve this effect
 // is to create an ordinary TextEditor and then override any methods that would allow it to
 // change its contents.
-// TODO: https://github.com/atom/atom/issues/9237.
+// TODO: https://github.com/atom/atom/issues/9237. id:57 gh:58
 export function enforceReadOnlyEditor(
   textEditor: atom$TextEditor,
   readOnlyExceptions?: Array<string> = ['append', 'setText'],

@@ -228,7 +228,7 @@ suite('Linting', () => {
         testLinterMessages(linter, ch, fileToLint, pydocstyleMessagseToBeReturned).then(done, done);
     });
     // Version dependenant, will be enabled once we have fixed this
-    // TODO: Check version of python running and accordingly change the values
+    // TODO: Check version of python running and accordingly change the values id:448 gh:449
     if (!initialize_1.IS_TRAVIS) {
         test('PyLint with config in root', done => {
             let ch = new MockOutputChannel('Lint');

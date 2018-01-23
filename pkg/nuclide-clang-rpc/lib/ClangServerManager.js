@@ -81,7 +81,7 @@ export default class ClangServerManager {
    * Spawn one Clang server per translation unit (i.e. source file).
    * This allows working on multiple files at once, and simplifies per-file state handling.
    *
-   * TODO(hansonw): We should ideally restart on change for all service requests.
+   * TODO (hansonw): We should ideally restart on change for all service requests. id:658 gh:659
    * However, restarting (and refetching flags) can take a very long time.
    * Currently, there's no "status" observable, so we can only provide a busy signal to the user
    * on diagnostic requests - and hence we only restart on 'compile' requests.

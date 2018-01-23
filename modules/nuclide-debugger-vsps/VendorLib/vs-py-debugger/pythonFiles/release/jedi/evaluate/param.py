@@ -146,7 +146,7 @@ class Arguments(tree.Base):
         return (self.trailer or self.argument_node).get_parent_until(tree.IsScope)
 
     def eval_args(self):
-        # TODO this method doesn't work with named args and a lot of other
+        # TODO this method doesn't work with named args and a lot of other id:245 gh:246
         # things. Use unpack.
         return [self._evaluator.eval_element(el) for stars, el in self._split()]
 
@@ -258,7 +258,7 @@ def get_params(evaluator, func, var_args):
                 try:
                     keys_used[k] = param_names[-1]
                 except IndexError:
-                    # TODO this is wrong stupid and whatever.
+                    # TODO this is wrong stupid and whatever. id:144 gh:145
                     pass
             key, va_values = next(var_arg_iterator, (None, ()))
 
@@ -340,7 +340,7 @@ def get_params(evaluator, func, var_args):
                     pass
                 else:
                     origin_args = non_kw_param.parent.var_args.argument_node
-                    # TODO  calculate the var_args tree and check if it's in
+                    # TODO calculate the var_args tree and check if it's in id:279 gh:280
                     # the tree (if not continue).
                     # print('\t\tnonkw', non_kw_param.parent.var_args.argument_node, )
                     if origin_args not in [f.parent.parent for f in first_values]:
@@ -378,7 +378,7 @@ def _star_star_dict(evaluator, array, input_node, func):
     if isinstance(array, iterable.FakeDict):
         return array._dct
     elif isinstance(array, iterable.Array) and array.type == 'dict':
-        # TODO bad call to non-public API
+        # TODO bad call to non-public API id:610 gh:611
         for key_node, values in array._items():
             for key in evaluator.eval_element(key_node):
                 if precedence.is_string(key):

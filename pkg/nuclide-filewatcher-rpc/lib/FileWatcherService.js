@@ -103,7 +103,7 @@ async function getRealPath(
   entityPath: string,
   isFile: boolean,
 ): Promise<string> {
-  // NOTE: this will throw when trying to watch non-existent entities.
+  // NOTE: this will throw when trying to watch non-existent entities. id:372 gh:373
   const stat = await fsPromise.stat(entityPath);
   if (stat.isFile() !== isFile) {
     getLogger('nuclide-filewatcher-rpc').warn(
@@ -156,7 +156,7 @@ function onWatcherChange(
     const entryPath = nuclideUri.join(subscription.path, entry.name);
     const observer = entityObserver.get(entryPath);
     if (observer != null) {
-      // TODO(most): handle `rename`, if needed.
+      // TODO (most): handle `rename`, if needed. id:272 gh:273
       if (!entry.exists) {
         observer.next('delete');
       } else {

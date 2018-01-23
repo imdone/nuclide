@@ -17,7 +17,7 @@ def _memoize_default(default=_NO_DEFAULT, evaluator_is_first_arg=False, second_a
     """
     def func(function):
         def wrapper(obj, *args, **kwargs):
-            # TODO These checks are kind of ugly and slow.
+            # TODO These checks are kind of ugly and slow. id:724 gh:725
             if evaluator_is_first_arg:
                 cache = obj.memoize_cache
             elif second_arg_is_evaluator:

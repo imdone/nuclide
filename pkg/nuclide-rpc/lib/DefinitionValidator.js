@@ -33,7 +33,7 @@ import type {
  * Throws if a named type referenced in an RPC interface is not defined.
  * The error message thrown is suitable for display to a human.
  *
- * NOTE: Will also mutate the incoming definitions in place to make them easier to marshal.
+ * NOTE: Will also mutate the incoming definitions in place to make them easier to marshal. id:516 gh:517
  */
 export function validateDefinitions(definitions: Definitions): void {
   const namedTypes: Map<
@@ -196,7 +196,7 @@ export function validateDefinitions(definitions: Definitions): void {
         break;
       case 'union':
         // Union types break the layout chain.
-        // TODO: Strictly we should detect alternates which directly contain their parent union,
+        // TODO: Strictly we should detect alternates which directly contain their parent union, id:653 gh:654
         // or if all alternates indirectly contain the parent union.
         break;
       case 'intersection':
@@ -324,7 +324,7 @@ export function validateDefinitions(definitions: Definitions): void {
     const fieldNames = new Set();
     for (const field of fields) {
       if (fieldNames.has(field.name)) {
-        // TODO allow duplicate field names if they have the same type.
+        // TODO allow duplicate field names if they have the same type. id:744 gh:745
         throw error(
           `Duplicate field name '${
             field.name
@@ -446,7 +446,7 @@ export function validateDefinitions(definitions: Definitions): void {
       // If there are multiple valid discriminant fields, we just pick the first.
       return validFields[0];
     } else {
-      // TODO: Better error message why each possibleFields is invalid.
+      // TODO: Better error message why each possibleFields is invalid. id:545 gh:546
       throw error('No valid discriminant field for union type.');
     }
   }
@@ -563,7 +563,7 @@ export function validateDefinitions(definitions: Definitions): void {
 
   // Replaces all uses of type aliases in return types with their definition
   // so that clients need not be aware of aliases.
-  // TODO: Should replace all aliases, however that will require rewriting marsalling.
+  // TODO: Should replace all aliases, however that will require rewriting marsalling. id:519 gh:520
   function cannonicalize(): void {
     visitAllTypes(cannonicalizeType);
   }

@@ -95,7 +95,7 @@ class NameFinder(object):
         :params bool attribute_lookup: Tell to logic if we're accessing the
             attribute or the contents of e.g. a function.
         """
-        # TODO rename scopes to names_dicts
+        # TODO rename scopes to names_dicts id:100 gh:101
 
         names = self.filter_name(scopes)
         if self._found_predefined_if_name is not None:
@@ -106,7 +106,7 @@ class NameFinder(object):
         if not names and not types \
                 and not (isinstance(self.name_str, tree.Name) and
                          isinstance(self.name_str.parent.parent, tree.Param)):
-            if not isinstance(self.name_str, (str, unicode)):  # TODO Remove?
+            if not isinstance(self.name_str, (str, unicode)):  # TODO Remove? id:216 gh:217
                 if attribute_lookup:
                     analysis.add_attribute_error(self._evaluator,
                                                  self.scope, self.name_str)
@@ -155,7 +155,7 @@ class NameFinder(object):
                 continue
 
             if isinstance(name_scope, compiled.CompiledObject):
-                # Let's test this. TODO need comment. shouldn't this be
+                # Let's test this. TODO need comment. shouldn't this be id:502 gh:503
                 # filtered before?
                 last_names.append(name)
                 continue
@@ -204,7 +204,7 @@ class NameFinder(object):
                 origin_scope = None
 
             if isinstance(stmt.parent, compiled.CompiledObject):
-                # TODO seriously? this is stupid.
+                # TODO seriously? this is stupid. id:125 gh:126
                 continue
             check = flow_analysis.break_check(self._evaluator, name_scope,
                                               stmt, origin_scope)
@@ -244,7 +244,7 @@ class NameFinder(object):
             definition = n.parent
             if isinstance(definition, (compiled.CompiledObject,
                 iterable.BuiltinMethod)):
-                # TODO this if should really be removed by changing the type of
+                # TODO this if should really be removed by changing the type of id:79 gh:80
                 #      those classes.
                 yield n
             elif definition.type in ('funcdef', 'classdef', 'file_input'):
@@ -283,7 +283,7 @@ class NameFinder(object):
                 flow_scope = flow_scope.get_parent_scope(include_flows=True)
                 if flow_scope is None:
                     break
-                # TODO check if result is in scope -> no evaluation necessary
+                # TODO check if result is in scope -> no evaluation necessary id:102 gh:103
                 n = check_flow_information(self._evaluator, flow_scope,
                                            self.name_str, self.position)
                 if n:
@@ -361,8 +361,8 @@ def _name_to_types(evaluator, name, scope):
             names_dicts = [next(names_dicts)]
             types += finder.find(names_dicts, attribute_lookup=False)
     elif isinstance(typ, tree.TryStmt):
-        # TODO an exception can also be a tuple. Check for those.
-        # TODO check for types that are not classes and add it to
+        # TODO an exception can also be a tuple. Check for those. id:218 gh:219
+        # TODO check for types that are not classes and add it to id:505 gh:506
         # the static analysis report.
         exceptions = evaluator.eval_element(name.get_previous_sibling().get_previous_sibling())
         types = set(chain.from_iterable(evaluator.execute(t) for t in exceptions))
@@ -581,7 +581,7 @@ def global_names_dict_generator(evaluator, scope, position):
             for names_dict in scope.names_dicts(True):
                 yield names_dict, position
                 if hasattr(scope, 'resets_positions'):
-                    # TODO This is so ugly, seriously. However there's
+                    # TODO This is so ugly, seriously. However there's id:127 gh:128
                     #      currently no good way of influencing
                     #      global_names_dict_generator when it comes to certain
                     #      objects.

@@ -102,7 +102,7 @@ class Context(BaseContext):
                 getitem = self.py__getitem__
             except AttributeError:
                 from jedi.evaluate import analysis
-                # TODO this context is probably not right.
+                # TODO this context is probably not right. id:437 gh:438
                 analysis.add(
                     contextualized_node.context,
                     'type-error-not-subscriptable',
@@ -202,7 +202,7 @@ class ContextualizedNode(object):
 
 
 class ContextualizedName(ContextualizedNode):
-    # TODO merge with TreeNameDefinition?!
+    # TODO merge with TreeNameDefinition?! id:613 gh:614
     @property
     def name(self):
         return self.node

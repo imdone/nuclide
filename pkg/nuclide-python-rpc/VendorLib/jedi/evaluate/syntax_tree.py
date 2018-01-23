@@ -105,7 +105,7 @@ def eval_node(context, element):
     elif typ == 'dotted_name':
         context_set = eval_atom(context, element.children[0])
         for next_name in element.children[2::2]:
-            # TODO add search_global=True?
+            # TODO add search_global=True? id:489 gh:490
             context_set = context_set.py__getattribute__(next_name, name_context=context)
         return context_set
     elif typ == 'eval_input':
@@ -124,7 +124,7 @@ def eval_trailer(context, base_contexts, trailer):
     if trailer_op == '[':
         trailer_op, node, _ = trailer.children
 
-        # TODO It's kind of stupid to cast this from a context set to a set.
+        # TODO It's kind of stupid to cast this from a context set to a set. id:482 gh:483
         foo = set(base_contexts)
         # special case: PEP0484 typing module, see
         # https://github.com/davidhalter/jedi/issues/663
@@ -486,8 +486,8 @@ def tree_name_to_contexts(evaluator, context, tree_name):
     elif typ in ('funcdef', 'classdef'):
         types = _apply_decorators(context, node)
     elif typ == 'try_stmt':
-        # TODO an exception can also be a tuple. Check for those.
-        # TODO check for types that are not classes and add it to
+        # TODO an exception can also be a tuple. Check for those. id:627 gh:628
+        # TODO check for types that are not classes and add it to id:731 gh:732
         # the static analysis report.
         exceptions = context.eval_node(tree_name.get_previous_sibling().get_previous_sibling())
         types = exceptions.execute_evaluated()

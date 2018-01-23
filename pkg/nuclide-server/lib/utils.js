@@ -46,7 +46,7 @@ export function asyncRequest(options: RequestOptions): Promise<ResponseBody> {
     if (options.useQuerystring === undefined) {
       options.useQuerystring = true;
     }
-    // TODO(t8118670): This can cause an uncaught exception.
+    // TODO (t8118670): This can cause an uncaught exception. id:529 gh:530
     // Likely requires a fix to 'request'.
     request(options, (error, response, body) => {
       if (error) {

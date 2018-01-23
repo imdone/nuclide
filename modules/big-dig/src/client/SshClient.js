@@ -44,7 +44,7 @@ const OPEN_CHANNEL_DELAY_MS = 200;
  *
  * The answers for all prompts must be returned as an array of strings in the same order.
  *
- * NOTE: It's possible for the server to come back and ask more questions.
+ * NOTE: It's possible for the server to come back and ask more questions. id:41 gh:42
  */
 export type KeyboardInteractiveHandler = (
   name: string,

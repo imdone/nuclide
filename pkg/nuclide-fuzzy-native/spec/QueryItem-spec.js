@@ -55,7 +55,7 @@ describe('QueryItem', () => {
   describe('Path Separator', () => {
     const item = new QueryItem('He/y/Hello');
 
-    // TODO match indices not yet implemented. These are not provided by the FBIDE algorithm.
+    // TODO match indices not yet implemented. These are not provided by the FBIDE algorithm. id:377 gh:378
     // eslint-disable-next-line jasmine/no-disabled-tests
     xit('should prefer matches after the last path separator', () => {
       const score = item.score('h');
@@ -73,7 +73,7 @@ describe('QueryItem', () => {
   });
 
   describe('Misc', () => {
-    // TODO match indices not yet implemented. These are not provided by the FBIDE algorithm.
+    // TODO match indices not yet implemented. These are not provided by the FBIDE algorithm. id:359 gh:360
     // eslint-disable-next-line jasmine/no-disabled-tests
     xit('should prefer matches with an initialism', () => {
       const item = new QueryItem('AbBa');
@@ -157,7 +157,7 @@ describe('scoreCommonSubsequence', () => {
     expect(scoreCommonSubsequence('needle', 'needles')).toEqual(13);
     expect(scoreCommonSubsequence('needle', 'aneedle')).toEqual(34);
     expect(scoreCommonSubsequence('needle', 'aBunchOfNeedles')).toEqual(81);
-    // TODO this shows that clustering can be improved, as the following scores should be identical:
+    // TODO this shows that clustering can be improved, as the following scores should be identical: id:577 gh:578
     expect(scoreCommonSubsequence('needle', 'twoneedle')).toEqual(42);
     expect(scoreCommonSubsequence('needle', 'oneneedle')).toEqual(78);
   });

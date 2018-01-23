@@ -33,7 +33,7 @@ export class ConfigObserver {
     this._fileExtensions = fileExtensions;
     this._findConfigDir = findConfigDir;
     this._currentConfigs = new BehaviorSubject(new Set());
-    // TODO: Consider incrementally updating, rather than recomputing on each event.
+    // TODO: Consider incrementally updating, rather than recomputing on each event. id:606 gh:607
     this._subscription = cache
       .observeFileEvents()
       .filter(fileEvent => fileEvent.kind !== FileEventKind.EDIT)

@@ -151,7 +151,7 @@ class JsTestRunner(object):
 
     @utils.retryable(num_retries=2, sleep_time=10, exponential=True)
     def install_third_party_packages(self):
-        # TODO(asuarez): Figure out a way to better declare the 3rd-party
+        # TODO (asuarez): Figure out a way to better declare the 3rd-party id:680 gh:681
         # packages that are absolutely needed during integration tests.
         install_cmd = ['apm', '--no-color', 'install', 'tool-bar']
         logging.info('Running `%s`...', ' '.join(install_cmd))

@@ -200,7 +200,7 @@ class Instance(use_metaclass(CachedMetaClass, Executed)):
         if any([isinstance(i, iterable.Slice) for i in indexes]):
             # Slice support in Jedi is very marginal, at the moment, so just
             # ignore them in case of __getitem__.
-            # TODO support slices in a more general way.
+            # TODO support slices in a more general way. id:155 gh:156
             indexes = []
 
         try:
@@ -404,15 +404,15 @@ class Class(use_metaclass(CachedMetaClass, Wrapper)):
                 mro.append(cls)
 
         mro = [self]
-        # TODO Do a proper mro resolution. Currently we are just listing
+        # TODO Do a proper mro resolution. Currently we are just listing id:249 gh:250
         # classes. However, it's a complicated algorithm.
         for cls in self.py__bases__(self._evaluator):
-            # TODO detect for TypeError: duplicate base class str,
+            # TODO detect for TypeError: duplicate base class str, id:146 gh:147
             # e.g.  `class X(str, str): pass`
             try:
                 mro_method = cls.py__mro__
             except AttributeError:
-                # TODO add a TypeError like:
+                # TODO add a TypeError like: id:282 gh:283
                 """
                 >>> class Y(lambda: test): pass
                 Traceback (most recent call last):
@@ -526,7 +526,7 @@ class Function(use_metaclass(CachedMetaClass, Wrapper)):
 
                 # Create param array.
                 if isinstance(f, Function):
-                    old_func = f  # TODO this is just hacky. change.
+                    old_func = f  # TODO this is just hacky. change. id:612 gh:613
                 else:
                     old_func = Function(self._evaluator, f, is_decorated=True)
 
@@ -535,7 +535,7 @@ class Function(use_metaclass(CachedMetaClass, Wrapper)):
                     debug.warning('no wrappers found %s', self.base_func)
                     return self
                 if len(wrappers) > 1:
-                    # TODO resolve issue with multiple wrappers -> multiple types
+                    # TODO resolve issue with multiple wrappers -> multiple types id:157 gh:158
                     debug.warning('multiple wrappers found %s %s',
                                   self.base_func, wrappers)
                 f = wrappers[0]
@@ -841,7 +841,7 @@ class ModuleWrapper(use_metaclass(CachedMetaClass, tree.Module, Wrapper)):
                 fake_n.parent = imp
                 names[name] = [fake_n]
 
-        # TODO add something like this in the future, its cleaner than the
+        # TODO add something like this in the future, its cleaner than the id:252 gh:253
         #   import hacks.
         # ``os.path`` is a hardcoded exception, because it's a
         # ``sys.modules`` modification.

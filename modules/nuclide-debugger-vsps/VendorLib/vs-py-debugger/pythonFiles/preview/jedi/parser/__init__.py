@@ -150,7 +150,7 @@ class Parser(object):
             self.remove_last_newline()
 
     def get_parsed_node(self):
-        # TODO rename to get_root_node
+        # TODO rename to get_root_node id:91 gh:92
         return self._parsed
 
     def error_recovery(self, grammar, stack, arcs, typ, value, start_pos, prefix,
@@ -263,7 +263,7 @@ class Parser(object):
                         # will be no previous leaf. So just ignore it.
                         break
                 elif newline.value != '\n':
-                    # TODO REMOVE, error recovery was simplified.
+                    # TODO REMOVE, error recovery was simplified. id:119 gh:120
                     # This may happen if error correction strikes and removes
                     # a whole statement including '\n'.
                     break
@@ -297,7 +297,7 @@ class ParserWithRecovery(Parser):
         self._omit_dedent_list = []
         self._indent_counter = 0
 
-        # TODO do print absolute import detection here.
+        # TODO do print absolute import detection here. id:231 gh:232
         # try:
         #     del python_grammar_no_print_statement.keywords["print"]
         # except KeyError:

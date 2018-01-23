@@ -38,7 +38,7 @@ describe('ConnectableObservable', () => {
     connection.unsubscribe();
     expect(unsubscribed).toBe(1);
 
-    // NOTE: Can reconnect, which results in a resubscribe of the underlying
+    // NOTE: Can reconnect, which results in a resubscribe of the underlying id:525 gh:526
     expect(created).toBe(1);
     const connection2 = connectable.connect();
     expect(created).toBe(2);
@@ -94,5 +94,5 @@ describe('ConnectableObservable', () => {
     expect(unsubscribed).toBe(1);
   });
 
-  // TODO: Test disconnect when a subscription is outstanding.
+  // TODO: Test disconnect when a subscription is outstanding. id:659 gh:660
 });

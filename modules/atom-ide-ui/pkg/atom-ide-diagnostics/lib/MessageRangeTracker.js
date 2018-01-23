@@ -92,7 +92,7 @@ export default class MessageRangeTracker {
 
       // If the file is currently open, create a marker.
 
-      // TODO If there is a long delay between when the file is saved and results appear, the file
+      // TODO If there is a long delay between when the file is saved and results appear, the file id:20 gh:21
       // may have changed in the mean time. Meaning that the markers we place here may be in the
       // wrong place already. Consider detecting such cases (perhaps with a checksum included in the
       // fix) and rejecting the fixes, since we can't accurately track their locations.

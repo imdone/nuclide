@@ -9,5 +9,5 @@
  * @format
  */
 
-// TODO: (chenglou) See D4100961. Temporarily removed to reconsider the UI/UX.
+// TODO: (chenglou) See D4100961. Temporarily removed to reconsider the UI/UX. id:461 gh:462
 // The future formatting feature will use Atom's notification box instead.

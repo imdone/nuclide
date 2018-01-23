@@ -114,7 +114,7 @@ function createPropsStream({dismiss, onConnected, dialogOptions}) {
     onDeleteProfileClicked(indexToDelete: number): void {
       if (indexToDelete === 0) {
         // no-op: The default connection profile can't be deleted.
-        // TODO jessicalin: Show this error message in a better place.
+        // TODO jessicalin: Show this error message in a better place. id:542 gh:543
         atom.notifications.addError(
           'The default connection profile cannot be deleted.',
         );

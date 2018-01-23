@@ -40,7 +40,7 @@ type DefaultProps = {
 };
 
 export type HunkProps = {
-  // TODO: remove disable
+  // TODO: remove disable id:563 gh:564
   /* eslint-disable react/no-unused-prop-types */
   collapsable?: boolean,
   extraData?: mixed,

@@ -137,7 +137,7 @@ def start_debugging(debugger, arguments, ipc_channel, is_attach):
             if arguments.launch_arguments else None
         environment_variables = arguments.launch_environment_variables \
             if arguments.launch_environment_variables else None
-        # TODO: should we resolve symbol link?
+        # TODO: should we resolve symbol link? id:681 gh:682
         executable_path = os.path.expanduser(str(arguments.executable_path)) \
             if arguments.executable_path else None
         working_directory = os.path.expanduser(str(arguments.working_directory)) \
@@ -247,7 +247,7 @@ def main():
     event_thread.join()
     lldb.SBDebugger.Destroy(debugger)
     lldb.SBDebugger.Terminate()
-    # TODO: investigate why we need os._exit() to terminate python process.
+    # TODO: investigate why we need os._exit() to terminate python process. id:239 gh:240
     os._exit(0)
 
 

@@ -31,7 +31,7 @@ export async function setRootDirectoryUri(directoryUri: string): Promise<void> {
       hackRootDirectory,
     )}`,
   );
-  // TODO: make xdebug_includes.php path configurable from hhconfig.
+  // TODO: make xdebug_includes.php path configurable from hhconfig. id:349 gh:350
   const hackDummyRequestFilePath = nuclideUri.join(
     // flowlint-next-line sketchy-null-string:off
     hackRootDirectory ? hackRootDirectory : '',
@@ -107,7 +107,7 @@ export function isCorrectConnection(
 
   const requestScriptPath = uriToPath(attributes.fileuri);
   if (getMode() === 'launch') {
-    // TODO: Pass arguments separately from script path so this check can be simpler.
+    // TODO: Pass arguments separately from script path so this check can be simpler. id:241 gh:242
     invariant(launchScriptPath != null, 'Null launchScriptPath in launch mode');
 
     if (launchWrapperCommand != null) {

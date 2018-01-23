@@ -65,7 +65,7 @@ export class HhvmDebuggerService extends DebuggerRpcServiceBase {
     return super.getAtomNotificationObservable();
   }
 
-  // TODO: Provided for interface compatibility with the old debugger, which is
+  // TODO: Provided for interface compatibility with the old debugger, which is id:679 gh:680
   // needed in PhpDebuggerInstance on the client side. Remove once the old debugger
   // is removed.
   getNotificationObservable(): ConnectableObservable<AtomNotification> {

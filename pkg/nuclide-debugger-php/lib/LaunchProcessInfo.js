@@ -164,7 +164,7 @@ export class LaunchProcessInfo extends DebuggerProcessInfo {
   async debug(): Promise<PhpDebuggerInstance> {
     const useNewDebugger = await passesGK('nuclide_hhvm_debugger_vscode');
     if (useNewDebugger) {
-      // TODO: Ericblue - this will be cleaned up when the old debugger
+      // TODO: Ericblue - this will be cleaned up when the old debugger id:290 gh:291
       // is removed. For now we need to leave both in place until the new
       // one is ready.
       return this._hhvmDebug();

@@ -93,7 +93,7 @@ function getCodeActions(
   return codeActionMaps.length > 0 ? mapUnion(...codeActionMaps) : null;
 }
 
-// TODO move LESS styles to nuclide-ui
+// TODO move LESS styles to nuclide-ui id:12 gh:13
 export const DiagnosticsPopup = (props: DiagnosticsPopupProps) => {
   const {fixer, goToLocation, codeActionsForMessage, messages, ...rest} = props;
   return (

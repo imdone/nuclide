@@ -25,7 +25,7 @@ import {getLogger} from 'log4js';
 
 import {FileEventKind} from '../../nuclide-open-files-rpc';
 
-// TODO put these in flow-typed when they are fleshed out better
+// TODO put these in flow-typed when they are fleshed out better id:570 gh:571
 
 type MessageHandler = (...args: any) => mixed;
 
@@ -33,7 +33,7 @@ type RpcConnection = {
   onNotification(methodName: string, handler: MessageHandler): void,
   sendNotification(methodName: string, ...args: any): void,
   sendRequest(methodName: string, ...args: any): Promise<any>,
-  // TODO requests
+  // TODO requests id:697 gh:698
   listen(): void,
   dispose(): void,
 };
@@ -135,10 +135,10 @@ export class FlowIDEConnection {
               closePaths.push(filePath);
               break;
             case FileEventKind.EDIT:
-              // TODO: errors-as-you-type
+              // TODO: errors-as-you-type id:315 gh:316
               break;
             case FileEventKind.SAVE:
-              // TODO: handle saves correctly
+              // TODO: handle saves correctly id:373 gh:374
               break;
             default:
               (fileEvent.kind: empty);

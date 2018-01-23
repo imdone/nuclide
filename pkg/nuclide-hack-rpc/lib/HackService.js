@@ -245,7 +245,7 @@ class HackSingleFileLanguageService {
               // This is passed over RPC as NuclideUri, which is not allowed
               // to be an empty string. It's better to silently skip a
               // (most likely) useless error, than crash the entire connection.
-              // TODO: figure out a better way to display those errors
+              // TODO: figure out a better way to display those errors id:376 gh:377
               return hackDiagnostics.filename !== '';
             })
             .map((hackDiagnostics: HackDiagnosticsMessage) => {
@@ -373,7 +373,7 @@ class HackSingleFileLanguageService {
     if (result == null || result.type == null || result.type === '_') {
       return null;
     } else {
-      // TODO: Use hack range for type hints, not nuclide range.
+      // TODO: Use hack range for type hints, not nuclide range. id:579 gh:580
       return typeHintFromSnippet(result.type, match.range);
     }
   }

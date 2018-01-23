@@ -74,7 +74,7 @@ function parseArgsAndRunMain(): Promise<void> {
         config: SshConnectionConfiguration,
       ) {
         getLogger().info(`Connected to server at: ${connection.getAddress()}`);
-        // TODO(mbolin): Do this in a better way that does not interleave
+        // TODO (mbolin): Do this in a better way that does not interleave id:73 gh:74
         // with logging output. Maybe a simpler send/response would be a better
         // first sample and there could be a more complex example that uses more
         // of the Observable API.

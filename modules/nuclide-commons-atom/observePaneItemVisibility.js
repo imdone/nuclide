@@ -16,7 +16,7 @@ import {setFilter} from 'nuclide-commons/collection';
 import {Observable, Scheduler, Subject} from 'rxjs';
 import shallowEqual from 'shallowequal';
 
-// TODO(T17495608): Currently, docks don't have a way of observing their visibility so this will
+// TODO (T17495608): Currently, docks don't have a way of observing their visibility so this will id:58 gh:59
 //   have some false positives when an item is its pane's active item but its dock is hidden.
 export default function observePaneItemVisibility(
   item: Object,
@@ -144,8 +144,8 @@ const observePaneContainerVisibilities = memoizeUntilChanged(_cacheKey => {
   return visibilityStates;
 });
 
-// HACK: Monkey-patch Docks in order to observe visibility toggling.
-// TODO: Use `Dock::observeVisibility` once atom/atom#14736 is in our lowest-supported version
+// HACK: Monkey-patch Docks in order to observe visibility toggling. id:53 gh:54
+// TODO: Use `Dock::observeVisibility` once atom/atom#14736 is in our lowest-supported version id:92 gh:93
 let docksPatched = false;
 const dockStateChanges = new Subject();
 function patchDocks() {

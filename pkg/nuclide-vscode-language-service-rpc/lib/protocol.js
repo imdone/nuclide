@@ -151,7 +151,7 @@ export type InitializeParams = {
   rootPath?: string,
   //  The rootUri of the workspace. Is null if no folder is open. If both
   //  `rootPath` and `rootUri` are set rootUri` wins.
-  rootUri?: string, // TODO: this should be DocumentUri
+  rootUri?: string, // TODO: this should be DocumentUri id:678 gh:679
   //  User provided initialization options.
   initializationOptions?: any,
   //  The capabilities provided by the client (editor)

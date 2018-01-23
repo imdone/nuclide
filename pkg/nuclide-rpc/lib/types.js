@@ -172,7 +172,7 @@ export type BuiltinLocation = {
 export type ReturnKind = 'promise' | 'observable' | 'void';
 
 // Babel Definitions
-// TODO: Move these to external-interfaces package.
+// TODO: Move these to external-interfaces package. id:524 gh:525
 
 export type Babel$Node = {
   loc: Babel$Range,

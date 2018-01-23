@@ -2117,7 +2117,7 @@
 
 	exports.basename = function (path, ext) {
 	  var f = splitPath(path)[2];
-	  // TODO: make this comparison case-insensitive on windows?
+	  // TODO: make this comparison case-insensitive on windows? id:440 gh:441
 	  if (ext && f.substr(-1 * ext.length) === ext) {
 	    f = f.substr(0, f.length - ext.length);
 	  }
@@ -2374,7 +2374,7 @@
 
 	        var parsed = reader.parse(data);
 
-	        // TODO: Any other transformations on the parsed object
+	        // TODO: Any other transformations on the parsed object id:101 gh:102
 	        // See https://github.com/jgm/commonmark.js#usage
 
 	        div.innerHTML = writer.render(parsed);
@@ -4023,7 +4023,7 @@
 			}
 		});
 
-		//TODO add ranges
+		//TODO add ranges id:68 gh:69
 		multiple.unshift("[" + single.join("") + "]");
 
 		return new RegExp(multiple.join("|"), "g");
@@ -4123,7 +4123,7 @@
 			return replace(str);
 		}
 
-		//TODO consider creating a merged map
+		//TODO consider creating a merged map id:82 gh:83
 		return function (str) {
 			return String(str).replace(re, replacer);
 		};

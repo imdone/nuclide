@@ -106,7 +106,7 @@ def get_faked(module, obj, name=None):
     else:
         # Set the docstr which was previously not set (faked modules don't
         # contain it).
-        doc = '"""%s"""' % obj.__doc__  # TODO need escapes.
+        doc = '"""%s"""' % obj.__doc__  # TODO need escapes. id:130 gh:131
         suite = result.children[-1]
         string = pt.String(pt.zero_position_modifier, doc, (0, 0), '')
         new_line = pt.Whitespace('\n', (0, 0), '')

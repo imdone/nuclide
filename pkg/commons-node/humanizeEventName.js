@@ -11,7 +11,7 @@
 
 // Adapted from https://github.com/atom/underscore-plus/blob/master/src/underscore-plus.coffee
 
-// TODO: Consider combining with the similar function in `./humanizeKeystoke.js`
+// TODO: Consider combining with the similar function in `./humanizeKeystoke.js` id:177 gh:178
 function capitalize(word: string): string {
   if (!word) {
     return '';

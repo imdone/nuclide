@@ -89,7 +89,7 @@ export default class DebuggerInstance implements DebuggerInstanceInterface {
 
   _translateMessageIfNeeded(message_: string): string {
     let message = message_;
-    // TODO: do we really need isRemote() checking?
+    // TODO: do we really need isRemote() checking? id:69 gh:70
     if (nuclideUri.isRemote(this.getTargetUri())) {
       message = translateMessageFromServer(
         nuclideUri.getHostname(this.getTargetUri()),

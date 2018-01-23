@@ -70,7 +70,7 @@ export function hgObserveExecution(
   args_: Array<string>,
   options_: HgExecOptions,
 ): Observable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:711 gh:712
   return Observable.fromPromise(
     getHgExecParams(args_, {
       ...(options_: any),
@@ -80,8 +80,8 @@ export function hgObserveExecution(
     return observeProcess(command, args, {
       ...options,
       killTreeWhenDone: true,
-      /* TODO(T17353599) */ isExitError: () => false,
-    }).catch(error => Observable.of({kind: 'error', error})); // TODO(T17463635)
+      /* TODO (T17353599) id:403 gh:404*/ isExitError: () => false,
+    }).catch(error => Observable.of({kind: 'error', error})); // TODO (T17463635) id:404 gh:405
   });
 }
 
@@ -245,7 +245,7 @@ function getAtomRpcScriptPath(): string {
 export function processExitCodeAndThrow(
   processMessage: LegacyProcessMessage,
 ): Observable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:408 gh:409
   if (processMessage.kind === 'exit' && processMessage.exitCode !== 0) {
     return Observable.throw(
       new Error(`HG failed with exit code: ${String(processMessage.exitCode)}`),

@@ -44,7 +44,7 @@ import createPackage from 'nuclide-commons-atom/createPackage';
 import {getLogger} from 'log4js';
 import featureConfig from 'nuclide-commons-atom/feature-config';
 import UniversalDisposable from 'nuclide-commons/UniversalDisposable';
-// TODO pelmers: maybe don't import from libclang
+// TODO pelmers: maybe don't import from libclang id:677 gh:675
 // eslint-disable-next-line rulesdir/no-cross-atom-imports
 import {registerClangProvider} from '../../nuclide-clang/lib/libclang';
 import {
@@ -302,7 +302,7 @@ class CqueryLSPClient {
   }
 
   async supportsSymbolSearch(directories: Array<NuclideUri>): Promise<boolean> {
-    // TODO pelmers: wrap with ensure server
+    // TODO pelmers: wrap with ensure server id:229 gh:230
     return this._service.supportsSymbolSearch(directories);
   }
 

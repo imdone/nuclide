@@ -90,7 +90,7 @@ function isLetterImportant(index: number, name: string): boolean {
  * This is a temporary workaround that allow calculating important characters on the fly rather
  * than relying on the index. Once the index is implemented, consumers of this need to be updated.
  */
-// TODO(jxg): replace with "important characters" index.
+// TODO (jxg): replace with "important characters" index. id:576 gh:577
 function importantCharactersForString(str: string): Set<string> {
   const importantCharacters = new Set();
   for (let index = 0; index < str.length; index++) {
@@ -157,7 +157,7 @@ export default class QueryItem {
       return 0;
     }
     // Check if this a "possible result".
-    // TODO consider building a directory-level index from important_character -> QueryItem,
+    // TODO consider building a directory-level index from important_character -> QueryItem, id:700 gh:701
     // akin to FBIDE's implementation.
     const firstChar = query[0].toLowerCase();
     if (!this._importantCharacters.has(firstChar)) {
@@ -184,7 +184,7 @@ export default class QueryItem {
          */
         return sub + this._filename.length;
       } else {
-        // TODO(jxg): Investigate extending scoreCommonSubsequence to consider subsequences
+        // TODO (jxg): Investigate extending scoreCommonSubsequence to consider subsequences id:356 gh:357
         // bidirectionally, or use (some proxy for) edit distance.
         const score = scoreCommonSubsequence(query, this._filename);
         if (score !== -1) {

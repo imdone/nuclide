@@ -9,7 +9,7 @@
  * @format
  */
 
-// TODO @jxg export debugger typedefs from main module. (t11406963)
+// TODO @jxg export debugger typedefs from main module. (t11406963) id:536 gh:537
 import type {
   EvaluationResult,
   ExpansionResult,
@@ -102,7 +102,7 @@ const LoadableValueComponent = (props: LoadableValueComponentProps) => {
   );
 };
 
-// TODO allow passing action components (edit button, pin button) here
+// TODO allow passing action components (edit button, pin button) here id:550 gh:551
 function renderValueLine(
   expression: React.Element<any> | ?string,
   value: React.Element<any> | string,
@@ -112,7 +112,7 @@ function renderValueLine(
       <div className="nuclide-ui-lazy-nested-value-container">{value}</div>
     );
   } else {
-    // TODO @jxg use a text editor to apply proper syntax highlighting for expressions (t11408154)
+    // TODO @jxg use a text editor to apply proper syntax highlighting for expressions (t11408154) id:670 gh:671
     return (
       <div className="nuclide-ui-lazy-nested-value-container">
         <span className={ValueComponentClassNames.identifier}>
@@ -210,7 +210,7 @@ class ValueComponent extends React.Component<
   /**
    * Constructs the corresponding state object based on the provided props.
    *
-   * NOTE: This should be used to set the state when the props change or when
+   * NOTE: This should be used to set the state when the props change or when id:753 gh:754
    *       the expansion state of the object is being toggled by the user.
    *
    * The expansion state (isExpanded) of this component is cached so it can

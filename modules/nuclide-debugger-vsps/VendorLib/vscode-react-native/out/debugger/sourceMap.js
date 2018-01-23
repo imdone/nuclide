@@ -39,7 +39,7 @@ class SourceMapUtil {
         try {
             let sourceMap = JSON.parse(sourceMapBody);
             if (sourceMap.sections) {
-                // TODO: there is a need to handle value.map == null, make a fake map
+                // TODO: there is a need to handle value.map == null, make a fake map id:174 gh:175
                 sourceMap.sections = sourceMap.sections.filter((value, index, array) => {
                     return value.map != null;
                 });

@@ -88,11 +88,11 @@ class Script(object):
         self.path = os.path.abspath(path) if path else None
 
         if source is None:
-            # TODO add a better warning than the traceback!
+            # TODO add a better warning than the traceback! id:438 gh:439
             with open(path, 'rb') as f:
                 source = f.read()
 
-        # TODO do we really want that?
+        # TODO do we really want that? id:465 gh:466
         self._source = python_bytes_to_unicode(source, encoding, errors='replace')
         self._code_lines = split_lines(self._source)
         line = max(len(self._code_lines), 1) if line is None else line

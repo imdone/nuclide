@@ -115,7 +115,7 @@ export default class DiagnosticsView extends React.Component<Props> {
               value={this.props.textFilter}
               onChange={this.props.onTextFilterChange}
             />
-            {/* TODO: This will probably change to a dropdown to also accommodate Head Changes */}
+            {/* TODO: This will probably change to a dropdown to also accommodate Head Changes id:17 gh:18*/}
             <Toggle
               className="inline-block"
               onChange={this._handleFilterByActiveTextEditorChange}

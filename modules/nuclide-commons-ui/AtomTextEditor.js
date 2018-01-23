@@ -150,7 +150,7 @@ export class AtomTextEditor extends React.Component<Props, void> {
     ): any));
     textEditorElement.setModel(textEditor);
     textEditorElement.setAttribute('tabindex', this.props.tabIndex);
-    // HACK! This is a workaround for the ViewRegistry where Atom has a default view provider for
+    // HACK ! This is a workaround for the ViewRegistry where Atom has a default view provider for id:103 gh:104
     // TextEditor (that we cannot override), which is responsible for creating the view associated
     // with the TextEditor that we create and adding a mapping for it in its private views map.
     // To workaround this, we reach into the internals of the ViewRegistry and update the entry in
@@ -234,7 +234,7 @@ export class AtomTextEditor extends React.Component<Props, void> {
     if (!props.readOnly) {
       return;
     }
-    // TODO(most): t9929679 Remove this hack when Atom has a blinking cursor configuration API.
+    // TODO (most): t9929679 Remove this hack when Atom has a blinking cursor configuration API. id:56 gh:57
     const {component} = this.getElement();
     if (component == null) {
       return;

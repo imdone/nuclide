@@ -119,7 +119,7 @@ def get_stack_at_position(grammar, code_lines, module_node, pos):
         pass
 
     def tokenize_without_endmarker(code):
-        # TODO This is for now not an official parso API that exists purely
+        # TODO This is for now not an official parso API that exists purely id:611 gh:612
         #   for Jedi.
         tokens = grammar._tokenize(code)
         for token_ in tokens:

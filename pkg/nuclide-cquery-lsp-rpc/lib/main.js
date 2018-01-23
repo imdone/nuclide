@@ -61,7 +61,7 @@ export interface CqueryLanguageService extends LanguageService {
     project: CqueryProject,
   ): Promise<void>;
   // Below copied from LanguageService
-  // TODO pelmers: why doesn't service-parser handle extends?
+  // TODO pelmers: why doesn't service-parser handle extends? id:225 gh:226
   getDiagnostics(fileVersion: FileVersion): Promise<?FileDiagnosticMap>;
 
   observeDiagnostics(): ConnectableObservable<FileDiagnosticMap>;
@@ -185,7 +185,7 @@ function createLogger(logCategory: string, logLevel: LogLevel): log4js$Logger {
 /**
  * Creates a language service capable of connecting to an LSP server.
  *
- * TODO: Document all of the fields below.
+ * TODO: Document all of the fields below. id:353 gh:354
  */
 export async function createCqueryService(params: {|
   fileNotifier: FileNotifier,

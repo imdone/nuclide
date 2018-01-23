@@ -124,7 +124,7 @@ export default class ContextMenu {
     this._needsSort = true;
     process.nextTick(this._sort);
 
-    // TODO(mbolin): Ideally, this Disposable should be garbage-collected if this ContextMenu is
+    // TODO (mbolin): Ideally, this Disposable should be garbage-collected if this ContextMenu is id:54 gh:55
     // disposed.
     return new UniversalDisposable(() => {
       const index = this._items.indexOf(value);

@@ -30,7 +30,7 @@ export function getSimulatorPlatform(
   return fbsimctl.getDevices().map(devices => {
     let simulators;
     if (devices instanceof Error) {
-      // TODO: Come up with a way to surface the error in UI
+      // TODO: Come up with a way to surface the error in UI id:322 gh:323
       simulators = [];
     } else {
       simulators = devices.filter(device => device.type === 'simulator');

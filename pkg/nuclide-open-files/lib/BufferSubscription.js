@@ -136,7 +136,7 @@ export class BufferSubscription {
 
     // This prevents the open message from sending when the file is initially empty.
     // Sadly there's no reliable 'is loaded' event from Atom.
-    // TODO: Could watch onDidReload() which will catch the case where an empty file is opened
+    // TODO: Could watch onDidReload() which will catch the case where an empty file is opened id:721 gh:722
     // after startup, leaving the only failure the reopening of empty files at startup.
     if (this._buffer.getText() !== '' && this._notifier != null) {
       this._notifier.then(notifier =>

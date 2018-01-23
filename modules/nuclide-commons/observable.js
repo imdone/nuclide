@@ -12,7 +12,7 @@
 
 /* global requestAnimationFrame, cancelAnimationFrame */
 
-// NOTE: Custom operators that require arguments should be written as higher-order functions. That
+// NOTE: Custom operators that require arguments should be written as higher-order functions. That id:65 gh:66
 // is, they should accept the arguments and return a function that accepts only an observable. This
 // allows a nice ergonomic way of using them with '.let()' (or a potential future pipe operator):
 //

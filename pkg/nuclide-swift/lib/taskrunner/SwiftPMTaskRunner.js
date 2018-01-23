@@ -137,9 +137,9 @@ export class SwiftPMTaskRunner {
       'log',
     ).concat(
       observeProcess(command.command, command.args, {
-        /* TODO(T17353599) */ isExitError: () => false,
+        /* TODO (T17353599) id:556 gh:557*/ isExitError: () => false,
       })
-        .catch(error => Observable.of({kind: 'error', error})) // TODO(T17463635)
+        .catch(error => Observable.of({kind: 'error', error})) // TODO (T17463635) id:530 gh:531
         .flatMap(message => {
           switch (message.kind) {
             case 'stderr':

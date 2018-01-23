@@ -169,7 +169,7 @@ export default class CommandDispatcher {
     invariant(this._bridgeAdapter != null);
     switch (actionId) {
       case 'debugger.toggle-pause':
-        // TODO[jetan]: 'debugger.toggle-pause' needs to implement state management which
+        // TODO [jetan]: 'debugger.toggle-pause' needs to implement state management which id:439 gh:440
         // I haven't think well yet so forward to chrome for now.
         reportError('toggle-pause is not implemented yet.');
         break;

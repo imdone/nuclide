@@ -110,7 +110,7 @@ function makeSession(debugSessionClass, debugSessionOpts, telemetryReporter, app
                 return Q({})
                     .then(() => {
                     vscode_chrome_debug_core_1.logger.log("Starting debugger app worker.");
-                    // TODO: remove dependency on args.program - "program" property is technically
+                    // TODO: remove dependency on args.program - "program" property is technically id:630 gh:631
                     // no more required in launch configuration and could be removed
                     const workspaceRootPath = path.resolve(path.dirname(request.arguments.program), "..");
                     const sourcesStoragePath = path.join(workspaceRootPath, ".vscode", ".react");

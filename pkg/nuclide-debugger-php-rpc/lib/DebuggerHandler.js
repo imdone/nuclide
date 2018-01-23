@@ -248,7 +248,7 @@ export class DebuggerHandler {
   ): Promise<DebugProtocol.StackFrame> {
     logger.debug('Converting frame: ' + JSON.stringify(frame));
     const location = locationOfFrame(frame);
-    const hasSource = true; // TODO;
+    const hasSource = true; // TODO ; id:285 gh:287
     if (!hasSource) {
       location.scriptId = '';
     }
@@ -346,7 +346,7 @@ export class DebuggerHandler {
     invariant(breakpoint != null);
     invariant(breakpoint.connectionId === enabledConnection.getId());
 
-    // TODO change to resume on resolve notification when it's received after setting a breakpoint.
+    // TODO change to resume on resolve notification when it's received after setting a breakpoint. id:357 gh:358
     await sleep(RESOLVE_BREAKPOINT_DELAY_MS);
     this.resume();
   }

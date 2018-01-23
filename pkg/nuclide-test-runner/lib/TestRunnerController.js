@@ -51,7 +51,7 @@ export class TestRunnerController {
     this._root = document.createElement('div');
     this._root.className = 'nuclide-test-runner-root';
 
-    // TODO: Use the ReadOnlyTextBuffer class from nuclide-atom-text-editor when it is exported.
+    // TODO: Use the ReadOnlyTextBuffer class from nuclide-atom-text-editor when it is exported. id:532 gh:533
     this._buffer = new TextBuffer();
     // Make `delete` a no-op to effectively create a read-only buffer.
     (this._buffer: Object).delete = () => {};

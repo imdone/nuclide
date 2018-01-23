@@ -127,7 +127,7 @@ export default class ClangLinter {
 
         let fix;
         if (diagnostic.fixits != null) {
-          // TODO: support multiple fixits (if it's ever used at all)
+          // TODO: support multiple fixits (if it's ever used at all) id:202 gh:203
           const fixit = diagnostic.fixits[0];
           if (fixit != null) {
             fix = {

@@ -369,7 +369,7 @@ describe('RemoteDirectory::isSymbolicLink()', () => {
   });
 });
 
-// TODO: #7344702 Re-enable and don't depend on watchman.
+// TODO: #7344702 Re-enable and don't depend on watchman. id:649 gh:649
 // eslint-disable-next-line jasmine/no-disabled-tests
 xdescribe('RemoteDirectory::onDidChange()', () => {
   const WATCHMAN_SETTLE_TIME_MS = 1 * 1000;

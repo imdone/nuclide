@@ -105,7 +105,7 @@ def clean_scope_docstring(scope_node):
     """ Returns a cleaned version of the docstring token. """
     node = scope_node.get_doc_node()
     if node is not None:
-        # TODO We have to check next leaves until there are no new
+        # TODO We have to check next leaves until there are no new id:491 gh:492
         # leaves anymore that might be part of the docstring. A
         # docstring can also look like this: ``'foo' 'bar'
         # Returns a literal cleaned version of the ``Token``.
@@ -210,7 +210,7 @@ def get_following_comment_same_line(node):
     except AttributeError:
         return None
     except ValueError:
-        # TODO in some particular cases, the tree doesn't seem to be linked
+        # TODO in some particular cases, the tree doesn't seem to be linked id:484 gh:485
         # correctly
         return None
     if "#" not in whitespace:

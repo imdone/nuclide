@@ -98,7 +98,7 @@ export class PopoutView extends React.Component<Props, State> {
     this._update();
 
     const observer = new MutationObserver((mutations, obs) => {
-      // TODO: be more efficent by computing delta and only updating what actually changed.
+      // TODO: be more efficent by computing delta and only updating what actually changed. id:567 gh:568
       const container = ReactDOM.findDOMNode(this);
       invariant(container != null && container.innerHTML != null);
 
@@ -230,7 +230,7 @@ export class PopoutView extends React.Component<Props, State> {
   _prepareContainer() {
     this._callJsFunctionInPopoutWindow(this._addContainer);
 
-    // TODO: (Ericblue) can this be more efficient?
+    // TODO: (Ericblue) can this be more efficient? id:540 gh:541
     // $FlowFixMe
     for (const element of atom.styles.styleElements) {
       this._callJsFunctionInPopoutWindow(this._addStyles, element.innerHTML);

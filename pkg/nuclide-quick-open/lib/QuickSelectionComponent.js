@@ -163,7 +163,7 @@ export default class QuickSelectionComponent extends React.Component<
     if (this.props.searchResultManager !== nextProps.searchResultManager) {
       throw new Error('quick-open: searchResultManager instance changed.');
     }
-    // TODO: Find a better way to trigger an update.
+    // TODO: Find a better way to trigger an update. id:503 gh:504
     const nextProviderName = this.props.searchResultManager.getActiveProviderName();
     if (this.state.activeTab.name === nextProviderName) {
       process.nextTick(() => {
@@ -689,7 +689,7 @@ export default class QuickSelectionComponent extends React.Component<
   _renderTabs(): React.Element<any> {
     const workspace = atom.views.getView(atom.workspace);
     const tabs = this.state.renderableProviders.map(tab => {
-      let keyBinding = null; // TODO
+      let keyBinding = null; // TODO id:496 gh:497
       const humanizedKeybinding = tab.action
         ? _findKeybindingForAction(tab.action, workspace)
         : '';

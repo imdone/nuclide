@@ -10,7 +10,7 @@ except NameError:
 
 
 def parse(source, filename='<string>'):
-    # NOTE: the raw string should be given to `compile` function
+    # NOTE: the raw string should be given to `compile` function id:618 gh:619
     if isinstance(source, unicode):
         source = fscommands.unicode_to_file_data(source)
     if b'\r' in source:

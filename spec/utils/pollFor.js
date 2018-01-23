@@ -16,7 +16,7 @@
  * If the predicate is not fulfilled within the maxWaitTime period, will reject the promise
  * and fail an `expect` call to produce a readable error.
  *
- * NOTE: The surrounding waitsForPromise has a timeout of its own, be sure to set it to a value
+ * NOTE: The surrounding waitsForPromise has a timeout of its own, be sure to set it to a value id:575 gh:576
  * higher than the `maxWaitTime`
  *
  * Usage:

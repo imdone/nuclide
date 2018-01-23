@@ -85,7 +85,7 @@ export function installPackage(
   device: DeviceId,
   packagePath: NuclideUri,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:277 gh:278
   return new Adb(device).installPackage(packagePath).publish();
 }
 
@@ -93,7 +93,7 @@ export function uninstallPackage(
   device: DeviceId,
   packageName: string,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:173 gh:174
   return new Adb(device).uninstallPackage(packageName).publish();
 }
 

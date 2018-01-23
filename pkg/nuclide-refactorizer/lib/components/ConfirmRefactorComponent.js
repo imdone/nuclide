@@ -46,7 +46,7 @@ export class ConfirmRefactorComponent extends React.PureComponent<Props> {
     for (const [path, edits] of response.edits) {
       editCount.set(path, (editCount.get(path) || 0) + edits.length);
     }
-    // TODO: display actual diff output here.
+    // TODO: display actual diff output here. id:506 gh:507
     return (
       <div>
         This refactoring will affect {editCount.size} files. Confirm?

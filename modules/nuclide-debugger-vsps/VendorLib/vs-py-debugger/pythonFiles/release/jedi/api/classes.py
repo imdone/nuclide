@@ -175,7 +175,7 @@ class BaseDefinition(object):
                 pass
             else:
                 if isinstance(par, er.ModuleWrapper):
-                    # TODO just make the path dotted from the beginning, we
+                    # TODO just make the path dotted from the beginning, we id:240 gh:241
                     # shouldn't really split here.
                     path[0:0] = par.py__name__().split('.')
                     break
@@ -296,7 +296,7 @@ class BaseDefinition(object):
 
         """
         path = [unicode(p) for p in self._path()]
-        # TODO add further checks, the mapping should only occur on stdlib.
+        # TODO add further checks, the mapping should only occur on stdlib. id:598 gh:599
         if not path:
             return None  # for keywords the path is empty
 
@@ -448,7 +448,7 @@ class Completion(BaseDefinition):
             if len(i.import_path) > 1 or not fast:
                 followed = self._follow_statements_imports()
                 if followed:
-                    # TODO: Use all of the followed objects as input to Documentation.
+                    # TODO: Use all of the followed objects as input to Documentation. id:145 gh:146
                     definition = followed[0]
 
         if raw:

@@ -112,7 +112,7 @@ export default class StatusBarTile {
       if (message.type === 'Error') {
         ++errorCount;
       } else if (message.type === 'Warning' || message.type === 'Info') {
-        // TODO: should "Info" messages have their own category?
+        // TODO: should "Info" messages have their own category? id:30 gh:31
         ++warningCount;
       }
     }

@@ -79,7 +79,7 @@ export default class RefactoringHelpers {
     );
   }
 
-  // TODO(hansonw): Move this to the clang-rpc service.
+  // TODO (hansonw): Move this to the clang-rpc service. id:664 gh:665
   static async _refactor(request: RefactorRequest): Promise<?RefactorResponse> {
     invariant(request.kind === 'rename');
     const {editor, originalPoint, newName} = request;
@@ -88,7 +88,7 @@ export default class RefactoringHelpers {
       return null;
     }
 
-    // TODO(hansonw): We should disallow renames that conflict with an existing variable.
+    // TODO (hansonw): We should disallow renames that conflict with an existing variable. id:204 gh:205
     const refs = await getLocalReferences(
       editor,
       originalPoint.row,
@@ -98,7 +98,7 @@ export default class RefactoringHelpers {
       return null;
     }
 
-    // TODO(hansonw): Apply clang-format.
+    // TODO (hansonw): Apply clang-format. id:321 gh:322
     const edits = refs.references.map(ref => ({
       oldRange: ref,
       oldText: refs.cursor_name,

@@ -72,7 +72,7 @@ export function installPackage(
   device: DeviceId,
   packagePath: NuclideUri,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:316 gh:317
   return new Sdb(device).installPackage(packagePath).publish();
 }
 
@@ -95,7 +95,7 @@ export function uninstallPackage(
   device: DeviceId,
   packageName: string,
 ): ConnectableObservable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:638 gh:639
   return new Sdb(device).uninstallPackage(packageName).publish();
 }
 

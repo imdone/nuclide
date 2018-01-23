@@ -495,7 +495,7 @@ export async function getInstance(file: NuclideUri): Promise<?MerlinProcess> {
 
   // flowlint-next-line sketchy-null-string:off
   if (dotMerlinPath) {
-    // TODO(pieter) add support for multiple .dotmerlin files
+    // TODO (pieter) add support for multiple .dotmerlin files id:432 gh:433
     await merlinProcessInstance.pushDotMerlinPath(dotMerlinPath);
     logger.debug('Added .merlin path: ' + dotMerlinPath);
   }

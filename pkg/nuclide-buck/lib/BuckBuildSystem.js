@@ -200,7 +200,7 @@ export class BuckBuildSystem {
     events: Observable<BuckEvent>,
     buckRoot: NuclideUri,
   ): Observable<TaskEvent> {
-    // TODO: the Diagnostics API does not allow emitting one message at a time.
+    // TODO: the Diagnostics API does not allow emitting one message at a time. id:191 gh:192
     // We have to accumulate messages per-file and emit them all.
     const fileDiagnostics = new Map();
     // Save error messages until the end so diagnostics have a chance to finish.
@@ -274,7 +274,7 @@ function runBuckCommand(
   debug: boolean,
   simulator: ?string,
 ): Observable<LegacyProcessMessage> {
-  // TODO(T17463635)
+  // TODO (T17463635) id:301 gh:302
   if (debug) {
     // Stop any existing debugging sessions, as install hangs if an existing
     // app that's being overwritten is being debugged.

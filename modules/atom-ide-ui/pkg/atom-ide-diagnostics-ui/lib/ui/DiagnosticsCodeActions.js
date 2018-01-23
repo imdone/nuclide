@@ -26,7 +26,7 @@ export default function DiagnosticsCodeActions(props: {
     <div className="diagnostics-code-actions">
       {Array.from(props.codeActions.entries())
         .splice(0, MAX_CODE_ACTIONS)
-        // TODO: (seansegal) T21130259 Display a "more" indicator when there are many CodeActions.
+        // TODO: (seansegal) T21130259 Display a "more" indicator when there are many CodeActions. id:11 gh:12
         .map(([title, codeAction], i) => {
           return (
             <ButtonGroup key={i}>
@@ -34,7 +34,7 @@ export default function DiagnosticsCodeActions(props: {
                 className="diagnostics-code-action-button"
                 size="EXTRA_SMALL"
                 onClick={() => {
-                  // TODO: (seansegal) T21130332 Display CodeAction status indicators
+                  // TODO: (seansegal) T21130332 Display CodeAction status indicators id:10 gh:11
                   codeAction.apply().catch(handleCodeActionFailure);
                 }}>
                 <span className="inline-block">{title}</span>

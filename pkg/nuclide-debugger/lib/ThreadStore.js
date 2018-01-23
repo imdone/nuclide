@@ -120,7 +120,7 @@ export default class ThreadStore {
   }
 
   _updateThread(thread: ThreadItem): void {
-    // TODO(jonaldislarry): add deleteThread API so that this stop reason checking is not needed.
+    // TODO (jonaldislarry): add deleteThread API so that this stop reason checking is not needed. id:368 gh:369
     if (
       thread.stopReason === 'end' ||
       thread.stopReason === 'error' ||
@@ -155,7 +155,7 @@ export default class ThreadStore {
     }
   }
 
-  // TODO(dbonafilia): refactor this code along with the ui code in callstackStore to a ui controller.
+  // TODO (dbonafilia): refactor this code along with the ui code in callstackStore to a ui controller. id:264 gh:265
   async _notifyThreadSwitch(
     sourceURL: string,
     lineNumber: number,

@@ -83,7 +83,7 @@ async function main(argv): Promise<number> {
 
   logger.debug(`nuclide-remote-atom with arguments: ${argv._}`);
 
-  // TODO(t10180337): Consider a batch API for openFile().
+  // TODO (t10180337): Consider a batch API for openFile(). id:740 gh:741
   if (argv._ != null && argv._.length > 0) {
     const commands =
       argv.port != null
@@ -99,7 +99,7 @@ async function main(argv): Promise<number> {
       try {
         if (nuclideUri.isRemote(realpath)) {
           if (argv.newWindow) {
-            // TODO(mbolin): Support --new-window for nuclide:// arguments.
+            // TODO (mbolin): Support --new-window for nuclide:// arguments. id:531 gh:532
             process.stderr.write(
               '--new-window is not currently supported for remote NuclideUris.\n',
             );
@@ -122,7 +122,7 @@ async function main(argv): Promise<number> {
           await commands.addProject(realpath, Boolean(argv.newWindow));
         } else {
           if (argv.newWindow) {
-            // TODO(mbolin): Support --new-window for files. This is tricky to
+            // TODO (mbolin): Support --new-window for files. This is tricky to id:511 gh:512
             // implement because we create a new window by opening an
             // atom:// URI on the user's machine. It is challenging to add code
             // that can recognize when this successfully opens the URI, so that

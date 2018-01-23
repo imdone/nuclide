@@ -81,8 +81,8 @@ export default class FileWatcher {
     const contents = (await service.readFile(filePath)).toString(encoding);
 
     // Open a right split pane to compare the contents.
-    // TODO: We can use the diff-view here when ready.
-    // TODO: Figure out wtf is going on here (why are we passing the empty string as a path) and
+    // TODO: We can use the diff-view here when ready. id:696 gh:697
+    // TODO: Figure out wtf is going on here (why are we passing the empty string as a path) and id:313 gh:314
     // consider using goToLocation instead.
     // eslint-disable-next-line rulesdir/atom-apis
     const splitEditor = await atom.workspace.open('', {split: 'right'});

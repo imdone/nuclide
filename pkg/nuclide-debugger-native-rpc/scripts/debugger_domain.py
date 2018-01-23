@@ -70,7 +70,7 @@ class DebuggerDomain(HandlerDomain):
         frameId = params['callFrameId']
 
         thread, frame = frameId.split('.')
-        # TODO: These return booleans to indicate success. Throw something if False.
+        # TODO: These return booleans to indicate success. Throw something if False. id:337 gh:338
         process = self.debugger_store.debugger.GetSelectedTarget().process
         process.SetSelectedThreadByIndexID(int(thread))
         process.GetSelectedThread().SetSelectedFrame(int(frame))

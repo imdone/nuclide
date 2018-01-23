@@ -61,7 +61,7 @@ class GeneratorMixin(object):
     @register_builtin_method('next', python_version_match=2)
     @register_builtin_method('__next__', python_version_match=3)
     def py__next__(self):
-        # TODO add TypeError if params are given.
+        # TODO add TypeError if params are given. id:452 gh:453
         return ContextSet.from_sets(lazy_context.infer() for lazy_context in self.py__iter__())
 
     def get_filters(self, search_global, until_position=None, origin_scope=None):
@@ -149,7 +149,7 @@ class Comprehension(AbstractIterable):
 
     @evaluator_method_cache()
     def _get_comp_for_context(self, parent_context, comp_for):
-        # TODO shouldn't this be part of create_context?
+        # TODO shouldn't this be part of create_context? id:472 gh:473
         return CompForContext.from_comp_for(parent_context, comp_for)
 
     def _nested(self, comp_fors, parent_context=None):
@@ -411,7 +411,7 @@ class _FakeArray(SequenceLiteralContext):
         super(SequenceLiteralContext, self).__init__(evaluator)
         self.array_type = type
         self.atom = container
-        # TODO is this class really needed?
+        # TODO is this class really needed? id:473 gh:474
 
 
 class FakeSequence(_FakeArray):
@@ -494,14 +494,14 @@ def unpack_tuple_to_dict(context, types, exprlist):
             try:
                 part = next(parts)
             except StopIteration:
-                # TODO this context is probably not right.
+                # TODO this context is probably not right. id:617 gh:618
                 analysis.add(context, 'value-error-too-many-values', part,
                              message="ValueError: too many values to unpack (expected %s)" % n)
             else:
                 dct.update(unpack_tuple_to_dict(context, lazy_context.infer(), part))
         has_parts = next(parts, None)
         if types and has_parts is not None:
-            # TODO this context is probably not right.
+            # TODO this context is probably not right. id:726 gh:727
             analysis.add(context, 'value-error-too-few-values', has_parts,
                          message="ValueError: need more than %s values to unpack" % n)
         return dct
@@ -519,7 +519,7 @@ def unpack_tuple_to_dict(context, types, exprlist):
 def check_array_additions(context, sequence):
     """ Just a mapper function for the internal _check_array_additions """
     if sequence.array_type not in ('list', 'set'):
-        # TODO also check for dict updates
+        # TODO also check for dict updates id:454 gh:455
         return NO_CONTEXTS
 
     return _check_array_additions(context, sequence)

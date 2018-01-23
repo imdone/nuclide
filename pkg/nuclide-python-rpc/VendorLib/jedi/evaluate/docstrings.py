@@ -210,7 +210,7 @@ def _evaluate_for_statement_string(module_context, string):
     )
     func_execution_context = function_context.get_function_execution()
     # Use the module of the param.
-    # TODO this module is not the module of the param in case of a function
+    # TODO this module is not the module of the param in case of a function id:621 gh:622
     # call. In that case it's the module of the function call.
     # stuffed with content from a function call.
     return list(_execute_types_in_stmt(func_execution_context, stmt))

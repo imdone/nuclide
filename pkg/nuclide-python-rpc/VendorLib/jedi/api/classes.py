@@ -138,7 +138,7 @@ class BaseDefinition(object):
         tree_name = self._name.tree_name
         resolve = False
         if tree_name is not None:
-            # TODO move this to their respective names.
+            # TODO move this to their respective names. id:431 gh:432
             definition = tree_name.get_definition()
             if definition is not None and definition.type == 'import_from' and \
                     tree_name.is_definition():
@@ -286,7 +286,7 @@ class BaseDefinition(object):
         more practical.
         """
         path = list(self._path())
-        # TODO add further checks, the mapping should only occur on stdlib.
+        # TODO add further checks, the mapping should only occur on stdlib. id:609 gh:610
         if not path:
             return None  # for keywords the path is empty
 
@@ -306,7 +306,7 @@ class BaseDefinition(object):
         return [Definition(self._evaluator, n) for n in names]
 
     def _goto_definitions(self):
-        # TODO make this function public.
+        # TODO make this function public. id:722 gh:723
         return [Definition(self._evaluator, d.name) for d in self._name.infer()]
 
     @property
@@ -355,7 +355,7 @@ class BaseDefinition(object):
             return None
 
         if isinstance(context, FunctionExecutionContext):
-            # TODO the function context should be a part of the function
+            # TODO the function context should be a part of the function id:443 gh:444
             # execution context.
             context = FunctionContext(
                 self._evaluator, context.parent_context, context.tree_node)
@@ -463,7 +463,7 @@ class Completion(BaseDefinition):
     @property
     def description(self):
         """Provide a description of the completion object."""
-        # TODO improve the class structure.
+        # TODO improve the class structure. id:467 gh:468
         return Definition.description.__get__(self)
 
     def __repr__(self):
@@ -670,7 +670,7 @@ class _Help(object):
 
         See :attr:`doc` for example.
         """
-        # TODO: Use all of the followed objects as output. Possibly divinding
+        # TODO: Use all of the followed objects as output. Possibly divinding id:434 gh:435
         # them by a few dashes.
         for context in self._get_contexts(fast=fast):
             return context.py__doc__(include_call_signature=not raw)

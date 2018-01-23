@@ -23,7 +23,7 @@ const NUCLIDE_PROTOCOL_PREFIX_LENGTH = NUCLIDE_PROTOCOL_PREFIX.length;
 
 export type OpenFileEditorInstance = {
   pane: atom$Pane,
-  // TODO(T23250374): After a few weeks, just refuse to handle broken URIs at all.
+  // TODO (T23250374): After a few weeks, just refuse to handle broken URIs at all. id:517 gh:518
   // RemoteTextEditorPlaceholder is the way to go!
   editor: atom$TextEditor | RemoteTextEditorPlaceholder,
   uri: NuclideUri,

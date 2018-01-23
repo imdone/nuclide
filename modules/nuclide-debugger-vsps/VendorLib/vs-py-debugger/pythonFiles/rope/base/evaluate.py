@@ -325,7 +325,7 @@ def _get_evaluated_names(targets, assigned, module, evaluation, lineno):
     for name, levels in astutils.get_name_levels(targets):
         assignment = rope.base.pynames.AssignmentValue(assigned, levels,
                                                        evaluation)
-        # XXX: this module should not access `rope.base.pynamesdef`!
+        # XXX: this module should not access `rope.base.pynamesdef`! id:620 gh:621
         pyname = rope.base.pynamesdef.AssignedName(lineno, module)
         pyname.assignments.append(assignment)
         result[name] = pyname

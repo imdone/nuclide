@@ -1650,7 +1650,7 @@ class Module(object):
     CurrentLoadIndex = 0
 
     def __init__(self, filename):
-        # TODO: Module.CurrentLoadIndex thread safety
+        # TODO: Module.CurrentLoadIndex thread safety id:72 gh:73
         self.module_id = Module.CurrentLoadIndex
         Module.CurrentLoadIndex += 1
         self.filename = filename

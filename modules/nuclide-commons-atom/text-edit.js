@@ -47,7 +47,7 @@ export async function applyTextEditsForMultipleFiles(
 ): Promise<boolean> {
   const paths = Array.from(changes.keys());
 
-  // NOTE: There is a race here. If the file contents change while the
+  // NOTE: There is a race here. If the file contents change while the id:55 gh:56
   // editors are being opened, then the ranges of the TextEdits will be off.
   // However, currently this is only used to applyEdits to open files.
   const editors = await Promise.all(

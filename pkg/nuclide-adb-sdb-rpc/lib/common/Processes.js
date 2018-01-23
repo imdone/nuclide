@@ -86,7 +86,7 @@ export class Processes {
             name: simpleProcess.name,
             cpuUsage: cpu,
             memUsage: mem,
-            isJava, // TODO(wallace) rename this to debuggable or make this a list of possible debugger types
+            isJava, // TODO (wallace) rename this to debuggable or make this a list of possible debugger types id:179 gh:180
           };
         }),
       );

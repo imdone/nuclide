@@ -467,7 +467,7 @@ class _PatchingASTWalker(object):
             return False
         offset = self.lines.get_line_start(node.lineno) + node.col_offset
         word = self.source[offset:offset + 4]
-        # XXX: This is a bug; the offset does not point to the first
+        # XXX: This is a bug; the offset does not point to the first id:628 gh:629
         alt_word = self.source[offset - 5:offset - 1]
         return 'elif' in (word, alt_word)
 
@@ -820,7 +820,7 @@ class _Source(object):
         return self.source[i:j]
 
     def _get_number_pattern(self):
-        # HACK: It is merely an approaximation and does the job
+        # HACK: It is merely an approaximation and does the job id:172 gh:173
         integer = r'\-?(0x[\da-fA-F]+|\d+)[lL]?'
         return r'(%s(\.\d*)?|(\.\d+))([eE][-+]?\d+)?[jJ]?' % integer
 

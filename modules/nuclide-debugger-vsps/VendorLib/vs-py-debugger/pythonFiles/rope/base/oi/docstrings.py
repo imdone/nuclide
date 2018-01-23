@@ -120,7 +120,7 @@ def _get_superfunc(pyfunc):
 
 
 def _get_mro(pyclass):
-    # FIXME: to use real mro() result
+    # FIXME: to use real mro() result id:294 gh:295
     l = [pyclass]
     for cls in l:
         for super_cls in cls.get_superclasses():

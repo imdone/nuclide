@@ -175,12 +175,12 @@ export default class ExpressionEvaluationManager {
       return;
     }
     remoteObject.getProperties().then(response => {
-      // TODO: exceptionDetails
+      // TODO: exceptionDetails id:262 gh:263
       const {result} = response;
       const expansionResult = this._propertiesToExpansionResult(result);
       this._raiseIPCEvent('GetPropertiesResponse', {
         result: expansionResult,
-        // error, TODO
+        // error, TODO id:554 gh:555
         objectId,
         id,
       });
@@ -216,7 +216,7 @@ export default class ExpressionEvaluationManager {
   ): Promise<ExpansionResult> {
     const response = await remoteObject.getProperties();
 
-    // TODO: deal with response.exceptionDetails.
+    // TODO: deal with response.exceptionDetails. id:692 gh:693
     return this._propertiesToExpansionResult(response.result) || [];
   }
 

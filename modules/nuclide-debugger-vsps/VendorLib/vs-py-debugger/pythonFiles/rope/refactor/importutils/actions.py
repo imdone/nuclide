@@ -143,7 +143,7 @@ class AddingVisitor(ImportInfoVisitor):
             if ImportInfoVisitor.dispatch(self, import_):
                 return True
 
-    # TODO: Handle adding relative and absolute imports
+    # TODO: Handle adding relative and absolute imports id:163 gh:164
     def visitNormalImport(self, import_stmt, import_info):
         if not isinstance(self.import_info, import_info.__class__):
             return False

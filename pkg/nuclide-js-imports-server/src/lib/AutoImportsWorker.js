@@ -332,7 +332,7 @@ async function getExportsForFile(
       return update;
     }
     const hasteName = getHasteName(file, ast, hasteSettings);
-    // TODO(hansonw): Support mixed-mode haste + non-haste imports.
+    // TODO (hansonw): Support mixed-mode haste + non-haste imports. id:599 gh:600
     // For now, if Haste is enabled, we'll only suggest Haste imports.
     if (hasteSettings.isHaste && hasteName == null) {
       return update;
@@ -449,7 +449,7 @@ async function handleNodeModule(
         exports: cachedUpdate,
       };
     }
-    // TODO(hansonw): How do we handle haste modules inside Node modules?
+    // TODO (hansonw): How do we handle haste modules inside Node modules? id:716 gh:717
     // For now we'll just treat them as usual.
     const update = await getExportsForFile(
       entryPoint,

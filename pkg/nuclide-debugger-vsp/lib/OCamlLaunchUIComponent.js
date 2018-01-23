@@ -165,7 +165,7 @@ export class OCamlLaunchUIComponent extends React.Component<
   }
 
   async _handleLaunchClick(): Promise<void> {
-    // TODO: perform some validation for the input.
+    // TODO: perform some validation for the input. id:435 gh:437
     const launchExecutable = this._expandIfLocal(
       this.state.launchExecutable.trim(),
     );
@@ -191,7 +191,7 @@ export class OCamlLaunchUIComponent extends React.Component<
       includeDirectories: additionalIncludeDirectories,
       breakAfterStart: this.state.breakAfterStart,
       targetUri: this.props.targetUri,
-      logLevel: Logger.LogLevel.Verbose, // TODO: read from configuration
+      logLevel: Logger.LogLevel.Verbose, // TODO: read from configuration id:689 gh:690
     };
 
     const debuggerService = await getDebuggerService();
@@ -205,7 +205,7 @@ export class OCamlLaunchUIComponent extends React.Component<
 
   _expandIfLocal(path: NuclideUri): NuclideUri {
     if (nuclideUri.isRemote(this.props.targetUri)) {
-      // TODO: support expansion for remote paths.
+      // TODO: support expansion for remote paths. id:292 gh:293
       return path;
     }
 

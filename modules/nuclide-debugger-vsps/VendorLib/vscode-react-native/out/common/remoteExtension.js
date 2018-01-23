@@ -39,7 +39,7 @@ class RemoteExtension {
     showInformationMessage(args) {
         return Q(null);
     }
-    // TODO(pelmers): mostly copied from extensionServer.launch
+    // TODO (pelmers): mostly copied from extensionServer.launch id:306 gh:307
     launch(request) {
         let mobilePlatformOptions = this.requestSetup(request.arguments);
         // We add the parameter if it's defined (adapter crashes otherwise)

@@ -35,7 +35,7 @@ import {hoveringOrAiming} from './aim';
 
 const GUTTER_ID = 'diagnostics-gutter';
 
-// TODO(mbolin): Make it so that when mousing over an element with this CSS class (or specifically,
+// TODO (mbolin): Make it so that when mousing over an element with this CSS class (or specifically, id:6 gh:7
 // the child element with the "region" CSS class), we also do a showPopupFor(). This seems to be
 // tricky given how the DOM of a TextEditor works today. There are div.tile elements, each of which
 // has its own div.highlights element and many div.line elements. The div.highlights element has 0
@@ -73,7 +73,7 @@ export function applyUpdateToEditor(
 ): void {
   let gutter = editor.gutterWithName(GUTTER_ID);
   if (!gutter) {
-    // TODO(jessicalin): Determine an appropriate priority so that the gutter:
+    // TODO (jessicalin): Determine an appropriate priority so that the gutter: id:8 gh:9
     // (1) Shows up to the right of the line numbers.
     // (2) Shows the items that are added to it right away.
     // Using a value of 10 fixes (1), but breaks (2). This seems like it is likely a bug in Atom.
@@ -91,7 +91,7 @@ export function applyUpdateToEditor(
   let marker;
   let markers = editorToMarkers.get(editor);
 
-  // TODO: Consider a more efficient strategy that does not blindly destroy all of the
+  // TODO: Consider a more efficient strategy that does not blindly destroy all of the id:7 gh:8
   // existing markers.
   if (markers) {
     for (marker of markers) {

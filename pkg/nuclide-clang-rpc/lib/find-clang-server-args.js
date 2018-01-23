@@ -50,7 +50,7 @@ export default (async function findClangServerArgs(
     } catch (err) {}
   }
 
-  // TODO(asuarez): Fix this when we have server-side settings.
+  // TODO (asuarez): Fix this when we have server-side settings. id:336 gh:337
   if (global.atom) {
     const path = ((atom.config.get(
       'nuclide.nuclide-clang.libclangPath',

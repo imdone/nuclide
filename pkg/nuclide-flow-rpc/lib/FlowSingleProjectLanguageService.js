@@ -112,7 +112,7 @@ export class FlowSingleProjectLanguageService {
   }
 
   getProjectRoot(fileUri: NuclideUri): Promise<?NuclideUri> {
-    // TODO Consider an invariant to assert that fileUri is inside this root. However, that should
+    // TODO Consider an invariant to assert that fileUri is inside this root. However, that should id:572 gh:573
     // never happen since this will be enclosed by MultiProjectLanguageService which will dispatch
     // to the correct instance of this class.
     return Promise.resolve(this._root);
@@ -605,7 +605,7 @@ export class FlowSingleProjectLanguageService {
     buffer: simpleTextBuffer$TextBuffer,
     position: atom$Point,
   ): Promise<?FindReferencesReturn> {
-    // TODO check flow version
+    // TODO check flow version id:698 gh:699
     return this._findRefs(filePath, buffer, position, true);
   }
 

@@ -160,7 +160,7 @@ export class LaunchUiComponent extends React.Component<Props, State> {
     recentlyLaunched: Array<{label: string, value: string}>,
   ): void {
     // Act like a simple MRU cache, move the script being launched to the front.
-    // NOTE: this array is expected to be really tiny.
+    // NOTE: this array is expected to be really tiny. id:362 gh:363
     const scriptNames = [script];
     recentlyLaunched.forEach(item => {
       if (item.label !== script && scriptNames.length < MAX_RECENTLY_LAUNCHED) {

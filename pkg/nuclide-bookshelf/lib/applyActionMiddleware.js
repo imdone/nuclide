@@ -114,7 +114,7 @@ function restorePaneItemState(
     return Observable.empty();
   }
 
-  // TODO(most): refactor to a `Set` all the way.
+  // TODO (most): refactor to a `Set` all the way. id:642 gh:643
   const fileUris = new Set(
     repositoryState.shortHeadsToFileList.get(shortHead) || [],
   );

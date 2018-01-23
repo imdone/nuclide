@@ -148,7 +148,7 @@ class GITCommands(object):
         self._do(['rm', self._in_dir(path)])
 
     def write(self, path, data):
-        # XXX: should we use ``git add``?
+        # XXX: should we use ``git add``? id:164 gh:165
         self.normal_actions.write(path, data)
 
     def _do(self, args):

@@ -149,7 +149,7 @@ type Props<T> = {
    * Should keyboard navigation be enabled? This option exists for historical purposes. Ideally it
    * would always be enabled, however, some locations require the "native-key-bindings" class--
    * usually to enable copying to the clipboard--which prevents Atom commands from firing.
-   * TODO: Find an alternative means of enabling copying in those locations, always enable keyboard
+   * TODO: Find an alternative means of enabling copying in those locations, always enable keyboard id:94 gh:95
    * navigation, and remove this prop.
    */
   enableKeyboardNavigation?: ?boolean,
@@ -589,7 +589,7 @@ export class Table<T: Object> extends React.Component<Props<T>, State<T>> {
                 case 2:
                   // We need to check `event.detail` (instead of using `onDoubleClick`) because
                   // (for some reason) `onDoubleClick` is only firing sporadically.
-                  // TODO: Figure out why. Repros in the diagnostic table with React 16.0.0 and
+                  // TODO: Figure out why. Repros in the diagnostic table with React 16.0.0 and id:59 gh:60
                   // Atom 1.22.0-beta1 (Chrome 56.0.2924.87). This may be because we're swapping out
                   // the component on the click so a different one is receiving the second?
                   this._selectRow({index: i, event, confirm: true});
@@ -634,7 +634,7 @@ export class Table<T: Object> extends React.Component<Props<T>, State<T>> {
         // Using native-key-bindings prevents the up and down arrows from being captured.
         'native-key-bindings': !this.props.enableKeyboardNavigation,
         // Only enable text selection if the rows aren't selectable as these two things conflict.
-        // TODO: Add the ability to copy text that doesn't involve text selection within selections.
+        // TODO: Add the ability to copy text that doesn't involve text selection within selections. id:61 gh:62
         'nuclide-ui-table-body-selectable-text': !this.props.selectable,
       },
     );

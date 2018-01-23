@@ -218,7 +218,7 @@ class Importer(object):
                     # Jedi cannot be sure about the entry point, we just calculate an
                     # absolute path here.
                     if dir_name:
-                        # TODO those sys.modules modifications are getting
+                        # TODO those sys.modules modifications are getting id:729 gh:730
                         # really stupid. this is the 3rd time that we're using
                         # this. We should probably refactor.
                         if path.endswith(os.path.sep + 'os.py'):
@@ -228,7 +228,7 @@ class Importer(object):
                     else:
                         _add_error(module_context, import_path[-1])
                         import_path = []
-                        # TODO add import error.
+                        # TODO add import error. id:462 gh:463
                         debug.warning('Attempted relative import beyond top-level package.')
                 # If no path is defined in the module we have no ideas where we
                 # are in the file system. Therefore we cannot know what to do.
@@ -258,7 +258,7 @@ class Importer(object):
             # If you edit e.g. gunicorn, there will be imports like this:
             # `from gunicorn import something`. But gunicorn is not in the
             # sys.path. Therefore look if gunicorn is a parent directory, #56.
-            if self.import_path:  # TODO is this check really needed?
+            if self.import_path:  # TODO is this check really needed? id:487 gh:488
                 for path in sys_path.traverse_parents(self.file_path):
                     if os.path.basename(path) == self.str_import_path[0]:
                         in_path.append(os.path.dirname(path))
@@ -521,7 +521,7 @@ def get_modules_containing_name(evaluator, modules, name):
 
     def check_python_file(path):
         try:
-            # TODO I don't think we should use the cache here?!
+            # TODO I don't think we should use the cache here?! id:480 gh:481
             node_cache_item = parser_cache[evaluator.grammar._hashed][path]
         except KeyError:
             try:

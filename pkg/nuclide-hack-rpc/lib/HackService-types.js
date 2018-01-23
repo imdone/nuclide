@@ -29,7 +29,7 @@ import type {
   LanguageService,
 } from '../../nuclide-language-service/lib/LanguageService';
 
-// TODO: Remove this once interface inheritance/subtyping is implemented in nuclide-rpc.
+// TODO: Remove this once interface inheritance/subtyping is implemented in nuclide-rpc. id:379 gh:380
 export interface HackLanguageService extends LanguageService {
   getDiagnostics(fileVersion: FileVersion): Promise<?FileDiagnosticMap>;
 

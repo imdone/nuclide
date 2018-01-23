@@ -29,7 +29,7 @@ import {
  * Creates a language service capable of connecting to an LSP server.
  * Note that spawnOptions and initializationOptions must both be RPC-able.
  *
- * TODO: Document all of the fields below.
+ * TODO: Document all of the fields below. id:560 gh:561
  */
 export async function createMultiLspLanguageService(
   languageId: string,

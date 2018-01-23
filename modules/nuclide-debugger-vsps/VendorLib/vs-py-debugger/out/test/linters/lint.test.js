@@ -240,7 +240,7 @@ suite('Linting', () => {
         });
     }
     // Version dependenant, will be enabled once we have fixed this
-    // TODO: Check version of python running and accordingly change the values
+    // TODO: Check version of python running and accordingly change the values id:71 gh:72
     if (!initialize_1.IS_TRAVIS) {
         isPython3.then(value => {
             const messagesToBeReturned = value ? filteredPylint3MessagesToBeReturned : filteredPylintMessagesToBeReturned;

@@ -109,7 +109,7 @@ describe('FlowIDEConnectionWatcher', () => {
       invariant(currentFakeIDEConnection != null);
       expect(currentFakeIDEConnection.onWillDispose).toHaveBeenCalled();
 
-      // TODO check that when the underlying connection dies, it gets re-established
+      // TODO check that when the underlying connection dies, it gets re-established id:344 gh:345
       const onWillDisposeHandler: any =
         currentFakeIDEConnection.onWillDispose.calls[0].args[0];
       onWillDisposeHandler();

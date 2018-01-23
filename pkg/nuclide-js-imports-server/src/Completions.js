@@ -73,7 +73,7 @@ export class Completions {
   ): Array<CompletionItem> {
     const {position, textDocument} = textDocumentPosition;
 
-    // TODO(seansegal): Handle imports broken up on multiple lines.
+    // TODO (seansegal): Handle imports broken up on multiple lines. id:449 gh:450
     const line = this.documents
       .get(textDocument.uri)
       .buffer.lineForRow(position.line);

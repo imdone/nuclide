@@ -145,7 +145,7 @@ export type ConsoleApi = {
   append(message: Message): void,
   dispose(): void,
 
-  // TODO: Update these to be (object: any, ...objects: Array<any>): void.
+  // TODO: Update these to be (object: any, ...objects: Array<any>): void. id:671 gh:672
   log(object: string, _: void): void,
   error(object: string, _: void): void,
   warn(object: string, _: void): void,

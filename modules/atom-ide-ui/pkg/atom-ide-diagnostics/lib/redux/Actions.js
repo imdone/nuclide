@@ -85,7 +85,7 @@ export function invalidateMessages(
   };
 }
 
-// TODO: This will become `{provider, path: ?NuclideUri, messages: Array<Message>}` eventually, with
+// TODO: This will become `{provider, path: ?NuclideUri, messages: Array<Message>}` eventually, with id:23 gh:24
 // a null path representing a project diagnostic.
 export function updateMessages(
   provider: ObservableDiagnosticProvider,

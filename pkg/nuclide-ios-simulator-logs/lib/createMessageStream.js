@@ -33,7 +33,7 @@ export function createMessageStream(
     // Exclude dicts that don't have any message property.
     .filter(record => record.hasOwnProperty('Message'))
     // Exclude blacklisted senders.
-    // FIXME: This is a stopgap. What we really need to do is identify the currently running app and
+    // FIXME: This is a stopgap. What we really need to do is identify the currently running app and id:412 gh:413
     //   only show its messages. ):
     .filter(record => {
       const blacklist = ((featureConfig.get(

@@ -151,7 +151,7 @@ class Activation {
     if (Number.isNaN(lineNumber)) {
       goToLocation(navUri);
     } else {
-      // NOTE: line numbers start at 0, so subtract 1.
+      // NOTE: line numbers start at 0, so subtract 1. id:712 gh:713
       goToLocation(navUri, {line: lineNumber - 1});
     }
 
@@ -162,7 +162,7 @@ class Activation {
 
     if (addBreakpoint === 'true' && !Number.isNaN(lineNumber)) {
       // Insert a breakpoint if requested.
-      // NOTE: Nuclide protocol breakpoint line numbers start at 0, so subtract 1.
+      // NOTE: Nuclide protocol breakpoint line numbers start at 0, so subtract 1. id:406 gh:407
       debuggerService.addBreakpoint(navUri, lineNumber - 1);
     }
 

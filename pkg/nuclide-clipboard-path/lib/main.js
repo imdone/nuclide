@@ -87,7 +87,7 @@ function copyRepositoryRelativePath(): void {
 }
 
 function getRepositoryRelativePath(path: NuclideUri): ?string {
-  // TODO(peterhal): repositoryForPath is the same as projectRelativePath
+  // TODO (peterhal): repositoryForPath is the same as projectRelativePath id:342 gh:343
   // only less robust. We'll need a version of findHgRepository which is
   // aware of remote paths.
   return null;

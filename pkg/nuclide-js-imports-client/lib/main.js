@@ -107,7 +107,7 @@ function getAutoImportSettings() {
   // means that the user would need to restart Nuclide for a change in their
   // settings to take effect. In the future, we would most likely want to observe
   // their settings and send DidChangeConfiguration requests to the server.
-  // TODO: Observe settings changes + send to the server.
+  // TODO: Observe settings changes + send to the server. id:413 gh:414
   return {
     diagnosticsWhitelist: featureConfig.get(
       'nuclide-js-imports-client.diagnosticsWhitelist',
@@ -189,7 +189,7 @@ class Activation {
           // First add all new imports naively
           if (result != null) {
             if (!applyTextEditsToBuffer(buffer, result)) {
-              // TODO(T24077432): Show the error to the user
+              // TODO (T24077432): Show the error to the user id:446 gh:447
               throw new Error('Could not apply edits to text buffer.');
             }
           }

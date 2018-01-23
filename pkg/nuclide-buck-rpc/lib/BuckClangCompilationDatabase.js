@@ -146,7 +146,7 @@ class BuckClangCompilationDatabaseHandler {
     buckProjectRoot: string,
     target: string,
   ): Promise<BuckClangCompilationDatabase> {
-    // TODO(t12973165): Allow configuring a custom flavor.
+    // TODO (t12973165): Allow configuring a custom flavor. id:644 gh:645
     // For now, this seems to use cxx.default_platform, which tends to be correct.
     const allFlavors = [
       'compilation-database',
@@ -169,7 +169,7 @@ class BuckClangCompilationDatabaseHandler {
 
         buildTarget,
         ...allArgs,
-        // TODO(hansonw): Any alternative to doing this?
+        // TODO (hansonw): Any alternative to doing this? id:186 gh:187
         // '-L',
         // String(os.cpus().length / 2),
       ],

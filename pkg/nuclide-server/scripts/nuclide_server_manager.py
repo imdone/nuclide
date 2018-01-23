@@ -164,7 +164,7 @@ class NuclideServerManager(object):
         self.logger.info('Starting to clean up old Nuclide processes/files.')
         # Clean up multiple Nuclide processes on same port.
         # There should be no more than one on a given port.
-        # TODO: log the error to analytics db.
+        # TODO: log the error to analytics db. id:553 gh:554
         # { port1 => [proc1, proc2, ...], ...}
         server_proc_map = defaultdict(list)
         # Group the processes by port.
@@ -267,7 +267,7 @@ class NuclideServerManager(object):
             common_name = self.options.common_name or \
                 '%s.nuclide.%s' % (getpass.getuser(), socket.gethostname())
 
-            # TODO: Client common name is 'nuclide'.
+            # TODO: Client common name is 'nuclide'. id:528 gh:529
             # We may want to generate unique common name and verify it.
             certs_generator = NuclideCertificatesGenerator(certs_dir, common_name, 'nuclide',
                                                            expiration_days=CERTS_EXPIRATION_DAYS)

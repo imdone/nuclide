@@ -276,7 +276,7 @@ export class TreeRootComponent extends React.Component<Props, State> {
     // separate, so there will never be a dangling separator at the end.
     items.push({type: 'separator'});
 
-    // TODO: Use a computed property when supported by Flow.
+    // TODO: Use a computed property when supported by Flow. id:569 gh:570
     const contextMenuObj = {};
     contextMenuObj[this.props.eventHandlerSelector] = items;
     atom.contextMenu.add(contextMenuObj);

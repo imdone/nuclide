@@ -80,7 +80,7 @@ def call_of_leaf(leaf, cut_own_trailer=False):
 
     If you're using the leaf, e.g. the bracket `)` it will return ``list([])``.
 
-    # TODO remove cut_own_trailer option, since its always used with it. Just
+    # TODO remove cut_own_trailer option, since its always used with it. Just id:80 gh:81
     #      ignore it, It's not what we want anyway. Or document it better?
     """
     trailer = leaf.parent

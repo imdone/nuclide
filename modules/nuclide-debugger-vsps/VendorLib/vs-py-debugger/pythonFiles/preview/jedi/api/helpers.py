@@ -56,7 +56,7 @@ def _is_on_comment(leaf, position):
         try:
             dedent = leaf.get_previous_leaf()
             if dedent.type == 'dedent' and dedent.prefix:
-                # TODO This is needed because the fast parser uses multiple
+                # TODO This is needed because the fast parser uses multiple id:95 gh:96
                 # endmarker tokens within a file which is obviously ugly.
                 # This is so ugly that I'm not even commenting how it exactly
                 # happens, but let me tell you that I want to get rid of it.

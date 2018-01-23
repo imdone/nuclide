@@ -50,7 +50,7 @@ export default class CallstackStore {
         this._handleClearInterface();
         break;
       case ActionTypes.SET_SELECTED_CALLFRAME_LINE:
-        // TODO: update _selectedCallFrameIndex.
+        // TODO: update _selectedCallFrameIndex. id:258 gh:259
         this._setSelectedCallFrameLine(payload.data.options);
         break;
       case ActionTypes.OPEN_SOURCE_LOCATION:

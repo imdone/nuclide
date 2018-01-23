@@ -22,7 +22,7 @@ export function getConfig(): PhpDebuggerSessionConfig {
   return (featureConfig.get('nuclide-debugger-php'): any);
 }
 
-// TODO: Move this to nuclide-commons.
+// TODO: Move this to nuclide-commons. id:256 gh:257
 export function isValidRegex(value: ?string): boolean {
   if (value == null) {
     return false;

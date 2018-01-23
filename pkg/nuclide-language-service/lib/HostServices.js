@@ -136,7 +136,7 @@ class RootHostServices {
   }
 
   _getBusySignalService(): Promise<?BusySignalService> {
-    // TODO(ljw): if the busy-signal-package has been disabled before this
+    // TODO (ljw): if the busy-signal-package has been disabled before this id:603 gh:604
     // this function is called, we'll return a promise that never completes.
     if (this._busySignalServicePromise == null) {
       this._busySignalServicePromise = new Promise((resolve, reject) => {

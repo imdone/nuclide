@@ -76,7 +76,7 @@ class SuggestionList extends React.Component<Props, State> {
   componentWillMount() {
     const {suggestionList} = this.props;
     const suggestion = suggestionList.getSuggestion();
-    // TODO(nmote): This is assuming `suggestion.callback` is always an Array, which is not true
+    // TODO (nmote): This is assuming `suggestion.callback` is always an Array, which is not true id:42 gh:43
     //   according to hyperclick/lib/types. It can also be a function.
     invariant(suggestion != null && Array.isArray(suggestion.callback));
     this._items = suggestion.callback;

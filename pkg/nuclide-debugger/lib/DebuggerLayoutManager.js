@@ -204,7 +204,7 @@ export class DebuggerLayoutManager {
           const debuggerMode = this._model.getStore().getDebuggerMode();
           if (debuggerMode !== DebuggerMode.STOPPED) {
             // If __DEV__, leave some extra space for the chrome devtools gear
-            // TODO: Remove this when chrome is gone
+            // TODO: Remove this when chrome is gone id:444 gh:445
             this._overridePaneInitialHeight(
               dockPane,
               newFlexScale,

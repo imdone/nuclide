@@ -81,7 +81,7 @@ export class Sdb extends DebugBridge {
   }
 
   installPackage(packagePath: NuclideUri): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:175 gh:176
     invariant(!nuclideUri.isRemote(packagePath));
     return this.runLongCommand('install', packagePath);
   }
@@ -91,7 +91,7 @@ export class Sdb extends DebugBridge {
   }
 
   uninstallPackage(packageName: string): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:318 gh:319
     return this.runLongCommand('uninstall', packageName);
   }
 

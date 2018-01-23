@@ -60,7 +60,7 @@ class PyFunction(pyobjects.PyFunction):
         if self.parameter_pynames is None:
             result = {}
             for index, name in enumerate(self.get_param_names()):
-                # TODO: handle tuple parameters
+                # TODO: handle tuple parameters id:296 gh:297
                 result[name] = pynames.ParameterName(self, index)
             self.parameter_pynames = result
         return self.parameter_pynames
@@ -76,7 +76,7 @@ class PyFunction(pyobjects.PyFunction):
         return self.get_ast().name
 
     def get_param_names(self, special_args=True):
-        # TODO: handle tuple parameters
+        # TODO: handle tuple parameters id:624 gh:625
         result = [pycompat.get_ast_arg_arg(node) for node in self.arguments.args
                   if isinstance(node, pycompat.ast_arg_type)]
         if special_args:

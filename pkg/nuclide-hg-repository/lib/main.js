@@ -179,7 +179,7 @@ export function addItemsToFileTreeContextMenu(
     {
       label: 'Revert',
       callback() {
-        // TODO(most): support reverting multiple nodes at once.
+        // TODO (most): support reverting multiple nodes at once. id:588 gh:589
         const revertNode = contextMenu.getSingleSelectedNode();
         confirmAndRevertPath(revertNode == null ? null : revertNode.uri);
       },
