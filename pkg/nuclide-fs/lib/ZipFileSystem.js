@@ -99,7 +99,7 @@ export class ZipFileSystem implements FileSystem {
   }
 
   async realpath(path: NuclideUri): Promise<NuclideUri> {
-    return path; // TODO: do we ever have symlinks in .jar files?
+    return path; // TODO: do we ever have symlinks in .jar files? id:346 gh:347
   }
 
   async readFile(path: NuclideUri, options?: ReadOptions): Promise<Buffer> {

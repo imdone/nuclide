@@ -341,7 +341,7 @@ class Activation {
     const env = [];
     if (targetOutput.env) {
       for (const key of Object.keys(targetOutput.env)) {
-        // NOTE: no escaping is necessary here; LLDB passes these directly to the process.
+        // NOTE: no escaping is necessary here; LLDB passes these directly to the process. id:683 gh:684
         env.push(key + '=' + targetOutput.env[key]);
       }
     }

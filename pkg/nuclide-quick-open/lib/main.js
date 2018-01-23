@@ -104,7 +104,7 @@ class Activation {
   ): void {
     for (let i = 0; i < selections.length; i++) {
       const selection = selections[i];
-      // TODO: Having a callback to call shouldn't necessarily preclude
+      // TODO: Having a callback to call shouldn't necessarily preclude id:523 gh:524
       // jumping to a location, but things like the grep provider currently depend on this
       // since they provide bogus values for row/column, breaking goToLocation below
       // Can possibly be resolved with a first-class "LINK" or similar resultType

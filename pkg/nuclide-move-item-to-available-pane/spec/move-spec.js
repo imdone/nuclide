@@ -35,7 +35,7 @@ describe('nuclide-move-item-to-available-pane', () => {
 
       dispatchCmdKRight();
 
-      // TODO(mbolin): The rest of this test does not appear to run correctly because Atom does not
+      // TODO (mbolin): The rest of this test does not appear to run correctly because Atom does not id:605 gh:606
       // seem to layout the windows "for real," so the (x, y) ClientRect for each pane is reported
       // to be at (0, 0), which breaks the logic of nuclide-move-item-to-available-pane. If we can
       // figure out how to fix this, this would be a much better test. For now, we leave it here so
@@ -61,7 +61,7 @@ describe('nuclide-move-item-to-available-pane', () => {
       // dispatchCmdKLeft();
       // assertWorkspaceState(['B*'], ['C', 'A']);
 
-      // TODO(mbolin): This is also an important test:
+      // TODO (mbolin): This is also an important test: id:719 gh:720
 
       // [A] [B, C*] [D]
       //

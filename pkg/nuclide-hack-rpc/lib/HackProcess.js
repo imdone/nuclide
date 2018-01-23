@@ -87,7 +87,7 @@ class HackProcess {
 
     this._fileSubscription = fileCache
       .observeFileEvents()
-      // TODO: Filter on hhconfigPath
+      // TODO: Filter on hhconfigPath id:363 gh:365
       .filter(fileEvent => {
         const fileExtension = nuclideUri.extname(
           fileEvent.fileVersion.filePath,
@@ -101,7 +101,7 @@ class HackProcess {
         switch (fileEvent.kind) {
           case FileEventKind.OPEN:
             service.didOpenFile(filePath, version, fileEvent.contents);
-            // TODO: Remove this once hack handles the initial contents in the open message.
+            // TODO: Remove this once hack handles the initial contents in the open message. id:578 gh:579
             service.didChangeFile(filePath, version, [
               {
                 text: fileEvent.contents,
@@ -181,7 +181,7 @@ class HackProcess {
     const service = this.getConnectionService();
 
     logger.debug('Got Hack Service');
-    // TODO: Include version number to ensure agreement on file version.
+    // TODO: Include version number to ensure agreement on file version. id:702 gh:703
     const unfilteredItems: ?HackCompletionsResult = await (await service).getCompletions(
       filePath,
       {line, column},
@@ -236,7 +236,7 @@ const processes: Cache<
   DISPOSE_VALUE,
 );
 
-// TODO: Is there any situation where these can be disposed before the
+// TODO: Is there any situation where these can be disposed before the id:365 gh:366
 //       remote connection is terminated?
 // Remove fileCache when the remote connection shuts down
 processes.observeKeys().subscribe(fileCache => {

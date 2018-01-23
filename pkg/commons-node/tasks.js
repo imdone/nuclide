@@ -20,7 +20,7 @@ import {observableFromSubscribeFunction} from 'nuclide-commons/event';
 import invariant from 'assert';
 import {Observable, Subscription} from 'rxjs';
 
-// FIXME: This should really be an interface, but we're currently transpiling with Babel 5, which
+// FIXME: This should really be an interface, but we're currently transpiling with Babel 5, which id:171 gh:172
 //   doesn't support that.
 export type Task = {
   start: () => void,

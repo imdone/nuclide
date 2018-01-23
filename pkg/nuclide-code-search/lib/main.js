@@ -19,7 +19,7 @@ class Activation {
   _disposables: UniversalDisposable;
 
   constructor(state: ?mixed) {
-    // TODO(wallace): Add activation code here.
+    // TODO (wallace): Add activation code here. id:206 gh:207
     this._disposables = new UniversalDisposable();
   }
 

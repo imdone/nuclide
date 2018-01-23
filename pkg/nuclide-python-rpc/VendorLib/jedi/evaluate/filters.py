@@ -126,7 +126,7 @@ class ParamName(AbstractTreeName):
 class AnonymousInstanceParamName(ParamName):
     def infer(self):
         param_node = search_ancestor(self.tree_name, 'param')
-        # TODO I think this should not belong here. It's not even really true,
+        # TODO I think this should not belong here. It's not even really true, id:728 gh:729
         #      because classmethod and other descriptors can change it.
         if param_node.position_index == 0:
             # This is a speed optimization, to return the self param (because

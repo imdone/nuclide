@@ -206,7 +206,7 @@ export class HgRepositoryClient {
     ): Observable<any>)
       .switchMap((enableDiffStats: boolean) => {
         if (!enableDiffStats) {
-          // TODO(most): rewrite fetching structures avoiding side effects
+          // TODO (most): rewrite fetching structures avoiding side effects id:380 gh:381
           this._hgDiffCache = new Map();
           this._emitter.emit('did-change-statuses');
           return Observable.empty();
@@ -249,7 +249,7 @@ export class HgRepositoryClient {
                   observeBufferCloseOrRename(buffer),
                   this._observePaneItemVisibility(item).filter(v => !v),
                 ).do(() => {
-                  // TODO(most): rewrite to be simpler and avoid side effects.
+                  // TODO (most): rewrite to be simpler and avoid side effects. id:382 gh:383
                   // Remove the file from the diff stats cache when the buffer is closed.
                   this._hgDiffCacheFilesToClear.add(filePath);
                 }),
@@ -531,7 +531,7 @@ export class HgRepositoryClient {
     return this._projectDirectory.getPath();
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:381 gh:382
   isProjectAtRoot(): boolean {
     return true;
   }
@@ -540,7 +540,7 @@ export class HgRepositoryClient {
     return this._workingDirectory.relativize(filePath);
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:580 gh:581
   hasBranch(branch: string): boolean {
     return false;
   }
@@ -557,17 +557,17 @@ export class HgRepositoryClient {
     );
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:704 gh:705
   isSubmodule(path: NuclideUri): boolean {
     return false;
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:383 gh:384
   getAheadBehindCount(reference: string, path: NuclideUri): number {
     return 0;
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:384 gh:385
   getCachedUpstreamAheadBehindCount(
     path: ?NuclideUri,
   ): {ahead: number, behind: number} {
@@ -577,7 +577,7 @@ export class HgRepositoryClient {
     };
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:385 gh:386
   getConfigValue(key: string, path: ?string): ?string {
     return null;
   }
@@ -586,12 +586,12 @@ export class HgRepositoryClient {
     return this._originURL;
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:582 gh:583
   getUpstreamBranch(path: ?string): ?string {
     return null;
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:705 gh:706
   getReferences(
     path: ?NuclideUri,
   ): {heads: Array<string>, remotes: Array<string>, tags: Array<string>} {
@@ -602,7 +602,7 @@ export class HgRepositoryClient {
     };
   }
 
-  // TODO This is a stub.
+  // TODO This is a stub. id:387 gh:388
   getReferenceTarget(reference: string, path: ?NuclideUri): ?string {
     return null;
   }
@@ -618,7 +618,7 @@ export class HgRepositoryClient {
    *
    */
 
-  // TODO (jessicalin) Can we change the API to make this method return a Promise?
+  // TODO (jessicalin) Can we change the API to make this method return a Promise? id:386 gh:387
   // If not, might need to do a synchronous `hg status` query.
   isPathModified(filePath: ?NuclideUri): boolean {
     // flowlint-next-line sketchy-null-string:off
@@ -633,7 +633,7 @@ export class HgRepositoryClient {
     }
   }
 
-  // TODO (jessicalin) Can we change the API to make this method return a Promise?
+  // TODO (jessicalin) Can we change the API to make this method return a Promise? id:389 gh:390
   // If not, might need to do a synchronous `hg status` query.
   isPathNew(filePath: ?NuclideUri): boolean {
     // flowlint-next-line sketchy-null-string:off
@@ -674,9 +674,9 @@ export class HgRepositoryClient {
     }
   }
 
-  // TODO (jessicalin) Can we change the API to make this method return a Promise?
+  // TODO (jessicalin) Can we change the API to make this method return a Promise? id:583 gh:584
   // If not, this method lies a bit by using cached information.
-  // TODO (jessicalin) Make this work for ignored directories.
+  // TODO (jessicalin) Make this work for ignored directories. id:706 gh:707
   isPathIgnored(filePath: ?NuclideUri): boolean {
     // flowlint-next-line sketchy-null-string:off
     if (!filePath) {
@@ -796,12 +796,12 @@ export class HgRepositoryClient {
   /**
    * Returns an array of LineDiff that describes the diffs between the given
    * file's `HEAD` contents and its current contents.
-   * NOTE: this method currently ignores the passed-in text, and instead diffs
+   * NOTE: this method currently ignores the passed-in text, and instead diffs id:391 gh:392
    * against the currently saved contents of the file.
    */
-  // TODO (jessicalin) Export the LineDiff type (from hg-output-helpers) when
+  // TODO (jessicalin) Export the LineDiff type (from hg-output-helpers) when id:388 gh:389
   // types can be exported.
-  // TODO (jessicalin) Make this method work with the passed-in `text`. t6391579
+  // TODO (jessicalin) Make this method work with the passed-in `text`. t6391579 id:392 gh:393
   getLineDiffs(filePath: ?NuclideUri, text: ?string): Array<LineDiff> {
     // flowlint-next-line sketchy-null-string:off
     if (!filePath) {
@@ -870,7 +870,7 @@ export class HgRepositoryClient {
             this._hgDiffCacheFilesUpdating.delete(pathToFetch);
           }
 
-          // TODO (t9113913) Ideally, we could send more targeted events that better
+          // TODO (t9113913) Ideally, we could send more targeted events that better id:585 gh:586
           // describe what change has occurred. Right now, GitRepository dictates either
           // 'did-change-status' or 'did-change-statuses'.
           this._emitter.emit('did-change-statuses');
@@ -941,7 +941,7 @@ export class HgRepositoryClient {
     filePath: NuclideUri,
     resolved: boolean,
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:707 gh:708
     return this._service.markConflictedFile(filePath, resolved).refCount();
   }
 
@@ -967,7 +967,7 @@ export class HgRepositoryClient {
     create: boolean,
     options?: CheckoutOptions,
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:393 gh:394
     return this._service.checkout(reference, create, options).refCount();
   }
 
@@ -1190,7 +1190,7 @@ export class HgRepositoryClient {
     message: string,
     filePaths: Array<NuclideUri> = [],
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:390 gh:391
     return this._service
       .commit(message, filePaths)
       .refCount()
@@ -1204,7 +1204,7 @@ export class HgRepositoryClient {
     amendMode: AmendModeValue,
     filePaths: Array<NuclideUri> = [],
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:395 gh:396
     return this._service
       .amend(message, amendMode, filePaths)
       .refCount()
@@ -1225,7 +1225,7 @@ export class HgRepositoryClient {
   }
 
   splitRevision(): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:586 gh:587
     this._updateInteractiveMode(true);
     return this._service
       .splitRevision()
@@ -1247,7 +1247,7 @@ export class HgRepositoryClient {
   }
 
   log(filePaths: Array<NuclideUri>, limit?: ?number): Promise<VcsLogResponse> {
-    // TODO(mbolin): Return an Observable so that results appear faster.
+    // TODO (mbolin): Return an Observable so that results appear faster. id:708 gh:709
     // Unfortunately, `hg log -Tjson` is not Observable-friendly because it will
     // not parse as JSON until all of the data has been printed to stdout.
     return this._service.log(filePaths, limit);
@@ -1256,7 +1256,7 @@ export class HgRepositoryClient {
   continueOperation(
     commandWithOptions: Array<string>,
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:397 gh:398
     return this._service.continueOperation(commandWithOptions).refCount();
   }
 
@@ -1272,7 +1272,7 @@ export class HgRepositoryClient {
     destination: string,
     source?: string,
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:394 gh:395
     return this._service.rebase(destination, source).refCount();
   }
 
@@ -1281,7 +1281,7 @@ export class HgRepositoryClient {
   }
 
   pull(options?: Array<string> = []): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:398 gh:399
     return this._service.pull(options).refCount();
   }
 

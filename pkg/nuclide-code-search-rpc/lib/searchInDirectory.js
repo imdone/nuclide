@@ -107,7 +107,7 @@ export function searchInDirectories(
           }
           return new Minimatch(pattern, {matchBase: true, dot: true});
         });
-        // TODO: This should walk the subdirectories and filter by glob before searching.
+        // TODO: This should walk the subdirectories and filter by glob before searching. id:666 gh:667
         return searchInDirectory(directory, regex, tool, useVcsSearch).filter(
           result =>
             Boolean(matchers.find(matcher => matcher.match(result.file))),

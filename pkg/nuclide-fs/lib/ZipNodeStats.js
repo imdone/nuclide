@@ -22,7 +22,7 @@ export class ZipNodeStats extends fs.Stats {
     this.dev = outer.dev;
     this.ino = outer.ino;
     this.mode = modeFromZipAttr(header.attr);
-    this.nlink = 1; // TODO: figure out directory link count?
+    this.nlink = 1; // TODO: figure out directory link count? id:574 gh:575
     this.uid = outer.uid;
     this.gid = outer.gid;
     this.rdev = outer.rdev;

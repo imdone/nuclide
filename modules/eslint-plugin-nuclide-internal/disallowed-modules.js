@@ -18,7 +18,7 @@
 
 const DISALLOWED_MODULES = new Map([
   ['invariant', '"assert"'],
-  // TODO(hansonw): Remove this if this bugfix PR gets merged:
+  // TODO (hansonw): Remove this if this bugfix PR gets merged: id:50 gh:51
   // https://github.com/substack/node-shell-quote/pull/29
   ['shell-quote', 'shellQuote and shellParse from nuclide-commons/string'],
 ]);

@@ -143,7 +143,7 @@ class DereferenceableValueHandler(ValueHandler):
         """
         DEREF_TYPE_CLASSES = [
             lldb.eTypeClassPointer,
-            # TODO[jeffreytan]: I do not think ObjectC/C++ support reference yet
+            # TODO [jeffreytan]: I do not think ObjectC/C++ support reference yet id:682 gh:683
             # so disable for now(enable it when we support classic C++).
             # lldb.eTypeClassReference,
         ]

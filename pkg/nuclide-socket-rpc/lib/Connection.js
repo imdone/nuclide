@@ -36,7 +36,7 @@ export class Connection {
     );
 
     this._socket.on('error', err => {
-      // TODO: we should find a way to send the error back
+      // TODO: we should find a way to send the error back id:663 gh:664
       //       to the remote socket
       trace('Connection error: ' + JSON.stringify(err));
       this._socket.end();

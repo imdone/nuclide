@@ -195,7 +195,7 @@ export class ContextViewManager {
             track('nuclide-context-view:filterQueryResults', {
               definitionsReturned: queryResult.definitions.length,
             });
-            // TODO (@reesjones) Handle case where multiple definitions are shown
+            // TODO (@reesjones) Handle case where multiple definitions are shown id:219 gh:220
             return queryResult.definitions[0];
           }
           // We do want to return null sometimes so providers can show "No definition selected"

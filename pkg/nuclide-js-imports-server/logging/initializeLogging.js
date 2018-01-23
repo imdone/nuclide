@@ -48,7 +48,7 @@ export default function initializeLogging(connection: IConnection) {
 }
 
 export function initializeLoggerForWorker(): void {
-  // TODO: Ideally worker messages would go to the parent, which could send them back to the client.
+  // TODO: Ideally worker messages would go to the parent, which could send them back to the client. id:417 gh:418
   log4js.configure({
     appenders: [
       {

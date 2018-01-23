@@ -226,7 +226,7 @@ class Activation {
       let disposed;
       activation._getStore().dispatch(Actions.registerSource(sourceInfo));
       const console = {
-        // TODO: Update these to be (object: any, ...objects: Array<any>): void.
+        // TODO: Update these to be (object: any, ...objects: Array<any>): void. id:345 gh:346
         log(object: string): void {
           console.append({text: object, level: 'log'});
         },
@@ -250,7 +250,7 @@ class Activation {
               scopeName: message.scopeName,
               sourceId: sourceInfo.id,
               kind: message.kind || 'message',
-              timestamp: new Date(), // TODO: Allow this to come with the message?
+              timestamp: new Date(), // TODO: Allow this to come with the message? id:669 gh:670
               repeatCount: 1,
             }),
           );

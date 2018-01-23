@@ -49,7 +49,7 @@ import {
 import {Observable} from 'rxjs';
 import {makeToolbarButtonSpec} from '../../nuclide-ui/ToolbarUtils';
 
-// TODO: use a more general versioning mechanism.
+// TODO: use a more general versioning mechanism. id:537 gh:538
 // Perhaps Atom should provide packages with some way of doing this.
 const SERIALIZED_VERSION = 2;
 // These match task types with shortcuts defined in nuclide-task-runner.json

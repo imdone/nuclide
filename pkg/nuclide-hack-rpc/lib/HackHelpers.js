@@ -65,7 +65,7 @@ export async function callHHClient(
 
       logger.debug(`Calling Hack: ${hackCommand} with ${allArgs.toString()}`);
       execResult = await trackTiming(trackingIdOfHackArgs(args), () => {
-        // TODO: Can't we do a better job with error handling here?
+        // TODO: Can't we do a better job with error handling here? id:378 gh:379
         try {
           return runCommandDetailed(hackCommand, allArgs, {
             input: processInput,

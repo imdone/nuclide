@@ -73,7 +73,7 @@ async function findNearestFile(
   fileName: string,
   pathToDirectory: string,
 ): Promise<?string> {
-  // TODO(5586355): If this becomes a bottleneck, we should consider memoizing
+  // TODO (5586355): If this becomes a bottleneck, we should consider memoizing id:83 gh:84
   // this function. The downside would be that if someone added a closer file
   // with fileName to pathToFile (or deleted the one that was cached), then we
   // would have a bug. This would probably be pretty rare, though.
@@ -191,7 +191,7 @@ async function getFileSystemType(entityPath: string): Promise<?string> {
       return null;
     }
   } else {
-    // TODO Handle other platforms (windows?)
+    // TODO Handle other platforms (windows?) id:96 gh:97
     return null;
   }
 }
@@ -278,7 +278,7 @@ async function copyFilePermissions(
 }
 
 /**
- * TODO: the fs-plus `writeFile` implementation runs `mkdirp` first.
+ * TODO: the fs-plus `writeFile` implementation runs `mkdirp` first. id:62 gh:63
  * We should use `fs.writeFile` and have callsites explicitly opt-in to this behaviour.
  */
 function writeFile(
@@ -323,7 +323,7 @@ async function writeFileAtomic(
     // those two operations where the destination file might have the wrong permissions.
     await copyFilePermissions(realPath, tempFilePath);
 
-    // TODO: put renames into a queue so we don't write older save over new save.
+    // TODO: put renames into a queue so we don't write older save over new save. id:64 gh:65
     // Use mv as fs.rename doesn't work across partitions.
     await mv(tempFilePath, realPath, {mkdirp: true});
   } catch (err) {

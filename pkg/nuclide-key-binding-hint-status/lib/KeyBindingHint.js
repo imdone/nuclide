@@ -58,8 +58,8 @@ export default class KeyBindingHint extends React.Component<any, State> {
     const keyBindings = keyBindingsFromCommand(event.type);
 
     if (!keyBindings.length) {
-      // TODO: Consider indicating that this command lacks a binding.
-      // TODO: Consider allowing the user to create a binding via a context menu.
+      // TODO: Consider indicating that this command lacks a binding. id:453 gh:454
+      // TODO: Consider allowing the user to create a binding via a context menu. id:421 gh:422
       return <div />;
     }
 

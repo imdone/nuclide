@@ -269,7 +269,7 @@ class DiffParser(object):
         ended.
         """
         self._parser_count += 1
-        # TODO speed up, shouldn't copy the whole list all the time.
+        # TODO speed up, shouldn't copy the whole list all the time. id:631 gh:632
         # memoryview?
         parsed_until_line = self._nodes_stack.parsed_until_line
         lines_after = self._parser_lines_new[parsed_until_line:]
@@ -497,7 +497,7 @@ class _NodesStack(object):
 
             if node.start_pos[0] > until_line:
                 break
-            # TODO this check might take a bit of time for large files. We
+            # TODO this check might take a bit of time for large files. We id:733 gh:734
             # might want to change this to do more intelligent guessing or
             # binary search.
             if _get_last_line(node) > until_line:

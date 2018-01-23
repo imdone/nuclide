@@ -27,7 +27,7 @@ import {getLogger} from 'log4js';
 import refactorReducers from './refactorReducers';
 import {getEpics} from './refactorEpics';
 
-// TODO create this lazily
+// TODO create this lazily id:643 gh:644
 const errors: Subject<mixed> = new Subject();
 
 function handleError(error: mixed): void {

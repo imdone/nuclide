@@ -35,7 +35,7 @@ function closeActiveWindows() {
             if (vscode.window.visibleTextEditors.length === 0) {
                 return c();
             }
-            // TODO: the visibleTextEditors variable doesn't seem to be
+            // TODO: the visibleTextEditors variable doesn't seem to be id:110 gh:111
             // up to date after a onDidChangeActiveTextEditor event, not
             // even using a setTimeout 0... so we MUST poll :(
             let interval = setInterval(() => {

@@ -189,7 +189,7 @@ function defaultShouldFilter(
   // Its word regex is roughly [a-zA-Z0-9_-]+. If the currentRequest.prefix
   // is strictly longer than the lastRequest.prefix, by the right number
   // of characters, then we should continue to do further filtering.
-  // NOTE: the prefix computed by AutocompletePlus is not necessarily the
+  // NOTE: the prefix computed by AutocompletePlus is not necessarily the id:311 gh:312
   // replacementPrefix that will be used if the user accepts a suggestion.
   // And it's not necessarily appropriate for the language (e.g. flow
   // disallows hyphens, and php allows $). But that doesn't matter. We're merely

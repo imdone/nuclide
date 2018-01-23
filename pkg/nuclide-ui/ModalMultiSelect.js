@@ -33,7 +33,7 @@ type Props = {
   options: Array<Option>,
   value: Array<any>,
   onChange: (value: Array<any>) => void,
-  size?: ButtonSize, // TODO: We really need to be consistent about these. SMALL or sm??
+  size?: ButtonSize, // TODO: We really need to be consistent about these. SMALL or sm?? id:538 gh:539
 };
 
 type State = {
@@ -110,7 +110,7 @@ export class ModalMultiSelect extends React.Component<Props, State> {
   };
 
   _confirmValues = (): void => {
-    // TODO (matthewwithanm): Use ctrl-enter to confirm
+    // TODO (matthewwithanm): Use ctrl-enter to confirm id:552 gh:553
     this._dismissModal();
     this.props.onChange(this.state.activeValues);
   };

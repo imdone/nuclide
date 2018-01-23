@@ -39,7 +39,7 @@ class MixedObject(object):
         return LazyMixedNamesDict(self._evaluator, self)
 
     def names_dicts(self, search_global):
-        # TODO is this needed?
+        # TODO is this needed? id:123 gh:124
         assert search_global is False
         return [self.names_dict]
 

@@ -87,7 +87,7 @@ export default class QuickOpenProvider {
     return arrayFlatten(arrayCompact(results));
   }
 
-  // TODO: Standardize on a generic SymbolResult renderer.
+  // TODO: Standardize on a generic SymbolResult renderer. id:714 gh:715
   getComponentForItem(item: SymbolResult): React.Element<any> {
     const name = item.name || '';
 

@@ -41,7 +41,7 @@ export default class DeepLinkService {
 
     this._disposable = new UniversalDisposable(
       // These events will be sent from lib/url-main.js.
-      // TODO: Use real Atom URI handler from
+      // TODO: Use real Atom URI handler from id:302 gh:303
       // https://github.com/atom/atom/pull/11399.
       Observable.fromEvent(
         ipcRenderer,

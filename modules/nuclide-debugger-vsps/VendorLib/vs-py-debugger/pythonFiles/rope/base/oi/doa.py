@@ -54,7 +54,7 @@ class PythonFileRunner(object):
             return
         # Disabling FIFO data transfer due to blocking when running
         # unittests in the GUI.
-        # XXX: Handle FIFO data transfer for `rope.ui.testview`
+        # XXX: Handle FIFO data transfer for `rope.ui.testview` id:263 gh:264
         if True or os.name == 'nt':
             self.receiver = _SocketReceiver()
         else:
@@ -141,7 +141,7 @@ class _SocketReceiver(_MessageReceiver):
 class _FIFOReceiver(_MessageReceiver):
 
     def __init__(self):
-        # XXX: this is insecure and might cause race conditions
+        # XXX: this is insecure and might cause race conditions id:156 gh:157
         self.file_name = self._get_file_name()
         os.mkfifo(self.file_name)
 

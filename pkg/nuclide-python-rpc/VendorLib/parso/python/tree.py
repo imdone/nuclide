@@ -121,7 +121,7 @@ class PythonLeaf(PythonMixin, Leaf):
         """
         Basically calls :py:meth:`parso.tree.NodeOrLeaf.get_start_pos_of_prefix`.
         """
-        # TODO it is really ugly that we have to override it. Maybe change
+        # TODO it is really ugly that we have to override it. Maybe change id:481 gh:482
         #   indent error leafs somehow? No idea how, though.
         previous_leaf = self.get_previous_leaf()
         if previous_leaf is not None and previous_leaf.type == 'error_leaf' \
@@ -215,7 +215,7 @@ class Name(_LeafWithoutNewlines):
             return None
 
         if type_ == 'except_clause':
-            # TODO in Python 2 this doesn't work correctly. See grammar file.
+            # TODO in Python 2 this doesn't work correctly. See grammar file. id:501 gh:502
             #      I think we'll just let it be. Python 2 will be gone in a few
             #      years.
             if self.get_previous_sibling() == 'as':

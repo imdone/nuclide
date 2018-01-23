@@ -184,7 +184,7 @@ export class FileCache {
 
   // getBuffer: returns whatever is the current version of the buffer.
   getBuffer(filePath: NuclideUri): ?simpleTextBuffer$TextBuffer {
-    // TODO: change this to return a string, to ensure that no caller will ever mutate
+    // TODO: change this to return a string, to ensure that no caller will ever mutate id:720 gh:721
     // the buffer contents (and hence its changeCount). The only modifications allowed
     // are those that come from the editor inside this.onFileEvent.
     return this._buffers.get(filePath);
@@ -198,7 +198,7 @@ export class FileCache {
   async getBufferAtVersion(
     fileVersion: FileVersion,
   ): Promise<?simpleTextBuffer$TextBuffer> {
-    // TODO: change this to return a string, like getBuffer() above.
+    // TODO: change this to return a string, like getBuffer() above. id:436 gh:436
     if (!await this._requests.waitForBufferAtVersion(fileVersion)) {
       return null;
     }
@@ -213,7 +213,7 @@ export class FileCache {
   // available. If called at any other time, the buffer may no longer be available,
   // in which case it may throw.
   getBufferForFileEvent(fileEvent: FileEvent): simpleTextBuffer$TextBuffer {
-    // TODO: change this to return a string, like getBuffer() above.
+    // TODO: change this to return a string, like getBuffer() above. id:463 gh:464
     const fileVersion = fileEvent.fileVersion;
     invariant(this._requests.isBufferAtVersion(fileVersion));
     const buffer = this.getBuffer(fileVersion.filePath);
@@ -227,7 +227,7 @@ export class FileCache {
 
   // Returns directory which contains this path if any.
   // Remote equivalent of atom.project.relativizePath()[1]
-  // TODO: Return the most nested open directory.
+  // TODO: Return the most nested open directory. id:430 gh:431
   //       Note that Atom doesn't do this, though it should.
   getContainingDirectory(filePath: NuclideUri): ?NuclideUri {
     for (const dir of this.getOpenDirectories()) {

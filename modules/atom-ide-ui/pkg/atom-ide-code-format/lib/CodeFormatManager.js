@@ -120,7 +120,7 @@ export default class CodeFormatManager {
     const saveEvents = Observable.create(observer => {
       const realSave = editor.save;
       const newSaves = new Subject();
-      // HACK: intercept the real TextEditor.save and handle it ourselves.
+      // HACK: intercept the real TextEditor.save and handle it ourselves. id:18 gh:19
       // Atom has no way of injecting content into the buffer asynchronously
       // before a save operation.
       // If we try to format after the save, and then save again,
@@ -190,7 +190,7 @@ export default class CodeFormatManager {
           this._safeFormatCodeOnSave(editor)
             // Fire-and-forget the original save function.
             // This is actually async for remote files, but we don't use the result.
-            // NOTE: finally is important, as saves should still fire on unsubscribe.
+            // NOTE: finally is important, as saves should still fire on unsubscribe. id:5 gh:6
             .finally(() => editor.getBuffer().save())
         );
       case 'new-save':

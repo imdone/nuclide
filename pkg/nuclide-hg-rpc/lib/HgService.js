@@ -370,7 +370,7 @@ export class HgService {
     args: Array<string>,
     options: HgExecOptions,
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:709 gh:710
     return hgObserveExecution(args, options);
   }
 
@@ -1127,7 +1127,7 @@ export class HgService {
     message: ?string,
     args: Array<string>,
   ): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:399 gh:400
     let editMergeConfigs;
     return Observable.fromPromise(
       (async () => {
@@ -1159,7 +1159,7 @@ export class HgService {
     message: string,
     filePaths: Array<NuclideUri> = [],
   ): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:396 gh:397
     return this._commitCode(message, ['commit', ...filePaths]).publish();
   }
 
@@ -1194,7 +1194,7 @@ export class HgService {
     amendMode: AmendModeValue,
     filePaths: Array<NuclideUri> = [],
   ): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:402 gh:403
     const args = ['amend', ...filePaths];
     switch (amendMode) {
       case 'Clean':
@@ -1221,7 +1221,7 @@ export class HgService {
   }
 
   splitRevision(): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:589 gh:590
     let editMergeConfigs;
     return Observable.fromPromise(
       (async () => {
@@ -1282,7 +1282,7 @@ export class HgService {
     create: boolean,
     options?: CheckoutOptions,
   ): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:710 gh:711
     const args = ['checkout', revision];
     if (options && options.clean) {
       args.push('--clean');
@@ -1555,7 +1555,7 @@ export class HgService {
     filePath: NuclideUri,
     resolved: boolean,
   ): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:401 gh:402
     // -m marks file as resolved, -u marks file as unresolved
     const fileStatus = resolved ? '-m' : '-u';
     const args = ['resolve', fileStatus, filePath];
@@ -1570,7 +1570,7 @@ export class HgService {
   continueOperation(
     args: Array<string>,
   ): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:400 gh:401
 
     const execOptions = {
       cwd: this._workingDirectory,
@@ -1603,7 +1603,7 @@ export class HgService {
     destination: string,
     source?: string,
   ): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:405 gh:406
 
     const args = ['rebase', '-d', destination];
     if (source != null) {
@@ -1646,7 +1646,7 @@ export class HgService {
   }
 
   pull(options: Array<string>): ConnectableObservable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:591 gh:592
     const args = ['pull', ...options];
     const execOptions = {
       cwd: this._workingDirectory,

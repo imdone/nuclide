@@ -429,15 +429,15 @@ class Class(use_metaclass(CachedMetaClass, Wrapper)):
                 mro.append(cls)
 
         mro = [self]
-        # TODO Do a proper mro resolution. Currently we are just listing
+        # TODO Do a proper mro resolution. Currently we are just listing id:111 gh:112
         # classes. However, it's a complicated algorithm.
         for cls in self.py__bases__():
-            # TODO detect for TypeError: duplicate base class str,
+            # TODO detect for TypeError: duplicate base class str, id:226 gh:227
             # e.g.  `class X(str, str): pass`
             try:
                 mro_method = cls.py__mro__
             except AttributeError:
-                # TODO add a TypeError like:
+                # TODO add a TypeError like: id:581 gh:582
                 """
                 >>> class Y(lambda: test): pass
                 Traceback (most recent call last):
@@ -554,7 +554,7 @@ class Function(use_metaclass(CachedMetaClass, Wrapper)):
 
                 # Create param array.
                 if isinstance(f, Function):
-                    old_func = f  # TODO this is just hacky. change.
+                    old_func = f  # TODO this is just hacky. change. id:133 gh:134
                 elif f.type == 'funcdef':
                     old_func = Function(self._evaluator, f, is_decorated=True)
                 else:
@@ -565,7 +565,7 @@ class Function(use_metaclass(CachedMetaClass, Wrapper)):
                     debug.warning('no wrappers found %s', self.base_func)
                     return self
                 if len(wrappers) > 1:
-                    # TODO resolve issue with multiple wrappers -> multiple types
+                    # TODO resolve issue with multiple wrappers -> multiple types id:88 gh:89
                     debug.warning('multiple wrappers found %s %s',
                                   self.base_func, wrappers)
                 f = list(wrappers)[0]
@@ -955,7 +955,7 @@ class ModuleWrapper(use_metaclass(CachedMetaClass, tree.Module, Wrapper)):
                 fake_n.parent = imp
                 names[name] = [fake_n]
 
-        # TODO add something like this in the future, its cleaner than the
+        # TODO add something like this in the future, its cleaner than the id:114 gh:115
         #   import hacks.
         # ``os.path`` is a hardcoded exception, because it's a
         # ``sys.modules`` modification.

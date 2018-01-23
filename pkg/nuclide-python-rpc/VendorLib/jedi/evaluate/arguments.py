@@ -128,7 +128,7 @@ class TreeArguments(AbstractArguments):
                              for a in arrays]
                 iterators = list(iterators)
                 for values in list(zip_longest(*iterators)):
-                    # TODO zip_longest yields None, that means this would raise
+                    # TODO zip_longest yields None, that means this would raise id:447 gh:448
                     # an exception?
                     yield None, get_merged_lazy_context(
                         [v for v in values if v is not None]
@@ -220,7 +220,7 @@ def _iterate_star_args(context, array, input_node, funcdef=None):
         iter_ = array.py__iter__
     except AttributeError:
         if funcdef is not None:
-            # TODO this funcdef should not be needed.
+            # TODO this funcdef should not be needed. id:469 gh:470
             m = "TypeError: %s() argument after * must be a sequence, not %s" \
                 % (funcdef.name.value, array)
             analysis.add(context, 'type-error-star', input_node, message=m)

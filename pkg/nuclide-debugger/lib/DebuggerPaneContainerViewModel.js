@@ -159,7 +159,7 @@ export class DebuggerPaneContainerViewModel {
           // If the container is dropped into itself, we've got a problem.
           // Call debugger:show, which will blow away this entire pane and redo
           // the debugger layout.
-          // TODO: Better solution here.
+          // TODO: Better solution here. id:691 gh:692
           process.nextTick(() => {
             atom.commands.dispatch(
               atom.views.getView(atom.workspace),
@@ -208,7 +208,7 @@ export class DebuggerPaneContainerViewModel {
         parentPane.getItems().indexOf(this) + 1,
       );
 
-      // TODO: Atom bug? This is here because when setting this item active immediately after
+      // TODO: Atom bug? This is here because when setting this item active immediately after id:297 gh:298
       // moving, it sometimes (but not always) renders a blank pane...
       process.nextTick(() => {
         invariant(parentPane != null);

@@ -46,7 +46,7 @@ type BuckCommandAndOptions = {
  *
  * Still, we try to make sure we don't slow down the user's computer.
  *
- * TODO(hansonw): Buck seems to have some race conditions that prevent us
+ * TODO (hansonw): Buck seems to have some race conditions that prevent us id:650 gh:651
  * from running things in parallel :(
  */
 const MAX_CONCURRENT_READ_ONLY = 1; // Math.max(1, os.cpus().length - 1);

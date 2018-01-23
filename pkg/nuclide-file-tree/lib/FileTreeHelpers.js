@@ -88,7 +88,7 @@ function fetchChildren(nodeKey: string): Promise<Array<string>> {
     directory.getEntries((error, entries_) => {
       let entries = entries_;
       // Resolve to an empty array if the directory deson't exist.
-      // TODO: should we reject promise?
+      // TODO: should we reject promise? id:695 gh:696
       if (error && error.code !== 'ENOENT') {
         reject(error);
         return;
@@ -178,7 +178,7 @@ function isValidDirectory(directory: Directory): boolean {
 }
 
 function isLocalEntry(entry: Entry): boolean {
-  // TODO: implement `RemoteDirectory.isRemoteDirectory()`
+  // TODO: implement `RemoteDirectory.isRemoteDirectory()` id:309 gh:310
   return !('getLocalPath' in entry);
 }
 

@@ -37,7 +37,7 @@ type CqueryProgressNotification = {
   onIndexedCount: number,
 };
 
-// FIXME pelmers: tracking cquery/issues/30
+// FIXME pelmers: tracking cquery/issues/30 id:222 gh:223
 // https://github.com/jacobdufault/cquery/issues/30#issuecomment-345536318
 function shortenByOneCharacter({newText, range}: TextEdit): TextEdit {
   return {
@@ -107,8 +107,8 @@ export class CqueryLanguageClient extends LspLanguageService {
           });
         },
       );
-    // TODO pelmers Register handlers for other custom cquery messages.
-    // TODO pelmers hook into refactorizer for renaming?
+    // TODO pelmers Register handlers for other custom cquery messages. id:351 gh:352
+    // TODO pelmers hook into refactorizer for renaming? id:675 gh:677
   }
 
   _executeCommand(command: string, args?: Array<any>): Promise<void> {
@@ -120,7 +120,7 @@ export class CqueryLanguageClient extends LspLanguageService {
     } else {
       return super._executeCommand(command, args);
     }
-    // TODO pelmers: handle cquery._autoImplement
+    // TODO pelmers: handle cquery._autoImplement id:224 gh:225
   }
 
   _convertCommands_CodeActions(commands: Array<Command>): Array<CodeAction> {
@@ -161,7 +161,7 @@ export class CqueryLanguageClient extends LspLanguageService {
     }
   }
 
-  // TODO pelmers: remove this when cquery implements workspace/applyEdit
+  // TODO pelmers: remove this when cquery implements workspace/applyEdit id:333 gh:334
   async _applyEdit(file: string, edits: Array<TextEdit>): Promise<boolean> {
     return this._host.applyTextEditsForMultipleFiles(
       new Map([

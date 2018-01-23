@@ -70,7 +70,7 @@ function onChangeWorkspaceFolders(context, event) {
     }
 }
 function onChangeConfiguration(context) {
-    // TODO implements
+    // TODO implements id:167 gh:168
 }
 function onFolderAdded(context, folder) {
     let rootPath = folder.uri.fsPath;

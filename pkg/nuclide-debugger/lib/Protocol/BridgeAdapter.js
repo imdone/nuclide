@@ -324,7 +324,7 @@ export default class BridgeAdapter {
   };
 
   getEventObservable(): Observable<IPCEvent> {
-    // TODO: hook other debug events when it's ready.
+    // TODO: hook other debug events when it's ready. id:367 gh:368
     const breakpointManager = this._breakpointManager;
     const stackTraceManager = this._stackTraceManager;
     const executionManager = this._executionManager;

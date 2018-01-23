@@ -120,7 +120,7 @@ export class Connection {
           this._stopReason = ASYNC_BREAK;
           this._stopBreakpointLocation = null;
         } else if (prevStatus !== ConnectionStatus.Break) {
-          // TODO(dbonafilia): investigate why we sometimes receive two BREAK_MESSAGES
+          // TODO (dbonafilia): investigate why we sometimes receive two BREAK_MESSAGES id:343 gh:344
           const [file, line, exception] = args;
           this._stopReason = exception == null ? BREAKPOINT : EXCEPTION;
           if (this._stopReason === EXCEPTION) {
@@ -160,7 +160,7 @@ export class Connection {
     this._status = newStatus;
     if (!this._isInternalStatus(newStatus)) {
       // Don't bubble up irrelevant statuses to the multiplexer
-      // TODO(dbonafilia): Add Enums to make status association clearer
+      // TODO (dbonafilia): Add Enums to make status association clearer id:237 gh:238
       return callback(newStatus, ...args);
     }
   }

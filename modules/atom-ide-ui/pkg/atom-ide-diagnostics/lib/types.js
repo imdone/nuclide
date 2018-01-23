@@ -39,7 +39,7 @@ export type DiagnosticInvalidationCallback = (
 ) => mixed;
 
 export type ObservableDiagnosticProvider = {
-  +name?: string, // TODO: This should probably be required. It is by the Indie API and is very useful.
+  +name?: string, // TODO: This should probably be required. It is by the Indie API and is very useful. id:35 gh:36
   updates: Observable<DiagnosticProviderUpdate>,
   invalidations: Observable<DiagnosticInvalidationMessage>,
   +supportedMessageKinds?: Array<DiagnosticMessageKind>,
@@ -92,7 +92,7 @@ export type DiagnosticAction = {
 export type DiagnosticMessage = {|
   kind?: DiagnosticMessageKind,
   providerName: string,
-  type: DiagnosticMessageType, // TODO: Rename to severity.
+  type: DiagnosticMessageType, // TODO: Rename to severity. id:63 gh:64
   filePath: NuclideUri,
   text?: string,
   html?: string,
@@ -102,7 +102,7 @@ export type DiagnosticMessage = {|
   // Actions will be displayed below the description in the popup.
   +actions?: Array<DiagnosticAction>,
   // Indicates that the message should still be displayed, but there should be some UI indicating
-  // that it is out of date. TODO(matthewwithanm) implement this UI.
+  // that it is out of date. TODO (matthewwithanm) implement this UI. id:29 gh:30
   stale?: boolean,
 |};
 
@@ -161,12 +161,12 @@ export type LinterMessageV2 = {
   // Languages like C++ can have errors with a huge stack, so one reference isn't enough.
   // `reference` will be ignored if this is provided.
   trace?: Array<LinterTrace>,
-  // TODO: use the URL and icon fields.
+  // TODO: use the URL and icon fields. id:31 gh:32
   url?: string,
   icon?: string,
   excerpt: string,
   severity: 'error' | 'warning' | 'info',
-  // TODO: only the first solution is used at the moment.
+  // TODO: only the first solution is used at the moment. id:32 gh:33
   solutions?: Array<
     | {
       title?: string,
@@ -176,7 +176,7 @@ export type LinterMessageV2 = {
       replaceWith: string,
     }
     | {
-      // TODO: not currently supported.
+      // TODO: not currently supported. id:39 gh:40
       title?: string,
       position: atom$RangeLike,
       priority?: number,
@@ -184,7 +184,7 @@ export type LinterMessageV2 = {
       replaceWith?: void, // Hint for Flow.
     },
   >,
-  // TODO: the callback version is not supported.
+  // TODO: the callback version is not supported. id:67 gh:68
   description?: string | (() => Promise<string> | string),
   linterName?: string,
   // custom extension

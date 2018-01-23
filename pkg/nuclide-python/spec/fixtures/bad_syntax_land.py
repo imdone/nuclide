@@ -32,7 +32,7 @@ b=5  # Missing whitespace around operator, underline the operator.
 b =  5  # Too much whitespace, underline the whitespace.
 
 # Trailing whitespace, underline the whitespace.
-# NOTE: DON'T LET YOUR EDITOR TRIM THE TRAILING WHITESPACE,
+# NOTE: DON'T LET YOUR EDITOR TRIM THE TRAILING WHITESPACE, id:520 gh:521
 # OR TESTS WILL FAIL :(
 # Expected: 4 trailing spaces.
 f = 5    

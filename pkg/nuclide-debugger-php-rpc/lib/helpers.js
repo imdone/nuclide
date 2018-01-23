@@ -153,7 +153,7 @@ export function launchPhpScriptWithXDebugEnabled(
     const block: string = chunk.toString().trim();
     const output = `child_process(${proc.pid}) stderr: ${block}`;
     logger.debug(output);
-    // TODO: Remove this when XDebug forwards stderr streams over
+    // TODO: Remove this when XDebug forwards stderr streams over id:287 gh:288
     // DbgpSocket.
     if (sendToOutputWindowAndResolve != null) {
       sendToOutputWindowAndResolve(block, 'error');

@@ -118,7 +118,7 @@ export class CommandExecutor {
     const fileMissingImportUri = nuclideUri.nuclideUriToUri(fileMissingImport);
     const ast = parseFile(this.documents.get(fileMissingImportUri).getText());
     if (ast == null || ast.program == null || ast.program.body == null) {
-      // TODO(T24077432): Figure out when this happens and throw an error
+      // TODO (T24077432): Figure out when this happens and throw an error id:416 gh:417
       return [];
     }
     const {body} = ast.program;

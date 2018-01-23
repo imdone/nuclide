@@ -198,7 +198,7 @@ export default class DiagnosticsTable extends React.PureComponent<
     const {showFileName, showDirectoryColumn} = this.props;
 
     // These need to add up to 1.
-    // TODO: Update the Table component so that we can have more control over this (and provide
+    // TODO: Update the Table component so that we can have more control over this (and provide id:13 gh:14
     //       explicit pixel widths)
     const TYPE_WIDTH = 0;
     const SOURCE_WIDTH = 0;
@@ -442,7 +442,7 @@ export default class DiagnosticsTable extends React.PureComponent<
     });
   }
 
-  // TODO: Memoize this so we don't recompute unnecessarily.
+  // TODO: Memoize this so we don't recompute unnecessarily. id:28 gh:29
   _sortRows(
     rows: Array<Row<DisplayDiagnostic>>,
     sortedColumn: $Keys<DisplayDiagnostic>,
@@ -498,7 +498,7 @@ function getMessageContent(
     ...traces,
   ];
   for (const message of allMessages) {
-    // TODO: A mix of html and text diagnostics will yield a wonky sort ordering.
+    // TODO: A mix of html and text diagnostics will yield a wonky sort ordering. id:14 gh:15
     if (message.html != null) {
       text += message.html + ' ';
       isPlainText = false;
@@ -598,7 +598,7 @@ function compareMessages(a: DiagnosticMessage, b: DiagnosticMessage): ?number {
     return 0;
   }
 
-  // TODO: This could be better if we also took into account the column and end start and column,
+  // TODO: This could be better if we also took into account the column and end start and column, id:15 gh:16
   // but it's probably good enough. (How likely are messages with the same text starting on the same
   // row?)
   return Math.abs(aRange.start.row - bRange.start.row);

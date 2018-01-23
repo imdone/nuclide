@@ -105,7 +105,7 @@ def extract(script, new_name):
 
     user_stmt = script._parser.user_stmt()
 
-    # TODO care for multiline extracts
+    # TODO care for multiline extracts id:629 gh:630
     dct = {}
     if user_stmt:
         pos = script._pos

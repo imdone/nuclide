@@ -142,7 +142,7 @@ class Script(object):
         :rtype: list of :class:`classes.Completion`
         """
         def get_completions(user_stmt, bs):
-            # TODO this closure is ugly. it also doesn't work with
+            # TODO this closure is ugly. it also doesn't work with id:238 gh:239
             # simple_complete (used for Interpreter), somehow redo.
             module = self._evaluator.wrap(self._parser.module())
             names, level, only_modules, unfinished_dotted = \
@@ -153,7 +153,7 @@ class Script(object):
                 i = imports.Importer(self._evaluator, imp_names, module, level)
                 completion_names = i.completion_names(self._evaluator, only_modules)
 
-            # TODO this paragraph is necessary, but not sure it works.
+            # TODO this paragraph is necessary, but not sure it works. id:596 gh:597
             context = self._user_context.get_context()
             if not next(context).startswith('.'):  # skip the path
                 if next(context) == 'from':
@@ -173,7 +173,7 @@ class Script(object):
                 if not path and not dot:
                     # add keywords
                     completion_names += keywords.keyword_names(all=True)
-                    # TODO delete? We should search for valid parser
+                    # TODO delete? We should search for valid parser id:143 gh:144
                     # transformations.
                 completion_names += self._simple_complete(path, dot, like)
             return completion_names
@@ -215,7 +215,7 @@ class Script(object):
                     and n.lower().startswith(like.lower()) \
                     or n.startswith(like):
                 if isinstance(c.parent, (tree.Function, tree.Class)):
-                    # TODO I think this is a hack. It should be an
+                    # TODO I think this is a hack. It should be an id:116 gh:117
                     #   er.Function/er.Class before that.
                     c = self._evaluator.wrap(c.parent).name
                 new = classes.Completion(self._evaluator, c, needs_dot, len(like))
@@ -358,7 +358,7 @@ class Script(object):
             if user_stmt is not None and user_stmt.type == 'expr_stmt':
                 for name in user_stmt.get_defined_names():
                     if name.start_pos <= self._pos <= name.end_pos:
-                        # TODO scaning for a name and then using it should be
+                        # TODO scaning for a name and then using it should be id:134 gh:135
                         # the default.
                         definitions = set(self._evaluator.goto_definition(name))
 

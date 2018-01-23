@@ -36,7 +36,7 @@ def filter_names(evaluator, completion_names, stack, like_name):
                 or str(name).startswith(like_name):
 
             if isinstance(name.parent, (tree.Function, tree.Class)):
-                # TODO I think this is a hack. It should be an
+                # TODO I think this is a hack. It should be an id:74 gh:75
                 #   er.Function/er.Class before that.
                 name = evaluator.wrap(name.parent).name
             new = classes.Completion(

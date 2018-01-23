@@ -452,7 +452,7 @@ export class SshHandshake {
 
             // Some servers have max channels set to 1, so add a delay to ensure
             // the old channel has been cleaned up on the server.
-            // TODO(hansonw): Implement a proper retry mechanism.
+            // TODO (hansonw): Implement a proper retry mechanism. id:512 gh:513
             // But first, we have to clean up this callback hell.
             await sleep(100);
             const result = await readRemoteFile(

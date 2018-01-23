@@ -15,7 +15,7 @@ from jedi.evaluate.compiled import CompiledObject
 def is_stdlib_path(path):
     # Python standard library paths look like this:
     # /usr/lib/python3.5/...
-    # TODO The implementation below is probably incorrect and not complete.
+    # TODO The implementation below is probably incorrect and not complete. id:479 gh:480
     if 'dist-packages' in path or 'site-packages' in path:
         return False
 
@@ -116,7 +116,7 @@ def call_of_leaf(leaf):
 
     If you're using the leaf, e.g. the bracket `)` it will return ``list([])``.
     """
-    # TODO this is the old version of this call. Try to remove it.
+    # TODO this is the old version of this call. Try to remove it. id:623 gh:624
     trailer = leaf.parent
     # The leaf may not be the last or first child, because there exist three
     # different trailers: `( x )`, `[ x ]` and `.x`. In the first two examples

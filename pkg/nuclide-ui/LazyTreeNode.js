@@ -90,7 +90,7 @@ export class LazyTreeNode {
     let key = this.__key;
     // flowlint-next-line sketchy-null-string:off
     if (!key) {
-      // TODO(mbolin): Escape slashes.
+      // TODO (mbolin): Escape slashes. id:565 gh:566
       const prefix = this.__parent ? this.__parent.getKey() : '/';
       const suffix = this.__isContainer ? '/' : '';
       key = prefix + this.getLabel() + suffix;

@@ -112,7 +112,7 @@ class Evaluator(object):
     def wrap(self, element):
         if isinstance(element, (er.Wrapper, er.InstanceElement,
             er.ModuleWrapper, er.FunctionExecution, er.Instance, compiled.CompiledObject)) or element is None:
-            # TODO this is so ugly, please refactor.
+            # TODO this is so ugly, please refactor. id:211 gh:212
             return element
 
         if element.type == 'classdef':
@@ -162,7 +162,7 @@ class Evaluator(object):
             types = finder.check_tuple_assignments(self, types, seek_name)
 
         first_operation = stmt.first_operation()
-        if first_operation not in ('=', None) and not isinstance(stmt, er.InstanceElement) and first_operation.type == 'operator':  # TODO don't check for this.
+        if first_operation not in ('=', None) and not isinstance(stmt, er.InstanceElement) and first_operation.type == 'operator':  # TODO don't check for this. id:458 gh:459
             # `=` is always the last character in aug assignments -> -1
             operator = copy.copy(first_operation)
             operator.value = operator.value[:-1]
@@ -293,7 +293,7 @@ class Evaluator(object):
         elif element.isinstance(tree.Lambda):
             types = set([er.LambdaWrapper(self, element)])
         elif element.isinstance(er.LambdaWrapper):
-            types = set([element])  # TODO this is no real evaluation.
+            types = set([element])  # TODO this is no real evaluation. id:121 gh:122
         elif element.type == 'expr_stmt':
             types = self.eval_statement(element)
         elif element.type in ('power', 'atom_expr'):

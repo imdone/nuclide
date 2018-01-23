@@ -139,7 +139,7 @@ class ChangeContents(Change):
 
     def __init__(self, resource, new_contents, old_contents=None):
         self.resource = resource
-        # IDEA: Only saving diffs; possible problems when undo/redoing
+        # IDEA: Only saving diffs; possible problems when undo/redoing id:261 gh:262
         self.new_contents = new_contents
         self.old_contents = old_contents
 
@@ -288,7 +288,7 @@ class RemoveResource(Change):
     def do(self):
         self._operations.remove(self.resource)
 
-    # TODO: Undoing remove operations
+    # TODO: Undoing remove operations id:154 gh:155
     @_handle_job_set
     def undo(self):
         raise NotImplementedError(

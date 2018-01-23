@@ -104,7 +104,7 @@ class Script(object):
         self.path = os.path.abspath(path) if path else None
 
         if source is None:
-            # TODO add a better warning than the traceback!
+            # TODO add a better warning than the traceback! id:93 gh:94
             try:
                 with open(path) as f:
                     source = f.read()

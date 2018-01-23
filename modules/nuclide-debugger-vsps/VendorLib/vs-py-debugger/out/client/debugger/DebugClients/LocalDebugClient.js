@@ -98,7 +98,7 @@ class LocalDebugClient extends DebugClient_1.DebugClient {
                         this.pyProc = proc;
                         resolve();
                     }, error => {
-                        // TODO: This condition makes no sense (refactor)
+                        // TODO: This condition makes no sense (refactor) id:75 gh:76
                         if (!this.debugServer && this.debugServer.IsRunning) {
                             return;
                         }
@@ -130,7 +130,7 @@ class LocalDebugClient extends DebugClient_1.DebugClient {
                 default: {
                     this.pyProc = child_process.spawn(pythonPath, args, { cwd: processCwd, env: environmentVariables });
                     this.pyProc.on('error', error => {
-                        // TODO: This condition makes no sense (refactor)
+                        // TODO: This condition makes no sense (refactor) id:120 gh:121
                         if (!this.debugServer && this.debugServer.IsRunning) {
                             return;
                         }

@@ -46,7 +46,7 @@ const CLASS_KIND_NAMES = {
 // Collapse template arguments for long types.
 const LONG_TYPE_LENGTH = 50;
 
-// TODO(hansonw): Highlight tokens inside types.
+// TODO (hansonw): Highlight tokens inside types. id:208 gh:209
 function tokenizeType(type: string): TokenizedText {
   if (type.length > LONG_TYPE_LENGTH) {
     const openIndex = type.indexOf('<');
@@ -127,7 +127,7 @@ export function outlineFromClangOutline(
 export default class OutlineViewHelpers {
   static getOutline(editor: atom$TextEditor): Promise<?Outline> {
     return trackTiming('nuclide-clang-atom:outline-view', async () => {
-      // HACK: Since outline view and diagnostics both trigger on save, favor diagnostics.
+      // HACK: Since outline view and diagnostics both trigger on save, favor diagnostics. id:340 gh:341
       await sleep(0);
       const clangOutline = await getOutline(editor);
       if (clangOutline == null) {

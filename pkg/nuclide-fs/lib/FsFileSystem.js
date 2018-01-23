@@ -107,7 +107,7 @@ export class FsFileSystem implements FileSystem {
         }
       }),
     );
-    // TODO: Return entries directly and change client to handle error.
+    // TODO: Return entries directly and change client to handle error. id:374 gh:375
     // $FlowFixMe
     return arrayCompact(entries).map(entry => {
       return [entry.file, entry.stats.isFile(), entry.isSymbolicLink];

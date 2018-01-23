@@ -545,7 +545,7 @@ class FastTokenizer(object):
             # will reset the parentheses counter, but new lines before will
             # still be ignored. So check the prefix.
 
-            # TODO what about flow parentheses counter resets in the tokenizer?
+            # TODO what about flow parentheses counter resets in the tokenizer? id:587 gh:588
             self._parentheses_level = 0
             # We need to simulate a newline before the indent, because the
             # open parentheses ignored them.

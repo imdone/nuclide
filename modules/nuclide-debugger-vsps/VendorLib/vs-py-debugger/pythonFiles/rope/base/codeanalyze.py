@@ -187,7 +187,7 @@ class LogicalLineFinder(object):
             yield start
 
     def generate_regions(self, start_line=1, end_line=None):
-        # XXX: `block_start` should be at a better position!
+        # XXX: `block_start` should be at a better position! id:291 gh:292
         block_start = 1
         readline = LinesToReadline(self.lines, block_start)
         try:

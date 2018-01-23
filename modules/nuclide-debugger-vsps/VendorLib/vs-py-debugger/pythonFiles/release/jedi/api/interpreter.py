@@ -64,7 +64,7 @@ class LazyName(helpers.FakeName):
                 # Unfortunately in some cases like `int` there's no __module__
                 module = builtins
             else:
-                # TODO this import is wrong. Yields x for x.y.z instead of z
+                # TODO this import is wrong. Yields x for x.y.z instead of z id:126 gh:127
                 module = __import__(module_name)
             parser_path = names
         raw_module = get_module(self._value)

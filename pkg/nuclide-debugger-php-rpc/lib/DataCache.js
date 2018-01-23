@@ -133,7 +133,7 @@ export class DataCache {
       throw new Error('Must be enabled to evaluate expression.');
     }
 
-    // TODO(jonaldislarry): Currently xdebug provides no way to eval at arbitrary stack depths,
+    // TODO (jonaldislarry): Currently xdebug provides no way to eval at arbitrary stack depths, id:418 gh:419
     // it only supports the current stack frame.  To work around this, we special-case evaluation
     // at the current stack depth.
     if (frameIndex === 0) {
@@ -245,7 +245,7 @@ function contextNameToScopeType(name: string): ScopeType {
       return 'global';
     case 'User defined constants':
       return 'global';
-    // TODO: Verify this ...
+    // TODO: Verify this ... id:685 gh:686
     default:
       logger.debug(`Unexpected context name: ${name}`);
       return 'closure';

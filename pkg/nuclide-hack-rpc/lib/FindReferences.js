@@ -38,7 +38,7 @@ export function convertReferences(
   const references = hackResult.map(ref => {
     return {
       uri: ref.filename,
-      name: null, // TODO(hansonw): Get the caller when it's available
+      name: null, // TODO (hansonw): Get the caller when it's available id:361 gh:362
       range: hackRangeToAtomRange(ref),
     };
   });

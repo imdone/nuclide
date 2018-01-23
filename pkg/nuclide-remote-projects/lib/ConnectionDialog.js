@@ -100,7 +100,7 @@ export default class ConnectionDialog extends React.Component<Props, State> {
           prompts,
           finish,
         ) => {
-          // TODO: Display all prompts, not just the first one.
+          // TODO: Display all prompts, not just the first one. id:539 gh:540
           this.requestAuthentication(prompts[0], finish);
         },
 
@@ -313,13 +313,13 @@ export default class ConnectionDialog extends React.Component<Props, State> {
     this.state.sshHandshake.cancel();
 
     if (mode === WAITING_FOR_CONNECTION) {
-      // TODO(mikeo): Tell delegate to cancel the connection request.
+      // TODO (mikeo): Tell delegate to cancel the connection request. id:515 gh:516
       this.setState({
         isDirty: false,
         mode: REQUEST_CONNECTION_DETAILS,
       });
     } else {
-      // TODO(mikeo): Also cancel connection request, as appropriate for mode?
+      // TODO (mikeo): Also cancel connection request, as appropriate for mode? id:514 gh:515
       this.props.onCancel();
       this.close();
     }

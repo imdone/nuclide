@@ -48,7 +48,7 @@ const ARCHIVE_SEPARATOR = '!';
 const KNOWN_ARCHIVE_EXTENSIONS = ['.jar', '.zip'];
 
 const REMOTE_PATH_URI_PREFIX = 'nuclide://';
-// TODO(ljw): following regex is incorrect. A URI scheme must start with
+// TODO (ljw): following regex is incorrect. A URI scheme must start with id:112 gh:113
 // [A-Za-z] not [0-9_-]. Also, not all schemes require // after them.
 const URI_PREFIX_REGEX = /^[A-Za-z0-9_-]+:\/\/.*/;
 
@@ -247,7 +247,7 @@ function normalizeDir(uri: NuclideUri): NuclideUri {
 }
 
 function getParent(uri: NuclideUri): NuclideUri {
-  // TODO: Is this different than dirname?
+  // TODO: Is this different than dirname? id:86 gh:87
   return normalize(join(uri, '..'));
 }
 
@@ -346,7 +346,7 @@ function _getWindowsPathFromWindowsFileUri(uri: string): ?string {
  * Returns null if not a valid file: URI.
  */
 function uriToNuclideUri(uri: string): ?string {
-  // TODO(ljw): the following check is incorrect. It's designed to support
+  // TODO (ljw): the following check is incorrect. It's designed to support id:98 gh:99
   // two-slash file URLs of the form "file://c:\path". But those are invalid
   // file URLs, and indeed it fails to %-escape "file://c:\My%20Documents".
   const windowsPathFromUri = _getWindowsPathFromWindowsFileUri(uri);

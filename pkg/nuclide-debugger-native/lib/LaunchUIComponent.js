@@ -28,7 +28,7 @@ import classnames from 'classnames';
 
 type PropsType = {
   targetUri: NuclideUri,
-  // TODO Remove disable
+  // TODO Remove disable id:243 gh:244
   // eslint-disable-next-line react/no-unused-prop-types
   store: LaunchAttachStore,
   actions: LaunchAttachActions,
@@ -128,8 +128,8 @@ export class LaunchUIComponent extends React.Component<PropsType, StateType> {
   }
 
   render(): React.Node {
-    // TODO: smart fill the working directory textbox.
-    // TODO: make tab stop between textbox work.
+    // TODO: smart fill the working directory textbox. id:341 gh:342
+    // TODO: make tab stop between textbox work. id:235 gh:236
     // Reserve tabIndex [1~10] to header portion of the UI so we start from "11" here.
     return (
       <div className="block">
@@ -225,7 +225,7 @@ export class LaunchUIComponent extends React.Component<PropsType, StateType> {
   }
 
   _handleLaunchClick = (): void => {
-    // TODO: perform some validation for the input.
+    // TODO: perform some validation for the input. id:411 gh:412
     const launchExecutable = nullthrows(this._launchExecutable)
       .getText()
       .trim();

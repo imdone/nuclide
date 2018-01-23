@@ -125,7 +125,7 @@ class Activation {
             track('bookshelf-always-restore');
             // The restore needs to wait for the change shorthead state update to complete
             // before triggering a cascaded state update when handling the restore action.
-            // TODO(most): move away from `nextTick`.
+            // TODO (most): move away from `nextTick`. id:184 gh:184
             process.nextTick(() => {
               commands.restorePaneItemState(repository, activeShortHead);
             });

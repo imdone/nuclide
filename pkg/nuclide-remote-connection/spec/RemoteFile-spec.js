@@ -183,7 +183,7 @@ describe('RemoteFile', () => {
     });
   });
 
-  // TODO: #7344702 Re-enable and don't depend on watchman.
+  // TODO: #7344702 Re-enable and don't depend on watchman. id:742 gh:743
   // eslint-disable-next-line jasmine/no-disabled-tests
   xdescribe('RemoteFile watchFile integration', () => {
     const WATCHMAN_SETTLE_TIME_MS = 1 * 1000;

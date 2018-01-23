@@ -40,7 +40,7 @@ class NuclideServer(object):
         self._clear_states()
         self.port = port
         self._proc = proc
-        # TODO: really support workspace.
+        # TODO: really support workspace. id:661 gh:662
         self.workspace = None
         if workspace is not None:
             workspace = os.path.expanduser(workspace)
@@ -234,7 +234,7 @@ class NuclideServer(object):
             p.wait()
         if quiet:
             # No nohup logging.
-            # TODO: This is a workaround for testing.
+            # TODO: This is a workaround for testing. id:748 gh:749
             # When we enable nohup logging, the test or any Python script that calls
             # this script via subprocess.Popen will hang on Popen.communicate().
             args = shlex.split('nohup node %s' % js_cmd)

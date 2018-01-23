@@ -71,7 +71,7 @@ export default class DiffViewEditor {
   }
 
   // This is now to work around Atom 1.12.x not clearing removed block decorations.
-  // TODO(most): Remove this when upgrading to Atom 1.13.x.
+  // TODO (most): Remove this when upgrading to Atom 1.13.x. id:634 gh:635
   _cleanupInvisibleDecorations(): void {
     if (this._editor.isDestroyed()) {
       return;

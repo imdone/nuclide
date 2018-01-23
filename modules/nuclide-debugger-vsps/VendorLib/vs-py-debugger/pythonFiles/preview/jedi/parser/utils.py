@@ -165,7 +165,7 @@ class ParserPickling(object):
         return self.__index
 
     def _remove_old_modules(self):
-        # TODO use
+        # TODO use id:113 gh:114
         change = False
         if change:
             self._flush_index(self)

@@ -80,7 +80,7 @@ class Subscription {
   next(data: any, bytes: number): void {
     try {
       this._observer.next(data);
-      // TODO: consider implementing a rate limit
+      // TODO: consider implementing a rate limit id:518 gh:519
       this._totalBytes += bytes;
     } catch (e) {
       logger.error(`Caught exception in Subscription.next: ${e.toString()}`);
@@ -769,7 +769,7 @@ export class RpcConnection<TransportType: Transport> {
       if (result == null) {
         return null;
       }
-      /* TODO: Uncomment this when the Hack service updates their protocol.
+      /* TODO: Uncomment this when the Hack service updates their protocol. id:655 gh:656
       if (result.protocol !== this._getProtocol()) {
         logger.error(`Received message with unexpected protocol: '${value}'`);
         return null;

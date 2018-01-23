@@ -21,7 +21,7 @@ import UniversalDisposable from 'nuclide-commons/UniversalDisposable';
 import {goToLocation} from 'nuclide-commons-atom/go-to-location';
 import {observableFromSubscribeFunction} from 'nuclide-commons/event';
 
-// TODO(peterhal): The current index should really live in the DiagnosticStore.
+// TODO (peterhal): The current index should really live in the DiagnosticStore. id:22 gh:23
 export default class KeyboardShortcuts {
   _subscriptions: UniversalDisposable;
   _diagnostics: Array<DiagnosticMessage>;
@@ -151,7 +151,7 @@ export default class KeyboardShortcuts {
     return diagnostic.trace;
   }
 
-  // TODO: Should filter out traces whose location matches the main diagnostic's location?
+  // TODO: Should filter out traces whose location matches the main diagnostic's location? id:9 gh:10
   trySetCurrentTrace(
     traces: Array<DiagnosticTrace>,
     traceIndex: number,

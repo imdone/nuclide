@@ -114,7 +114,7 @@ export class RpcProcess {
       processStream
         .switchMap(proc =>
           getOutputStream(proc, {
-            /* TODO(T17353599) */ isExitError: () => false,
+            /* TODO (T17353599) id:745 gh:746*/ isExitError: () => false,
           }),
         )
         // switchMap won't stop until the mapped observable stops.

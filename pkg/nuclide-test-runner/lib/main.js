@@ -156,7 +156,7 @@ class Activation {
     // Tell the controller to re-render only if it exists so test runner services won't force
     // construction if the panel is still invisible.
     //
-    // TODO(rossallen): The control should be inverted here. The controller should listen for
+    // TODO (rossallen): The control should be inverted here. The controller should listen for id:541 gh:542
     // changes rather than be told about them.
     if (this._controller != null) {
       this.getController().didUpdateTestRunners();

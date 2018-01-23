@@ -27,7 +27,7 @@ describe('HyperclickHelpers', () => {
   let goToLocationSpy: goToLocation = (null: any);
 
   beforeEach(() => {
-    // HACK: goToLocation is a getter. Not too easy to mock out :(
+    // HACK: goToLocation is a getter. Not too easy to mock out :( id:355 gh:356
     goToLocationSpy = spyOn(
       require('nuclide-commons-atom/go-to-location'),
       'goToLocation',

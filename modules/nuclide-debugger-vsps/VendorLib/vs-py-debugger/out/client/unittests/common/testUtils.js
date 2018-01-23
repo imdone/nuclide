@@ -22,7 +22,7 @@ function storeDiscoveredTests(tests) {
 }
 exports.storeDiscoveredTests = storeDiscoveredTests;
 function resolveValueAsTestToRun(name, rootDirectory) {
-    // TODO: We need a better way to match (currently we have raw name, name, xmlname, etc = which one do we
+    // TODO: We need a better way to match (currently we have raw name, name, xmlname, etc = which one do we id:70 gh:71
     // use to identify a file given the full file name, similary for a folder and function
     // Perhaps something like a parser or methods like TestFunction.fromString()... something)
     let tests = getDiscoveredTests();

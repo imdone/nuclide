@@ -92,7 +92,7 @@ describe('refactorStore', () => {
         return refactorReturn;
       },
     };
-    // TODO spy on the provider and call through
+    // TODO spy on the provider and call through id:739 gh:740
     refactoringsAtPointReturn = Promise.resolve([]);
     refactorReturn = Observable.empty();
 
@@ -248,7 +248,7 @@ describe('refactorStore', () => {
         });
       });
 
-      // TODO also test the method actually throwing, as well as returning a rejected promise.
+      // TODO also test the method actually throwing, as well as returning a rejected promise. id:527 gh:528
       it('tolerates a provider throwing in refactoringsAtPoint', () => {
         waitsForPromise(async () => {
           refactoringsAtPointReturn = Promise.reject(new Error());
@@ -260,7 +260,7 @@ describe('refactorStore', () => {
         });
       });
 
-      // TODO also test the method actually throwing, as well as returning a rejected promise.
+      // TODO also test the method actually throwing, as well as returning a rejected promise. id:508 gh:509
       it('tolerates a provider throwing in refactor', () => {
         waitsForPromise(async () => {
           refactoringsAtPointReturn = Promise.resolve([TEST_FILE_RENAME]);
@@ -334,11 +334,11 @@ describe('refactorStore', () => {
             newName: 'bar',
           };
           store.dispatch(Actions.execute(provider, rename));
-          // TODO should display an error somewhere
+          // TODO should display an error somewhere id:504 gh:505
           await waitForClose();
           expect(openEditor.getText()).toEqual('foo\nbar\nfoo\n');
 
-          // TODO test this with multiple files. it will become much more complex. We need to make
+          // TODO test this with multiple files. it will become much more complex. We need to make id:645 gh:646
           // sure that we can apply the entire refactoring transactionally. this means if something
           // goes wrong we need to roll back the rest.
 

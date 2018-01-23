@@ -61,11 +61,11 @@ type State = {
 
 /**
  * A Combo Box.
- * TODO allow making text input non-editable via props
- * TODO open/close options dropdown upon focus/blur
- * TODO add public getter/setter for textInput
- * TODO use generic search provider
- * TODO move combobox to separate package.
+ * TODO allow making text input non-editable via props id:561 gh:562
+ * TODO open/close options dropdown upon focus/blur id:534 gh:536
+ * TODO add public getter/setter for textInput id:544 gh:545
+ * TODO use generic search provider id:668 gh:669
+ * TODO move combobox to separate package. id:752 gh:753
  */
 export class Combobox extends React.Component<Props, State> {
   _freeformInput: ?AtomInput;

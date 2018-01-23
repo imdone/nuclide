@@ -187,7 +187,7 @@ export async function copy(
     return false;
   }
   await ROOT_FS.copy(sourcePath, destinationPath);
-  // TODO: May need to move into ROOT_FS if future filesystems support writing.
+  // TODO: May need to move into ROOT_FS if future filesystems support writing. id:551 gh:552
   await fsPromise.copyFilePermissions(sourcePath, destinationPath);
   return true;
 }
@@ -320,7 +320,7 @@ export function writeFile(
   data: string,
   options?: WriteOptions,
 ): Promise<void> {
-  // TODO: May need to move into ROOT_FS if future filesystems support writing.
+  // TODO: May need to move into ROOT_FS if future filesystems support writing. id:526 gh:527
   return fsPromise.writeFileAtomic(path, data, options);
 }
 

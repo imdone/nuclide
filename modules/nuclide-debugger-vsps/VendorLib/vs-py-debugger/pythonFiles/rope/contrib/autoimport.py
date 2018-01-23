@@ -33,7 +33,7 @@ class AutoImport(object):
         if self.names is None:
             self.names = {}
         project.data_files.add_write_hook(self._write)
-        # XXX: using a filtered observer
+        # XXX: using a filtered observer id:299 gh:300
         observer = resourceobserver.ResourceObserver(
             changed=self._changed, moved=self._moved, removed=self._removed)
         if observe:
@@ -45,7 +45,7 @@ class AutoImport(object):
         This function tries to find modules that have a global name
         that starts with `starting`.
         """
-        # XXX: breaking if gave up! use generators
+        # XXX: breaking if gave up! use generators id:626 gh:627
         result = []
         for module in self.names:
             for global_name in self.names[module]:

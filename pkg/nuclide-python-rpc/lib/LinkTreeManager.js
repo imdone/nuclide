@@ -38,7 +38,7 @@ export default class LinkTreeManager {
     const realBasePath = await fsPromise.realpath(basePath);
     const realSrcPath = await fsPromise.realpath(src);
 
-    // TODO: Buck rdeps performance is too slow, so only search the immediate Buck file.
+    // TODO: Buck rdeps performance is too slow, so only search the immediate Buck file. id:639 gh:640
     // Reconsider this if things look better.
     const MAX_ITER = 1;
 
@@ -88,7 +88,7 @@ export default class LinkTreeManager {
         bins = await this._getDependencies(src, buckRoot, kind);
       }
 
-      // TODO: once we add link-tree flavor to buck, build the link tree of the
+      // TODO: once we add link-tree flavor to buck, build the link tree of the id:737 gh:738
       // first binary.
       return bins.map(bin => {
         const linkTreeSuffix = LINK_TREE_SUFFIXES[kind];

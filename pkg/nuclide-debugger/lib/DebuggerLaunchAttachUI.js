@@ -27,7 +27,7 @@ import invariant from 'assert';
 
 type PropsType = {
   dialogMode: DebuggerConfigAction,
-  // TODO: Remove disable
+  // TODO: Remove disable id:366 gh:367
   /* eslint-disable react/no-unused-prop-types */
   store: DebuggerProviderStore,
   debuggerActions: DebuggerActions,
@@ -49,7 +49,7 @@ type StateType = {
   }>,
 };
 
-// TODO those should be managed by the debugger store state
+// TODO those should be managed by the debugger store state id:260 gh:261
 function setLastUsedDebugger(
   host: string,
   action: DebuggerConfigAction,

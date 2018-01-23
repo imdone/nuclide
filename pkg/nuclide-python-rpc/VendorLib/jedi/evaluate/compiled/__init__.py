@@ -264,7 +264,7 @@ class CompiledObject(Context):
             else:
                 if bltn_obj is None:
                     # We want to evaluate everything except None.
-                    # TODO do we?
+                    # TODO do we? id:450 gh:451
                     continue
                 bltn_obj = create(self.evaluator, bltn_obj)
                 for result in bltn_obj.execute(params):
@@ -603,7 +603,7 @@ def compiled_objects_cache(attribute_name):
             try:
                 return cache[key][0]
             except KeyError:
-                # TODO this whole decorator is way too ugly
+                # TODO this whole decorator is way too ugly id:470 gh:471
                 result = func(evaluator, obj, parent_context, module, faked)
                 # Need to cache all of them, otherwise the id could be overwritten.
                 cache[key] = result, obj, parent_context, module, faked

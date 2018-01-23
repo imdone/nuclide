@@ -128,7 +128,7 @@ class BackslashNode(IndentationNode):
             equals = expr_stmt.children[-2]
 
             if '\t' in config.indentation:
-                # TODO unite with the code of BracketNode
+                # TODO unite with the code of BracketNode id:734 gh:735
                 self.indentation = None
             else:
                 # If the backslash follows the equals, use normal indentation
@@ -300,7 +300,7 @@ class PEP8Normalizer(ErrorFinder):
             if wanted > blank_lines and leaf.type != 'endmarker':
                 # In case of a comment we don't need to add the issue, yet.
                 if not is_comment:
-                    # TODO end_pos wrong.
+                    # TODO end_pos wrong. id:474 gh:475
                     code = 302 if wanted == 2 else 301
                     message = "expected %s blank line, found %s" \
                         % (wanted, blank_lines)
@@ -356,7 +356,7 @@ class PEP8Normalizer(ErrorFinder):
 
         self._new_statement = leaf.type == 'newline'
 
-        # TODO does this work? with brackets and stuff?
+        # TODO does this work? with brackets and stuff? id:497 gh:498
         if leaf.type == 'newline' and \
                 self._indentation_tos.type == IndentationTypes.BACKSLASH:
             self._indentation_tos = self._indentation_tos.parent
@@ -410,7 +410,7 @@ class PEP8Normalizer(ErrorFinder):
             self._newline_count += 1
 
         if type_ == 'backslash':
-            # TODO is this enough checking? What about ==?
+            # TODO is this enough checking? What about ==? id:490 gh:491
             if node.type != IndentationTypes.BACKSLASH:
                 if node.type != IndentationTypes.SUITE:
                     self.add_issue(part, 502, 'The backslash is redundant between brackets')
@@ -577,21 +577,21 @@ class PEP8Normalizer(ErrorFinder):
                 message = "Whitespace before '%s'" % part.value
                 add_if_spaces(spacing, 203, message)
             elif prev == ':' and prev.parent.type in _POSSIBLE_SLICE_PARENTS:
-                pass # TODO
+                pass # TODO id:635 gh:636
             elif prev in (',', ';', ':'):
                 add_not_spaces(spacing, 231, "missing whitespace after '%s'")
             elif part == ':':  # Is a subscript
-                # TODO
+                # TODO id:735 gh:736
                 pass
             elif part in ('*', '**') and part.parent.type not in _NON_STAR_TYPES \
                     or prev in ('*', '**') \
                     and prev.parent.type not in _NON_STAR_TYPES:
-                # TODO
+                # TODO id:476 gh:477
                 pass
             elif prev in _FACTOR and prev.parent.type == 'factor':
                 pass
             elif prev == '@' and prev.parent.type == 'decorator':
-                pass  # TODO should probably raise an error if there's a space here
+                pass  # TODO should probably raise an error if there's a space here id:499 gh:499
             elif part in _NEEDS_SPACE or prev in _NEEDS_SPACE:
                 if part == '=' and part.parent.type in ('argument', 'param') \
                         or prev == '=' and prev.parent.type in ('argument', 'param'):
@@ -623,7 +623,7 @@ class PEP8Normalizer(ErrorFinder):
                     message_225 = 'Missing whitespace between tokens'
                     #print('xy', spacing)
                     #self.add_issue(spacing, 225, message_225)
-                    # TODO why only brackets?
+                    # TODO why only brackets? id:492 gh:493
                     if part in _OPENING_BRACKETS:
                         message = "Whitespace before '%s'" % part.value
                         add_if_spaces(spacing, 211, message)
@@ -679,7 +679,7 @@ class PEP8Normalizer(ErrorFinder):
             for i, line in enumerate(leaf.value.splitlines()[1:]):
                 indentation = re.match('[ \t]*', line).group(0)
                 start_pos = leaf.line + i, len(indentation)
-                # TODO check multiline indentation.
+                # TODO check multiline indentation. id:637 gh:638
         elif typ == 'endmarker':
             if self._newline_count >= 2:
                 self.add_issue(leaf, 391, 'Blank line at end of file')
@@ -717,7 +717,7 @@ class PEP8NormalizerConfig(ErrorFinderConfig):
         self.spaces_before_comment = spaces_before_comment
 
 
-# TODO this is not yet ready.
+# TODO this is not yet ready. id:736 gh:737
 #@PEP8Normalizer.register_rule(type='endmarker')
 class BlankLineAtEnd(Rule):
     code = 392

@@ -75,7 +75,7 @@ def add(evaluator, name, jedi_obj, message=None, typ=Error, payload=None):
     from jedi.evaluate.iterable import MergedNodes
     while isinstance(jedi_obj, MergedNodes):
         if len(jedi_obj) != 1:
-            # TODO is this kosher?
+            # TODO is this kosher? id:147 gh:148
             return
         jedi_obj = list(jedi_obj)[0]
 

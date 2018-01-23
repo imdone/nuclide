@@ -80,6 +80,6 @@ export class BigDigClient {
   }
 
   dispose() {
-    // TODO(mbolin)
+    // TODO (mbolin) id:38 gh:39
   }
 }

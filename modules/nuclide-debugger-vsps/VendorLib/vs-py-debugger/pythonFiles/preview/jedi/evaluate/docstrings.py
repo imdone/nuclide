@@ -141,7 +141,7 @@ def _evaluate_for_statement_string(evaluator, string, module):
         return []
 
     # Use the module of the param.
-    # TODO this module is not the module of the param in case of a function
+    # TODO this module is not the module of the param in case of a function id:77 gh:78
     # call. In that case it's the module of the function call.
     # stuffed with content from a function call.
     pseudo_cls.parent = module

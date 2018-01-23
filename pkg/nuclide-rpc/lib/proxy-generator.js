@@ -10,7 +10,7 @@
  */
 
 /**
- * NOTE: Keep this file free of runtime dependencies!
+ * NOTE: Keep this file free of runtime dependencies! id:549 gh:550
  * Dependencies should be injected into createProxyGenerator below.
  * This allows us to easily cache the result of this function during development
  * to minimize the impact on reload times.

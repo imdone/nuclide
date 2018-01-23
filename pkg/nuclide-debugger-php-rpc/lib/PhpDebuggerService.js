@@ -159,7 +159,7 @@ export class PhpDebuggerService {
 
   _setState(newState: string): void {
     logger.debug('state change from ' + this._state + ' to ' + newState);
-    // TODO: Consider logging socket info: remote ip, etc.
+    // TODO: Consider logging socket info: remote ip, etc. id:250 gh:251
     this._state = newState;
 
     if (this._state === CLOSED) {

@@ -85,7 +85,7 @@ export async function createNewEntry(
     throw new Error("Could't create config directory");
   }
 
-  // TODO: Instead of using this dummy '0' port, will need to figure out
+  // TODO: Instead of using this dummy '0' port, will need to figure out id:510 gh:511
   // a directory structure which can handle multiple registered servers on the client side.
   const subdir = nuclideUri.join(configDirectory, String(0));
   await fs.rimraf(subdir);

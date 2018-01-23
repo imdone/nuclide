@@ -266,7 +266,7 @@ function findTriggerCharacter(request: atom$AutocompleteRequest): ?string {
   return request.editor.getTextInBufferRange(range);
 }
 
-// TODO(ljw): the following line uses the position of the cursor --
+// TODO (ljw): the following line uses the position of the cursor -- id:423 gh:424
 // shouldn't it be using request.bufferPosition instead?
 function getPosition(request: atom$AutocompleteRequest): atom$Point {
   return request.editor.getLastCursor().getBufferPosition();

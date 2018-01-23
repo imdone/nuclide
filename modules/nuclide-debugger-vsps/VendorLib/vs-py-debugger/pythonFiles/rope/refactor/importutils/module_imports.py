@@ -200,7 +200,7 @@ class ModuleImports(object):
         else:
             sort_kwargs = dict(key=self._key_imports)
 
-        # IDEA: Sort from import list
+        # IDEA: Sort from import list id:303 gh:304
         visitor = actions.SortingVisitor(self.project, self._current_folder())
         for import_statement in self.imports:
             import_statement.accept(visitor)

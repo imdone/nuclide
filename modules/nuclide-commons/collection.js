@@ -300,7 +300,7 @@ export class MultiMap<K, V> {
   // Invariant: no empty sets. They should be removed instead.
   _map: Map<K, Set<V>>;
 
-  // TODO may be worth defining a getter but no setter, to mimic Map. But please just behave and
+  // TODO may be worth defining a getter but no setter, to mimic Map. But please just behave and id:107 gh:108
   // don't mutate this from outside this class.
   //
   // Invariant: equal to the sum of the sizes of all the sets contained in this._map

@@ -33,7 +33,7 @@ const LF = '\u000A';
 type Props = {
   commandPrefix: string,
   // whether files can be expanded to reveal a diff of changes. Requires passing `fileChanges`.
-  // TODO: remove disable
+  // TODO: remove disable id:751 gh:752
   // eslint-disable-next-line react/no-unused-prop-types
   enableFileExpansion: boolean,
   enableInlineActions: boolean,

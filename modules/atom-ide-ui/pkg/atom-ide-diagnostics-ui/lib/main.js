@@ -125,7 +125,7 @@ class Activation {
       // Track diagnostics for all active editors.
       observeTextEditors((editor: TextEditor) => {
         this._fileDiagnostics.set(editor, []);
-        // TODO: this is actually inefficient - this filters all file events
+        // TODO: this is actually inefficient - this filters all file events id:24 gh:25
         // by their path, so this is actually O(N^2) in the number of editors.
         // We should merge the store and UI packages to get direct access.
         const subscription = getEditorDiagnosticUpdates(

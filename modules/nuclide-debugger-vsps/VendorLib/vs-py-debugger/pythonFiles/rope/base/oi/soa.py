@@ -91,7 +91,7 @@ class SOAVisitor(object):
                 after = self._parameter_objects(pyfunction)
                 if after != before:
                     self.follow(pyfunction)
-        # XXX: Maybe we should not call every builtin function
+        # XXX: Maybe we should not call every builtin function id:166 gh:167
         if isinstance(pyfunction, rope.base.builtins.BuiltinFunction):
             pyfunction.get_returned_object(args)
 
@@ -124,7 +124,7 @@ class SOAVisitor(object):
                     pyfunction = pyobject['__setitem__'].get_object()
                     args = arguments.ObjectArguments([instance] + args_pynames)
                     self._call(pyfunction, args)
-                # IDEA: handle `__setslice__`, too
+                # IDEA: handle `__setslice__`, too id:265 gh:266
 
 
 class _SOAAssignVisitor(astutils._NodeNameCollector):

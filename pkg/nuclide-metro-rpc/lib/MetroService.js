@@ -31,7 +31,7 @@ import {NO_METRO_PROJECT_ERROR, METRO_PORT_BUSY_ERROR} from './types';
 /**
  * Get the command that would be used if you asked to start Metro at the given URI.
  * Returns null if Metro cannot be started there.
- * TODO: We need to have a solid concept of an "active project" that's consistent across Nuclide
+ * TODO: We need to have a solid concept of an "active project" that's consistent across Nuclide id:718 gh:719
  *       (i.e. where we should look for commands like this) and use that here. The current behavior
  *       of everything having its own algorithm is bad.
  */

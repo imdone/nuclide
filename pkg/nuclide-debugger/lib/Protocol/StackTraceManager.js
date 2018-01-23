@@ -88,7 +88,7 @@ export default class StackTraceManager {
   _parseCallstack(): Callstack {
     return this._currentThreadFrames.map(frame => {
       const result = ({
-        name: frame.functionName, // TODO: format
+        name: frame.functionName, // TODO: format id:300 gh:301
         location: {
           path: this._debuggerDispatcher.getFileUriFromScriptId(
             frame.location.scriptId,

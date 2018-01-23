@@ -419,7 +419,7 @@ class _RealFinder(object):
         return self.get_assignment_type(offset) is not None
 
     def get_assignment_type(self, offset):
-        # XXX: does not handle tuple assignments
+        # XXX: does not handle tuple assignments id:267 gh:268
         word_end = self._find_word_end(offset)
         next_char = self._find_first_non_space_char(word_end + 1)
         single = self.code[next_char:next_char + 1]
@@ -500,7 +500,7 @@ class _RealFinder(object):
         if prev_char not in '(,' and next_char not in ',)':
             return False
         parens_start = self.find_parens_start_from_inside(offset)
-        # XXX: only handling (x, y) = value
+        # XXX: only handling (x, y) = value id:161 gh:162
         return offset < equals_offset and \
             self.code[start:parens_start].strip() == ''
 

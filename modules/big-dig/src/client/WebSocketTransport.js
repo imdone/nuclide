@@ -89,7 +89,7 @@ export class WebSocketTransport {
     return socket.url;
   }
 
-  // TODO(mbolin): Remove this once we have BigDigClient working. Until then,
+  // TODO (mbolin): Remove this once we have BigDigClient working. Until then, id:44 gh:45
   // this demonstrates how to make a secure request to the HTTPS server.
   testAgent() {
     const {hostname, port} = require('url').parse(this.getAddress());

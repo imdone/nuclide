@@ -35,7 +35,7 @@ int main(int argc, char *argv[]) {
   NSArray *germanMakes_array = @[@"Mercedes-Benz", @"Porsche", @"Volkswagen"];
 
   // ObjectC NSDictionary
-  // TODO[jeffreytan]: write test for it(t7809321)
+  // TODO [jeffreytan]: write test for it(t7809321) id:407 gh:408
   NSDictionary *inventory_dictionary = @{
     @"Mercedes-Benz SLK250" : @13,
     @"Mercedes-Benz E350" : @22,

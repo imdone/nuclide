@@ -301,7 +301,7 @@ export class DbgpSocket {
       outputType === 'stdout'
         ? ConnectionStatus.Stdout
         : ConnectionStatus.Stderr;
-    // TODO: t13439903 -- add a way to fetch the rest of the data.
+    // TODO: t13439903 -- add a way to fetch the rest of the data. id:281 gh:282
     const truncatedOutputText = outputText.slice(0, STREAM_MESSAGE_MAX_SIZE);
     this._emitStatus(status, truncatedOutputText);
   }
@@ -444,7 +444,7 @@ export class DbgpSocket {
   //  starting, stopping, stopped, running, break
   async getStatus(): Promise<string> {
     const response = await this._callDebugger('status');
-    // TODO: Do we ever care about response.$.reason?
+    // TODO: Do we ever care about response.$.reason? id:354 gh:355
     return response.$.status;
   }
 
@@ -533,7 +533,7 @@ export class DbgpSocket {
         'Error from setPausedOnExceptions: ' + JSON.stringify(response),
       );
     }
-    // TODO: Validate that response.$.state === 'enabled'
+    // TODO: Validate that response.$.state === 'enabled' id:246 gh:247
     return response.$.id;
   }
 
@@ -559,7 +559,7 @@ export class DbgpSocket {
       `,
       );
     }
-    // TODO: Validate that response.$.state === 'enabled'
+    // TODO: Validate that response.$.state === 'enabled' id:422 gh:423
     return response.$.id;
   }
 
@@ -650,7 +650,7 @@ export class DbgpSocket {
 
   dispose(): void {
     if (!this._isClosed) {
-      // TODO[jeffreytan]: workaround a crash(t8181538) in hhvm
+      // TODO [jeffreytan]: workaround a crash(t8181538) in hhvm id:686 gh:687
       this.sendContinuationCommand(COMMAND_DETACH);
     }
 

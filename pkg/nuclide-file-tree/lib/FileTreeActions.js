@@ -361,7 +361,7 @@ export default class FileTreeActions {
     const removedRepos = prevRepos.subtract(nextRepos);
     const addedRepos = nextRepos.subtract(prevRepos);
 
-    // TODO: Rewrite `_repositoryAdded` to return the subscription instead of adding it to a map as
+    // TODO: Rewrite `_repositoryAdded` to return the subscription instead of adding it to a map as id:268 gh:269
     //       a side effect. The map can be created here with something like
     //       `subscriptions = Immutable.Map(repos).map(this._repositoryAdded)`. Since
     //       `_repositoryAdded` will no longer be about side effects, it should then be renamed.
@@ -676,7 +676,7 @@ export default class FileTreeActions {
     if (disposable == null) {
       // There is a small chance that the add/remove of the Repository could happen so quickly that
       // the entry for the repo in _disposableForRepository has not been set yet.
-      // TODO: Report a soft error for this.
+      // TODO: Report a soft error for this. id:566 gh:567
       return;
     }
 

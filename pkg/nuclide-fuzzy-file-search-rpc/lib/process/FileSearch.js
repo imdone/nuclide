@@ -46,7 +46,7 @@ export async function fileSearchForDirectory(
       `Could not update path sets for ${realpath}. Searches may be stale`,
       e,
     );
-    // TODO(hansonw): Fall back to manual refresh or node watches
+    // TODO (hansonw): Fall back to manual refresh or node watches id:699 gh:700
   }
 
   fileSearchCache[directory] = pathSet;

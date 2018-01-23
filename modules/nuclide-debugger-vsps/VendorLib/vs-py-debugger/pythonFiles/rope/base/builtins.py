@@ -419,7 +419,7 @@ class Tuple(BuiltinClass):
         if objects:
             first = objects[0]
         attributes = {
-            '__getitem__': BuiltinName(BuiltinFunction(first)),  # TODO: add slice support
+            '__getitem__': BuiltinName(BuiltinFunction(first)),  # TODO: add slice support id:162 gh:163
             '__getslice__':
             BuiltinName(BuiltinFunction(pyobjects.PyObject(self))),
             '__new__': BuiltinName(BuiltinFunction(function=self._new_tuple)),

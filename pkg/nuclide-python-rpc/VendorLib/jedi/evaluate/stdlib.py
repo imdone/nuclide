@@ -182,7 +182,7 @@ class SuperInstance(AbstractInstanceContext):
 
 @argument_clinic('[type[, obj]], /', want_context=True)
 def builtins_super(evaluator, types, objects, context):
-    # TODO make this able to detect multiple inheritance super
+    # TODO make this able to detect multiple inheritance super id:625 gh:626
     if isinstance(context, (InstanceFunctionExecution,
                             AnonymousInstanceFunctionExecution)):
         su = context.instance.py__class__().py__bases__()
@@ -198,7 +198,7 @@ def builtins_reversed(evaluator, sequences, obj, arguments):
     key, lazy_context = next(arguments.unpack())
     cn = None
     if isinstance(lazy_context, LazyTreeContext):
-        # TODO access private
+        # TODO access private id:730 gh:731
         cn = ContextualizedNode(lazy_context._context, lazy_context.data)
     ordered = list(sequences.iterate(cn))
 
@@ -264,7 +264,7 @@ def collections_namedtuple(evaluator, obj, arguments):
         return NO_CONTEXTS
 
     # Process arguments
-    # TODO here we only use one of the types, we should use all.
+    # TODO here we only use one of the types, we should use all. id:464 gh:465
     name = list(_follow_param(evaluator, arguments, 0))[0].obj
     _fields = list(_follow_param(evaluator, arguments, 1))[0]
     if isinstance(_fields, compiled.CompiledObject):

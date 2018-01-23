@@ -130,7 +130,7 @@ module.exports = function(context) {
           if (comment.value.includes('@flow')) {
             fix = fixer => fixer.replaceText(comment, flowHeader.trim());
           } else if (comment.value.includes('@noflow')) {
-            // TODO: replace the stuff after the docblock.
+            // TODO: replace the stuff after the docblock. id:89 gh:90
             // It should be pretty obvious to the user, though.
             fix = fixer => fixer.replaceText(comment, noFlowHeader.trim());
           } else {

@@ -9,7 +9,7 @@
  * @format
  */
 
-// TODO: Make it possible to move or split a pane with a VcsLogPaneItem.
+// TODO: Make it possible to move or split a pane with a VcsLogPaneItem. id:676 gh:678
 
 import type FileTreeContextMenu from '../../nuclide-file-tree/lib/FileTreeContextMenu';
 import type {HgRepositoryClient} from '../../nuclide-hg-repository-client/lib/HgRepositoryClient.js';
@@ -63,7 +63,7 @@ class Activation {
       }),
     );
 
-    // TODO(mbolin): Once the nuclide-file-tree.context-menu is generalized to automatically add
+    // TODO (mbolin): Once the nuclide-file-tree.context-menu is generalized to automatically add id:756 gh:757
     // menu items to the editor context menu, as appropriate, it should be possible to eliminate
     // (or at least reduce) the logic here.
 

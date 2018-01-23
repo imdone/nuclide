@@ -78,7 +78,7 @@ export function sourceKittenSourcetextToAtomSnippet(
 }
 
 export function sourceKittenKindToAtomType(kind: string): string {
-  // TODO(bgesiak): Some of the kinds don't have predefined Atom styles that
+  // TODO (bgesiak): Some of the kinds don't have predefined Atom styles that id:749 gh:750
   //        suit them. These should use custom HTML.
   switch (kind) {
     case 'source.lang.swift.keyword':

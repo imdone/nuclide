@@ -126,7 +126,7 @@ export function shortHeadChangedNotification(
       repository.getWorkingDirectory(),
     );
 
-    // TODO(most): Should we handle empty bookmark switches differently?
+    // TODO (most): Should we handle empty bookmark switches differently? id:283 gh:284
     const newShortHeadDisplayText =
       newShortHead.length > 0 ? `to \`${newShortHead}\`` : '';
 

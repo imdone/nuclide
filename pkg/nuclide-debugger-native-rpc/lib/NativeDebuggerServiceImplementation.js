@@ -261,7 +261,7 @@ export class NativeDebuggerService extends DebuggerRpcWebSocketService {
     });
     const lldbWebSocketListeningPort = await this._connectWithLLDB(lldbProcess);
 
-    // TODO[jeffreytan]: explicitly use ipv4 address 127.0.0.1 for now.
+    // TODO [jeffreytan]: explicitly use ipv4 address 127.0.0.1 for now. id:234 gh:235
     // Investigate if we can use localhost and match protocol version between client/server.
     const lldbWebSocketAddress = `ws://127.0.0.1:${lldbWebSocketListeningPort}/`;
     await this.connectToWebSocketServer(lldbWebSocketAddress);

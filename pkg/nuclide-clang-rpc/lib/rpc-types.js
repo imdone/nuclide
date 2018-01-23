@@ -11,10 +11,10 @@
 
 import type {NuclideUri} from 'nuclide-commons/nuclideUri';
 
-// NOTE that the definitions in this file are shared between
+// NOTE that the definitions in this file are shared between id:660 gh:661
 // the ClangService and ClangProcessService.
 
-// TODO: Support enums in rpc3 framework.
+// TODO: Support enums in rpc3 framework. id:200 gh:201
 // export type ClangCursorType = $Enum<typeof ClangCursorToDeclarationTypes>;
 export type ClangCursorType = string;
 

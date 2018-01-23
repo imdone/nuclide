@@ -128,7 +128,7 @@ type State = {
  * Size-sensitive container that provides an onResize callback that
  * is invoked with the container's width and height whenever it changes.
  *
- * NOTE: This component is meant to be used to detect size changes that
+ * NOTE: This component is meant to be used to detect size changes that id:555 gh:556
  *       are not a result of a DOM mutation. If you only care about size
  *       changes as a result of a DOM mutation, use MeasuredComponent
  *       instead.

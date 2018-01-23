@@ -328,7 +328,7 @@ export class ConnectionMultiplexer {
       case ConnectionStatus.Starting:
         // Starting status has no stack.
         // step before reporting initial status to get to the first instruction.
-        // TODO: Use loader breakpoint configuration to choose between step/run.
+        // TODO: Use loader breakpoint configuration to choose between step/run. id:414 gh:415
         if (!this._shouldPauseAllConnections()) {
           connection.sendContinuationCommand(COMMAND_RUN);
         } else {
@@ -339,7 +339,7 @@ export class ConnectionMultiplexer {
         }
         break;
       case ConnectionStatus.Stopping:
-        // TODO: May want to enable post-mortem features?
+        // TODO: May want to enable post-mortem features? id:684 gh:685
         if (this._isPaused()) {
           this._emitRequestUpdate(connection);
         }
@@ -830,7 +830,7 @@ export class ConnectionMultiplexer {
         'error',
       );
     }
-    // TODO: Stderr redirection is not implemented in HHVM so we won't check this return value.
+    // TODO: Stderr redirection is not implemented in HHVM so we won't check this return value. id:253 gh:254
     await connection.sendStderrRequest();
   }
 

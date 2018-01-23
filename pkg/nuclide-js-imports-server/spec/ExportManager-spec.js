@@ -100,7 +100,7 @@ describe('ExportManager', () => {
     expect(exp[0].isTypeExport).toBe(false);
     expect(exp[0].uri).toBe('testFile');
     expect(exp[0].isDefault).toBe(false);
-    // NOTE: no type information here right now.
+    // NOTE: no type information here right now. id:597 gh:598
   });
   it('Should index multiple variables export', () => {
     const program = 'const x = 3; const y = 4; export {x, y}; ';
@@ -204,7 +204,7 @@ describe('ExportManager', () => {
     expect(exp[0].uri).toBe('testFile');
     expect(exp[0].isDefault).toBe(false);
   });
-  // TODO: actually index the values of the spread.
+  // TODO: actually index the values of the spread. id:715 gh:716
   it('Should index module.exports with a spread', () => {
     const program =
       "const X = {}; module.exports = {...X, [foo]: 'ignore', foo: 'foo'}";

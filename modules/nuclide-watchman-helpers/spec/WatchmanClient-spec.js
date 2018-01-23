@@ -39,7 +39,7 @@ describe('WatchmanClient test suite', () => {
           ['nested/nested-test.txt', 'ghi'],
         ]),
       );
-      // TODO(hansonw): This is a big change in Watchman behavior- figure out what
+      // TODO (hansonw): This is a big change in Watchman behavior- figure out what id:275 gh:276
       // this means for Nuclide's use.
       dirPath = fs.realpathSync(dirPath);
       waits(1010);

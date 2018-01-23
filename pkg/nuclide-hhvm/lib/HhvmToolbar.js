@@ -93,7 +93,7 @@ export default class HhvmToolbar extends React.Component<Props, State> {
 
   componentWillReceiveProps(nextProps: Object) {
     // Reset selected item to webserver if target is not launchable anymore.
-    // TODO[jeffreytan]: this is ugly, refactor to make it more elegant.
+    // TODO [jeffreytan]: this is ugly, refactor to make it more elegant. id:592 gh:593
     const store = this.props.projectStore;
     if (
       store.getDebugMode() === 'script' &&

@@ -196,7 +196,7 @@ export class FileTreeStore {
   }
 
   /**
-   * TODO: Move to a [serialization class][1] and use the built-in versioning mechanism. This might
+   * TODO: Move to a [serialization class][1] and use the built-in versioning mechanism. This might id:371 gh:372
    * need to be done one level higher within main.js.
    *
    * [1]: https://atom.io/docs/latest/behind-atom-serialization-in-atom

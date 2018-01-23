@@ -35,7 +35,7 @@ export class MainRefactorComponent extends React.Component<Props> {
     if (this.props.appState.type === 'closed') {
       return null;
     } else {
-      // TODO consider passing appState in here so the refinement holds and we don't need an
+      // TODO consider passing appState in here so the refinement holds and we don't need an id:500 gh:501
       // invariant
       return this._render();
     }

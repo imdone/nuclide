@@ -310,7 +310,7 @@ export default class DebuggerActions {
 
   /**
    * Utility for getting refreshed connections.
-   * TODO: refresh connections when new directories are removed/added in file-tree.
+   * TODO: refresh connections when new directories are removed/added in file-tree. id:690 gh:691
    */
   updateConnections(): void {
     const connections = this._getRemoteConnections();
@@ -326,7 +326,7 @@ export default class DebuggerActions {
    * Get remote connections without duplication.
    */
   _getRemoteConnections(): Array<string> {
-    // TODO: move this logic into RemoteConnection package.
+    // TODO: move this logic into RemoteConnection package. id:295 gh:296
     return atom.project
       .getPaths()
       .filter(path => {

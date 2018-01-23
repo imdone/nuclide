@@ -47,7 +47,7 @@ export default class PromptButton extends React.Component<Props> {
   _handleClick = (event: SyntheticMouseEvent<>): void => {
     const currentWindow = remote.getCurrentWindow();
     const menu = new remote.Menu();
-    // TODO: Sort alphabetically by label
+    // TODO: Sort alphabetically by label id:220 gh:221
     this.props.options.forEach(option => {
       menu.append(
         new remote.MenuItem({

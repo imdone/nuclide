@@ -127,7 +127,7 @@ class HhvmDebugSession extends LoggingDebugSession {
       await setRootDirectoryUri(args.config.targetUri);
       nuclideLogger.setLevel(args.config.logLevel);
 
-      // TODO Get rid of legacy: Resume to start the debug session.
+      // TODO Get rid of legacy: Resume to start the debug session. id:255 gh:256
       this._debuggerHandler.resume();
 
       this.sendResponse(response);
@@ -172,7 +172,7 @@ class HhvmDebugSession extends LoggingDebugSession {
     });
   }
 
-  // TODO(most): proper thread updates support.
+  // TODO (most): proper thread updates support. id:429 gh:430
   threadsRequest(response: DebugProtocol.ThreadsResponse): void {
     response.body = {
       threads: [new Thread(1, 'thread 1')],

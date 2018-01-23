@@ -154,7 +154,7 @@ class ModuleContext(use_metaclass(CachedMetaClass, TreeContext)):
                             paths.add(other)
                     if paths:
                         return list(paths)
-                    # TODO I'm not sure if this is how nested namespace
+                    # TODO I'm not sure if this is how nested namespace id:483 gh:484
                     # packages work. The tests are not really good enough to
                     # show that.
         # Default to this.
@@ -193,7 +193,7 @@ class ModuleContext(use_metaclass(CachedMetaClass, TreeContext)):
                 # It's obviously a relative import to the current module.
                 names[name] = SubModuleName(self, name)
 
-        # TODO add something like this in the future, its cleaner than the
+        # TODO add something like this in the future, its cleaner than the id:477 gh:478
         #   import hacks.
         # ``os.path`` is a hardcoded exception, because it's a
         # ``sys.modules`` modification.

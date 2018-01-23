@@ -76,7 +76,7 @@ class MixedName(compiled.CompiledName):
     def infer(self):
         obj = self.parent_context.obj
         try:
-            # TODO use logic from compiled.CompiledObjectFilter
+            # TODO use logic from compiled.CompiledObjectFilter id:615 gh:616
             obj = getattr(obj, self.string_name)
         except AttributeError:
             # Happens e.g. in properties of
@@ -208,7 +208,7 @@ def _create(evaluator, obj, parent_context=None, *args):
         module_context = parent_context.get_root_context()
     else:
         module_context = ModuleContext(evaluator, module_node, path=path)
-        # TODO this __name__ is probably wrong.
+        # TODO this __name__ is probably wrong. id:725 gh:726
         name = compiled_object.get_root_context().py__name__()
         imports.add_module(evaluator, name, module_context)
 

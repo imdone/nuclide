@@ -207,7 +207,7 @@ class Importer(object):
                     else:
                         _add_error(self._evaluator, import_path[-1])
                         import_path = []
-                        # TODO add import error.
+                        # TODO add import error. id:105 gh:106
                         debug.warning('Attempted relative import beyond top-level package.')
             else:
                 # Here we basically rewrite the level to 0.
@@ -227,7 +227,7 @@ class Importer(object):
             # If you edit e.g. gunicorn, there will be imports like this:
             # `from gunicorn import something`. But gunicorn is not in the
             # sys.path. Therefore look if gunicorn is a parent directory, #56.
-            if self.import_path:  # TODO is this check really needed?
+            if self.import_path:  # TODO is this check really needed? id:221 gh:222
                 for path in sys_path.traverse_parents(self.file_path):
                     if os.path.basename(path) == self.str_import_path[0]:
                         in_path.append(os.path.dirname(path))

@@ -9,7 +9,7 @@
  * @format
  */
 
-// TODO @jxg export debugger typedefs from main module. (t11406963)
+// TODO @jxg export debugger typedefs from main module. (t11406963) id:674 gh:676
 import type {EvaluationResult} from '../nuclide-debugger/lib/types';
 
 import * as React from 'react';
@@ -119,7 +119,7 @@ export default class SimpleValueComponent extends React.Component<Props> {
         </span>
       );
     }
-    // TODO @jxg use a text editor to apply proper syntax highlighting for expressions
+    // TODO @jxg use a text editor to apply proper syntax highlighting for expressions id:755 gh:756
     // (t11408154)
     const renderedExpression = (
       <span className={ValueComponentClassNames.identifier}>{expression}</span>

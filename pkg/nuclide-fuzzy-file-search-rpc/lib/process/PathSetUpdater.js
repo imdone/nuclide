@@ -22,7 +22,7 @@ import invariant from 'assert';
 import {hgRunCommand} from '../../../nuclide-hg-rpc/lib/hg-utils';
 import {WatchmanClient} from 'nuclide-watchman-helpers';
 
-// TODO: This probably won't work on Windows, but we'll worry about that
+// TODO: This probably won't work on Windows, but we'll worry about that id:375 gh:376
 // when Watchman officially supports Windows.
 const S_IFDIR = 16384;
 const WATCHMAN_SUBSCRIPTION_BUFFER_TIME = 3000;
@@ -35,7 +35,7 @@ const HG_STATUS_FILE_CAP = 1000;
  * watchers to observe when relevant file additions and deletions occur.
  * This class currently relies on the Nuclide WatchmanClient, which requires fb-watchman.
  */
-// TODO (t7298196) Investigate falling back to Node watchers.
+// TODO (t7298196) Investigate falling back to Node watchers. id:352 gh:353
 export default class PathSetUpdater {
   _pathSetToSubscription: Map<PathSet, WatchmanSubscription>;
   _watchmanClient: ?WatchmanClient;

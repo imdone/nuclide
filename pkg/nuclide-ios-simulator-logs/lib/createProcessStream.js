@@ -22,9 +22,9 @@ export function createProcessStream(): Observable<string> {
   const currentDeviceUdids = observeProcess(
     'bash',
     ['-c', WATCH_CURRENT_UDID_SCRIPT],
-    {/* TODO(T17353599) */ isExitError: () => false},
+    {/* TODO (T17353599) id:594 gh:595*/ isExitError: () => false},
   )
-    .catch(error => Observable.of({kind: 'error', error})) // TODO(T17463635)
+    .catch(error => Observable.of({kind: 'error', error})) // TODO (T17463635) id:713 gh:714
     .map(event => {
       if (event.kind === 'error') {
         throw event.error;
@@ -57,9 +57,9 @@ export function createProcessStream(): Observable<string> {
         'nuclide-ios-simulator-logs.pathToSyslog',
       ): any): string),
       ['-w', '-F', 'xml', '-d', logDir],
-      {/* TODO(T17353599) */ isExitError: () => false},
+      {/* TODO (T17353599) id:410 gh:411*/ isExitError: () => false},
     )
-      .catch(error => Observable.of({kind: 'error', error})) // TODO(T17463635)
+      .catch(error => Observable.of({kind: 'error', error})) // TODO (T17463635) id:441 gh:442
       .map(event => {
         if (event.kind === 'error') {
           throw event.error;

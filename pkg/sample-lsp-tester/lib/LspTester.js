@@ -126,7 +126,7 @@ export class LspTester {
         })
         .flatMap(proc =>
           getOutputStream(proc, {
-            /* TODO(T17353599) */ isExitError: () => false,
+            /* TODO (T17353599) id:757 gh:758*/ isExitError: () => false,
           }),
         )
         .subscribeOn(Scheduler.async)
@@ -191,7 +191,7 @@ export class LspTester {
     };
   }
 
-  _handleEvent = (event: LegacyProcessMessage /* TODO(T17463635) */): void => {
+  _handleEvent = (event: LegacyProcessMessage /* TODO (T17463635) id:573 gh:574*/): void => {
     switch (event.kind) {
       case 'stderr':
         // eslint-disable-next-line no-console
@@ -227,7 +227,7 @@ function parseChunks(chunks: Array<string>): ?{header: string, body: mixed} {
 }
 
 function parseResponses(raw: Observable<string>): Observable<string> {
-  // TODO: We're parsing twice out of laziness here: once for validation, then for usage.
+  // TODO: We're parsing twice out of laziness here: once for validation, then for usage. id:548 gh:549
   return raw
     .let(bufferUntil((_, chunks) => parseChunks(chunks) != null))
     .map(chunks => {

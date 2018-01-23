@@ -107,7 +107,7 @@ def visit_cursor(libclang, cursor):
                 params.append(child.spelling or child.type.spelling)
             elif child.kind == CursorKind.TEMPLATE_TYPE_PARAMETER:
                 tparams.append(child.spelling)
-            # TODO(hansonw): non-type and "template template" params?
+            # TODO (hansonw): non-type and "template template" params? id:338 gh:339
 
     if kind in MEMBER_KINDS:
         # Name should be fully qualified if outside the parent.
@@ -147,7 +147,7 @@ def visit_cursor(libclang, cursor):
             else:
                 return None
         else:
-            # TODO(hansonw): Handle other special macros like DEFINE_ params.
+            # TODO (hansonw): Handle other special macros like DEFINE_ params. id:662 gh:663
             return None
 
     ret = {

@@ -50,7 +50,7 @@ export function convertValue(
     case 'object':
       return convertObjectValue(contextId, dbgpProperty);
     default:
-      // TODO: Remaining property types - closure, hashmap, ...
+      // TODO: Remaining property types - closure, hashmap, ... id:360 gh:361
       return convertUnknownValue(dbgpProperty);
   }
 }

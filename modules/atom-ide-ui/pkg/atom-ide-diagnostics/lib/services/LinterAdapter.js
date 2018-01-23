@@ -140,7 +140,7 @@ export function linterMessageV2ToDiagnosticMessage(
     );
     sortedSolutions.forEach((solution, i) => {
       if (solution.replaceWith !== undefined) {
-        // TODO: support multiple fixes.
+        // TODO: support multiple fixes. id:26 gh:27
         if (fix == null) {
           fix = {
             oldRange: Range.fromObject(solution.position),
@@ -158,7 +158,7 @@ export function linterMessageV2ToDiagnosticMessage(
     });
   }
   let text = msg.excerpt;
-  // TODO: use markdown + handle callback-based version.
+  // TODO: use markdown + handle callback-based version. id:27 gh:28
   if (typeof msg.description === 'string') {
     text = text + '\n' + msg.description;
   }

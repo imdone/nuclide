@@ -87,7 +87,7 @@ class DocstringMixin(object):
             node = node.children[0]
 
         if node.type == 'string':
-            # TODO We have to check next leaves until there are no new
+            # TODO We have to check next leaves until there are no new id:233 gh:234
             # leaves anymore that might be part of the docstring. A
             # docstring can also look like this: ``'foo' 'bar'
             # Returns a literal cleaned version of the ``Token``.
@@ -127,7 +127,7 @@ class Base(object):
             classes = (classes,)
         scope = self if include_current else self.parent
         while scope.parent is not None:
-            # TODO why if classes?
+            # TODO why if classes? id:590 gh:591
             if classes and reverse != scope.isinstance(*classes):
                 break
             scope = scope.parent
@@ -520,7 +520,7 @@ class BaseNode(Base):
         return self.children[-1].end_pos
 
     def get_code(self, normalized=False, include_prefix=True):
-        # TODO implement normalized (depending on context).
+        # TODO implement normalized (depending on context). id:139 gh:140
         if include_prefix:
             return "".join(c.get_code(normalized) for c in self.children)
         else:
@@ -585,7 +585,7 @@ class BaseNode(Base):
         c = self.parent.children
         index = c.index(self)
         if index == len(c) - 1:
-            # TODO WTF? recursion?
+            # TODO WTF? recursion? id:109 gh:110
             return self.get_next_leaf()
         else:
             return c[index + 1]
@@ -611,7 +611,7 @@ class BaseNode(Base):
         except AttributeError:
             return None
         except ValueError:
-            # TODO in some particular cases, the tree doesn't seem to be linked
+            # TODO in some particular cases, the tree doesn't seem to be linked id:128 gh:129
             # correctly
             return None
         if "#" not in whitespace:
@@ -832,7 +832,7 @@ class Module(Scope):
         Checks if imports in this module are explicitly absolute, i.e. there
         is a ``__future__`` import.
         """
-        # TODO this is a strange scan and not fully correct. I think Python's
+        # TODO this is a strange scan and not fully correct. I think Python's id:236 gh:237
         # parser does it in a different way and scans for the first
         # statement/import with a tokenizer (to check for syntax changes like
         # the future print statement).
@@ -1030,7 +1030,7 @@ class Function(ClassOrFunc):
 
     @property
     def yields(self):
-        # TODO This is incorrect, yields are also possible in a statement.
+        # TODO This is incorrect, yields are also possible in a statement. id:593 gh:594
         return self._search_in_scope(YieldExpr)
 
     def is_generator(self):
@@ -1301,7 +1301,7 @@ class Import(BaseNode):
         `nodes_to_execute` works a bit different for imports, because the names
         itself cannot directly get resolved (except on itself).
         """
-        # TODO couldn't we return the names? Would be nicer.
+        # TODO couldn't we return the names? Would be nicer. id:141 gh:142
         return [self]
 
 

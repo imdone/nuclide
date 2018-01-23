@@ -128,7 +128,7 @@ class Parser(object):
         self._indent_counter = 0
         self._last_failed_start_pos = (0, 0)
 
-        # TODO do print absolute import detection here.
+        # TODO do print absolute import detection here. id:614 gh:615
         #try:
         #    del python_grammar_no_print_statement.keywords["print"]
         #except KeyError:

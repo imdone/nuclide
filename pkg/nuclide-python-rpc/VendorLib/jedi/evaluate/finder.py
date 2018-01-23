@@ -81,7 +81,7 @@ class NameFinder(object):
         if isinstance(self._name, tree.Name):
             scope = self._name
             while scope.parent is not None:
-                # TODO why if classes?
+                # TODO why if classes? id:460 gh:461
                 if not isinstance(scope, tree.Scope):
                     break
                 scope = scope.parent
@@ -103,7 +103,7 @@ class NameFinder(object):
         """
         names = []
         if self._context.predefined_names:
-            # TODO is this ok? node might not always be a tree.Name
+            # TODO is this ok? node might not always be a tree.Name id:485 gh:486
             node = self._name
             while node is not None and not is_scope(node):
                 node = node.parent

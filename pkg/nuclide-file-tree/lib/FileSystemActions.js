@@ -48,7 +48,7 @@ class FileSystemActions {
           return;
         }
 
-        // TODO: check if filePath is in rootKey and if not, find the rootKey it belongs to.
+        // TODO: check if filePath is in rootKey and if not, find the rootKey it belongs to. id:562 gh:563
         const directory = FileTreeHelpers.getDirectoryByKey(node.uri);
         if (directory == null) {
           return;
@@ -136,7 +136,7 @@ class FileSystemActions {
           return;
         }
 
-        // TODO: check if pathToCreate is in rootKey and if not, find the rootKey it belongs to.
+        // TODO: check if pathToCreate is in rootKey and if not, find the rootKey it belongs to. id:694 gh:695
         const directory = FileTreeHelpers.getDirectoryByKey(filePath);
         if (directory == null) {
           return;
@@ -376,7 +376,7 @@ class FileSystemActions {
       onConfirm: (newBasename: string, options: {addToVCS?: boolean}) => {
         const file = FileTreeHelpers.getFileByKey(node.uri);
         if (file == null) {
-          // TODO: Connection could have been lost for remote file.
+          // TODO: Connection could have been lost for remote file. id:305 gh:306
           return;
         }
         this._onConfirmDuplicate(
@@ -448,7 +448,7 @@ class FileSystemActions {
   _getSelectedContainerNode(): ?FileTreeNode {
     const store = FileTreeStore.getInstance();
     /*
-     * TODO: Choosing the last selected key is inexact when there is more than 1 root. The Set of
+     * TODO: Choosing the last selected key is inexact when there is more than 1 root. The Set of id:370 gh:371
      * selected keys should be maintained as a flat list across all roots to maintain insertion
      * order.
      */

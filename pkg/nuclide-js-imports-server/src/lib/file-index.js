@@ -186,7 +186,7 @@ function filesWithoutHash(files: Array<string>): Array<FileWithHash> {
   return files.map(name => ({name, sha1: null}));
 }
 
-// TODO: watch node_modules and package.json files for changes.
+// TODO: watch node_modules and package.json files for changes. id:420 gh:421
 export function watchDirectory(root: string): Observable<FileChange> {
   return Observable.defer(() => {
     const watchmanClient = new WatchmanClient();

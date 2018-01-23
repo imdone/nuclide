@@ -79,7 +79,7 @@ export class DiagnosticsViewModel {
 
     const {pattern, invalid} = getFilterPattern('', false);
     this._model = new Model({
-      // TODO: Get this from constructor/serialization.
+      // TODO: Get this from constructor/serialization. id:2 gh:3
       hiddenGroups: new Set(),
       textFilter: {text: '', isRegExp: false, pattern, invalid},
       selectedMessage: null,
@@ -223,7 +223,7 @@ export class DiagnosticsViewModel {
 
   _handleTextFilterChange = (value: RegExpFilterChange): void => {
     const {text, isRegExp} = value;
-    // TODO: Fuzzy if !isRegExp?
+    // TODO: Fuzzy if !isRegExp? id:4 gh:4
     const {invalid, pattern} = getFilterPattern(text, isRegExp);
     this._model.setState({
       textFilter: {text, isRegExp, invalid, pattern},
@@ -264,7 +264,7 @@ function goToDiagnosticLocation(
   message: DiagnosticMessage,
   options: {|focusEditor: boolean|},
 ): void {
-  // TODO: what should we do for project-path diagnostics?
+  // TODO: what should we do for project-path diagnostics? id:3 gh:5
   if (nuclideUri.endsWithSeparator(message.filePath)) {
     return;
   }

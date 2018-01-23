@@ -30,7 +30,7 @@ function createBrowserWindow(loadSettings, parent) {
       protocol: 'file',
       slashes: true,
       pathname: path.join(loadSettings.resourcePath, 'static/index.html'),
-      // TODO(hansonw): Remove when Atom 1.15 is deployed.
+      // TODO (hansonw): Remove when Atom 1.15 is deployed. id:758 gh:759
       hash: encodeURIComponent(JSON.stringify(loadSettings)),
     })
   );

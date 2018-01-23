@@ -140,7 +140,7 @@ class SuperInstance(er.Instance):
 
 @argument_clinic('[type[, obj]], /', want_scope=True)
 def builtins_super(evaluator, types, objects, scope):
-    # TODO make this able to detect multiple inheritance super
+    # TODO make this able to detect multiple inheritance super id:228 gh:229
     accept = (tree.Function, er.FunctionExecution)
     if scope.isinstance(*accept):
         wanted = (tree.Class, er.Instance)
@@ -224,7 +224,7 @@ def collections_namedtuple(evaluator, obj, arguments):
         return set()
 
     # Process arguments
-    # TODO here we only use one of the types, we should use all.
+    # TODO here we only use one of the types, we should use all. id:584 gh:585
     name = list(_follow_param(evaluator, arguments, 0))[0].obj
     _fields = list(_follow_param(evaluator, arguments, 1))[0]
     if isinstance(_fields, compiled.CompiledObject):

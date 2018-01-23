@@ -219,7 +219,7 @@ export class BreakpointStore {
   }
 
   /**
-   * TODO[jeffreytan]: look into unhandled exception support.
+   * TODO [jeffreytan]: look into unhandled exception support. id:248 gh:249
    * Dbgp protocol does not seem to support uncaught exception handling
    * so we only support 'all' and treat all other states as 'none'.
    */

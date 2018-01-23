@@ -105,7 +105,7 @@ def _paths_from_assignment(evaluator, expr_stmt):
             assert c[0].type == 'name' and c[0].value == 'sys'
             trailer = c[1]
             assert trailer.children[0] == '.' and trailer.children[1].value == 'path'
-            # TODO Essentially we're not checking details on sys.path
+            # TODO Essentially we're not checking details on sys.path id:135 gh:136
             # manipulation. Both assigment of the sys.path and changing/adding
             # parts of the sys.path are the same: They get added to the current
             # sys.path.

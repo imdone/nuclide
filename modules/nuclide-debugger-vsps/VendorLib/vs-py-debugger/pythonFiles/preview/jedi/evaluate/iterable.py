@@ -103,7 +103,7 @@ class GeneratorMixin(object):
     @register_builtin_method('next')
     @register_builtin_method('__next__')
     def py__next__(self):
-        # TODO add TypeError if params are given.
+        # TODO add TypeError if params are given. id:507 gh:508
         return unite(self.py__iter__())
 
     @memoize_default()
@@ -491,7 +491,7 @@ class FakeDict(_FakeArray):
 
     def _items(self):
         for key, values in self._dct.items():
-            # TODO this is not proper. The values could be multiple values?!
+            # TODO this is not proper. The values could be multiple values?! id:129 gh:130
             yield key, values[0]
 
 
@@ -638,7 +638,7 @@ def py__getitem__(evaluator, types, trailer):
 def check_array_additions(evaluator, array):
     """ Just a mapper function for the internal _check_array_additions """
     if array.type not in ('list', 'set'):
-        # TODO also check for dict updates
+        # TODO also check for dict updates id:81 gh:82
         return set()
 
     is_list = array.type == 'list'

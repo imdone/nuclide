@@ -39,7 +39,7 @@ type FrameLocation = {
 };
 
 export function idOfFrame(frame: DbgpStackFrame): string {
-  // TODO: Mangle in the transactionId of the most recent pause/status.
+  // TODO: Mangle in the transactionId of the most recent pause/status. id:426 gh:427
   return frame.$.level;
 }
 
@@ -58,7 +58,7 @@ export function fileUrlOfFrame(frame: DbgpStackFrame): string {
 
 export function locationOfFrame(frame: DbgpStackFrame): FrameLocation {
   return {
-    // TODO: columnNumber: from cmdbegin/end
+    // TODO: columnNumber: from cmdbegin/end id:687 gh:688
     lineNumber: Number(frame.$.lineno),
     scriptId: fileOfFrame(frame),
   };

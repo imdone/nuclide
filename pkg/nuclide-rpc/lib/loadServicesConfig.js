@@ -47,7 +47,7 @@ function createServiceConfigObject(
   return jsonConfig.map(config => {
     return {
       name: config.name,
-      // TODO(peterhal): Remove this once all services have had their def files removed.
+      // TODO (peterhal): Remove this once all services have had their def files removed. id:522 gh:523
       definition: nuclideUri.resolve(
         basedir,
         config.definition || config.implementation,

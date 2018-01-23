@@ -70,7 +70,7 @@ export default class RecordView extends React.Component<Props> {
   _renderContent(displayableRecord: DisplayableRecord): React.Element<any> {
     const {record} = displayableRecord;
     if (record.kind === 'request') {
-      // TODO: We really want to use a text editor to render this so that we can get syntax
+      // TODO: We really want to use a text editor to render this so that we can get syntax id:350 gh:351
       // highlighting, but they're just too expensive. Figure out a less-expensive way to get syntax
       // highlighting.
       return <pre>{record.text || ' '}</pre>;

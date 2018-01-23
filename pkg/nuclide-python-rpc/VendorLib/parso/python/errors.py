@@ -532,7 +532,7 @@ class _StarCheck(SyntaxRule):
 @ErrorFinder.register_rule(value='**')
 class _StarStarCheck(SyntaxRule):
     # e.g. {**{} for a in [1]}
-    # TODO this should probably get a better end_pos including
+    # TODO this should probably get a better end_pos including id:471 gh:472
     #      the next sibling of leaf.
     message = "dict unpacking cannot be used in dict comprehension"
 

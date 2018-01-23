@@ -37,13 +37,13 @@ export class DebugBridge {
   }
 
   runLongCommand(...command: string[]): Observable<LegacyProcessMessage> {
-    // TODO(T17463635)
+    // TODO (T17463635) id:640 gh:641
     return this.constructor.configObs.switchMap(config =>
       observeProcess(config.path, this.getDeviceArgs().concat(command), {
         killTreeWhenDone: true,
-        /* TODO(T17353599) */ isExitError: () => false,
+        /* TODO (T17353599) id:182 gh:183*/ isExitError: () => false,
       }).catch(error => Observable.of({kind: 'error', error})),
-    ); // TODO(T17463635)
+    ); // TODO (T17463635) id:280 gh:281
   }
 
   getDeviceArgs(): Array<string> {

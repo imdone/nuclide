@@ -79,7 +79,7 @@ const definitionPath = nuclideUri.resolve(argv.definitionPath);
 const preserveFunctionNames = argv.preserveFunctionNames;
 const serviceName = argv.serviceName;
 
-// TODO: Make this a command line option.
+// TODO: Make this a command line option. id:521 gh:522
 const predefinedTypeNames = [
   nuclideUri.NUCLIDE_URI_TYPE_NAME,
   'atom$Point',

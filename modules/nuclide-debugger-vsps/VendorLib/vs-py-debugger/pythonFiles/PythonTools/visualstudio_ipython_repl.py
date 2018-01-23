@@ -74,7 +74,7 @@ except ImportError:
     raise UnsupportedReplException(str(exc_value))
 
 
-# TODO: SystemExit exceptions come back to us as strings, can we automatically exit when ones raised somehow?
+# TODO: SystemExit exceptions come back to us as strings, can we automatically exit when ones raised somehow? id:205 gh:206
 
 #####
 # Channels which forward events
@@ -161,7 +161,7 @@ class VsIOPubChannel(DefaultHandler, IOPubChannel):
             self._vs_backend.write_stdout(output)
         elif stream_name == 'stderr':
             self._vs_backend.write_stderr(output)
-        # TODO: stdin can show up here, do we echo that?
+        # TODO: stdin can show up here, do we echo that? id:451 gh:452
     
     def handle_execute_result(self, content):
         self.handle_execute_output(content)
@@ -214,7 +214,7 @@ class VsIOPubChannel(DefaultHandler, IOPubChannel):
             return
 
     def handle_error(self, content):
-        # TODO: this includes escape sequences w/ color, we need to unescape that
+        # TODO: this includes escape sequences w/ color, we need to unescape that id:115 gh:116
         ename = content['ename']
         evalue = content['evalue']
         tb = content['traceback']

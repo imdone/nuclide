@@ -138,7 +138,7 @@ class Evaluator(object):
             types = finder.check_tuple_assignments(types, seek_name)
 
         first_operation = stmt.first_operation()
-        if first_operation not in ('=', None) and not isinstance(stmt, er.InstanceElement):  # TODO don't check for this.
+        if first_operation not in ('=', None) and not isinstance(stmt, er.InstanceElement):  # TODO don't check for this. id:244 gh:245
             # `=` is always the last character in aug assignments -> -1
             operator = copy.copy(first_operation)
             operator.value = operator.value[:-1]
@@ -176,7 +176,7 @@ class Evaluator(object):
         elif element.isinstance(tree.Lambda):
             return [er.LambdaWrapper(self, element)]
         elif element.isinstance(er.LambdaWrapper):
-            return [element]  # TODO this is no real evaluation.
+            return [element]  # TODO this is no real evaluation. id:600 gh:601
         elif element.type == 'expr_stmt':
             return self.eval_statement(element)
         elif element.type == 'power':

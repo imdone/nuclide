@@ -129,7 +129,7 @@ class SuperInstance(er.Instance):
 
 @argument_clinic('[type[, obj]], /', want_scope=True)
 def builtins_super(evaluator, types, objects, scope):
-    # TODO make this able to detect multiple inheritance super
+    # TODO make this able to detect multiple inheritance super id:148 gh:149
     accept = (tree.Function, er.FunctionExecution)
     if scope.isinstance(*accept):
         wanted = (tree.Class, er.Instance)

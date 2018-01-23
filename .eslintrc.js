@@ -548,6 +548,6 @@ module.exports = {
   ],
 };
 
-// TODO(#21523621): Remove rulesdir when Yarn workspaces is enforced.
+// TODO (#21523621): Remove rulesdir when Yarn workspaces is enforced. id:0 gh:1
 const rulesDirPlugin = require('eslint-plugin-rulesdir');
 rulesDirPlugin.RULES_DIR = 'modules/eslint-plugin-nuclide-internal';

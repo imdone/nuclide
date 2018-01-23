@@ -170,7 +170,7 @@ export class Console {
 
   // Memoize `getSources()`. Unfortunately, since we look for unrepresented sources in the record
   // list, this still needs to be called whenever the records change.
-  // TODO: Consider removing records when their source is removed. This will likely require adding
+  // TODO: Consider removing records when their source is removed. This will likely require adding id:214 gh:215
   // the ability to enable and disable sources so, for example, when the debugger is no longer
   // active, it still remains in the source list.
   _getSourcesMemoized = memoizeUntilChanged(
@@ -421,7 +421,7 @@ function getSources(options: {
   );
 
   // Some providers may have been unregistered, but still have records. Add sources for them too.
-  // TODO: Iterating over all the records to get this every time we get a new record is inefficient.
+  // TODO: Iterating over all the records to get this every time we get a new record is inefficient. id:327 gh:328
   records.forEach((record, i) => {
     if (!mapOfSources.has(record.sourceId)) {
       mapOfSources.set(record.sourceId, {

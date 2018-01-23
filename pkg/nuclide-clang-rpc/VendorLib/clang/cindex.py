@@ -45,7 +45,7 @@ Most object information is exposed using properties, when the underlying API
 call is efficient.
 """
 
-# TODO
+# TODO id:192 gh:193
 # ====
 #
 # o API support for invalid translation units. Currently we can't even get the
@@ -238,7 +238,7 @@ class SourceRange(Structure):
         ("begin_int_data", c_uint),
         ("end_int_data", c_uint)]
 
-    # FIXME: Eliminate this and make normal constructor? Requires hiding ctypes
+    # FIXME: Eliminate this and make normal constructor? Requires hiding ctypes id:331 gh:332
     # object.
     @staticmethod
     def from_locations(start, end):
@@ -578,7 +578,7 @@ class CursorKind(object):
     def __repr__(self):
         return 'CursorKind.%s' % (self.name,)
 
-# FIXME: Is there a nicer way to expose this enumeration? We could potentially
+# FIXME: Is there a nicer way to expose this enumeration? We could potentially id:654 gh:655
 # represent the nested structure, or even build a class hierarchy. The main
 # things we want for sure are (a) simple external access to kinds, (b) a place
 # to hang a description and name, (c) easy to keep in sync with Index.h.
@@ -1144,7 +1144,7 @@ class Cursor(Structure):
         some entity, return a cursor that points to the definition of that
         entity.
         """
-        # TODO: Should probably check that this is either a reference or
+        # TODO: Should probably check that this is either a reference or id:195 gh:196
         # declaration prior to issuing the lookup.
         return conf.lib.clang_getCursorDefinition(self)
 
@@ -1381,10 +1381,10 @@ class Cursor(Structure):
     def get_children(self):
         """Return an iterator for accessing the children of this cursor."""
 
-        # FIXME: Expose iteration from CIndex, PR6125.
+        # FIXME: Expose iteration from CIndex, PR6125. id:307 gh:308
         def visitor(child, parent, children):
-            # FIXME: Document this assertion in API.
-            # FIXME: There should just be an isNull method.
+            # FIXME: Document this assertion in API. id:194 gh:195
+            # FIXME: There should just be an isNull method. id:332 gh:333
             assert child != conf.lib.clang_getNullCursor()
 
             # Create reference to TU so it isn't GC'd before Cursor.
@@ -1429,7 +1429,7 @@ class Cursor(Structure):
     @staticmethod
     def from_result(res, fn, args):
         assert isinstance(res, Cursor)
-        # FIXME: There should just be an isNull method.
+        # FIXME: There should just be an isNull method. id:656 gh:657
         if res == conf.lib.clang_getNullCursor():
             return None
 
@@ -1676,7 +1676,7 @@ class Type(Structure):
                 return self.length
 
             def __getitem__(self, key):
-                # FIXME Support slice objects.
+                # FIXME Support slice objects. id:196 gh:197
                 if not isinstance(key, int):
                     raise TypeError("Must supply a non-negative int.")
 
@@ -2427,7 +2427,7 @@ class TranslationUnit(ClangObject):
             unsaved_files_array = (_CXUnsavedFile * len(unsaved_files))()
             for i,(name,value) in enumerate(unsaved_files):
                 if not isinstance(value, str):
-                    # FIXME: It would be great to support an efficient version
+                    # FIXME: It would be great to support an efficient version id:310 gh:311
                     # of this, one day.
                     value = value.read()
                     print value
@@ -2491,7 +2491,7 @@ class TranslationUnit(ClangObject):
             unsaved_files_array = (_CXUnsavedFile * len(unsaved_files))()
             for i,(name,value) in enumerate(unsaved_files):
                 if not isinstance(value, str):
-                    # FIXME: It would be great to support an efficient version
+                    # FIXME: It would be great to support an efficient version id:197 gh:198
                     # of this, one day.
                     value = value.read()
                     print value
@@ -3072,7 +3072,7 @@ functionList = [
 
   ("clang_getFileName",
    [File],
-   _CXString), # TODO go through _CXString.from_result?
+   _CXString), # TODO go through _CXString.from_result? id:334 gh:335
 
   ("clang_getFileTime",
    [File],

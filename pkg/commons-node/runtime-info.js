@@ -52,7 +52,7 @@ function getCacheableRuntimeInformation(): RuntimeInformation {
     nuclideVersion: getNuclideVersion(),
     installerPackageVersion: 0,
     uptime: 0,
-    // TODO (chenshen) fill following information.
+    // TODO (chenshen) fill following information. id:276 gh:277
     serverVersion: 0,
   };
 

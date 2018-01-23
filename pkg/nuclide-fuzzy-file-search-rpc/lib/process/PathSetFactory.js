@@ -194,7 +194,7 @@ function getAllFilesFromWatchman( // eslint-disable-line no-unused-vars
 export function getPaths(localDirectory: string): Promise<Array<string>> {
   // Attempts to get a list of files relative to `localDirectory`, hopefully from
   // a fast source control index.
-  // TODO (williamsc) once ``{HG|Git}Repository` is working in nuclide-server,
+  // TODO (williamsc) once ``{HG|Git}Repository` is working in nuclide-server, id:348 gh:349
   // use those instead to determine VCS.
   return (
     getFilesFromHg(localDirectory)

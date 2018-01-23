@@ -113,7 +113,7 @@ async function getClangService(
 /**
  * Compiles the specified source file (automatically determining the correct compilation flags).
  * It currently returns an Observable just to circumvent the 60s service timeout for Promises.
- * TODO(9519963): Stream back more detailed compile status message.
+ * TODO (9519963): Stream back more detailed compile status message. id:198 gh:199
  */
 export function compile(
   src: NuclideUri,

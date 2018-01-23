@@ -81,7 +81,7 @@ class DocstringMixin(object):
             node = node.children[0]
 
         if node.type == 'string':
-            # TODO We have to check next leaves until there are no new
+            # TODO We have to check next leaves until there are no new id:286 gh:286
             # leaves anymore that might be part of the docstring. A
             # docstring can also look like this: ``'foo' 'bar'
             # Returns a literal cleaned version of the ``Token``.
@@ -121,7 +121,7 @@ class Base(object):
             classes = (classes,)
         scope = self if include_current else self.parent
         while scope.parent is not None:
-            # TODO why if classes?
+            # TODO why if classes? id:616 gh:617
             if classes and reverse != scope.isinstance(*classes):
                 break
             scope = scope.parent
@@ -626,7 +626,7 @@ class Module(Scope):
         Checks if imports in this module are explicitly absolute, i.e. there
         is a ``__future__`` import.
         """
-        # TODO this is a strange scan and not fully correct. I think Python's
+        # TODO this is a strange scan and not fully correct. I think Python's id:160 gh:161
         # parser does it in a different way and scans for the first
         # statement/import with a tokenizer (to check for syntax changes like
         # the future print statement).
@@ -768,7 +768,7 @@ class Function(ClassOrFunc):
 
     @property
     def yields(self):
-        # TODO This is incorrect, yields are also possible in a statement.
+        # TODO This is incorrect, yields are also possible in a statement. id:259 gh:260
         return self._search_in_scope(YieldExpr)
 
     def is_generator(self):

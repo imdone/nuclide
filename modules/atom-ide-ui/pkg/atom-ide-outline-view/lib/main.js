@@ -92,7 +92,7 @@ class Activation {
 
 createPackage(module.exports, Activation);
 
-// TODO this can be removed once we no longer want to support versions of Atom less than 1.17.0
+// TODO this can be removed once we no longer want to support versions of Atom less than 1.17.0 id:34 gh:35
 // (D4973408)
 function getActiveEditorRegistryEventSources() {
   return {

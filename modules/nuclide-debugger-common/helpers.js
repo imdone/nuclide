@@ -13,7 +13,7 @@
 import url from 'url';
 
 export function pathToUri(path: string): string {
-  // TODO(ljw): this is not a valid way of constructing URIs.
+  // TODO (ljw): this is not a valid way of constructing URIs. id:433 gh:434
   // The format is "file://server/absolute%20path" where
   // percent-escaping is to be used inside the path for all unsafe characters.
   // This function fails to work with does-style paths "c:\path",
@@ -23,7 +23,7 @@ export function pathToUri(path: string): string {
 }
 
 export function uriToPath(uri: string): string {
-  // TODO: this will think that "c:\file.txt" uses the protocol "c",
+  // TODO: this will think that "c:\file.txt" uses the protocol "c", id:99 gh:100
   // rather than being a local filename. It also fails to recognize the host,
   // e.g. "file://server/path" vs "file://localhost/path" vs "file:///path".
   const components = url.parse(uri);

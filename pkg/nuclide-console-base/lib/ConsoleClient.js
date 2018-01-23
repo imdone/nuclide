@@ -36,7 +36,7 @@ export default class ConsoleClient {
   }
 
   enableAndPipeProcessMessagesToConsole(
-    processMessage: LegacyProcessMessage /* TODO(T17463635) */,
+    processMessage: LegacyProcessMessage /* TODO (T17463635) id:323 gh:324*/,
   ) {
     pipeProcessMessagesToConsole(
       this._processName,

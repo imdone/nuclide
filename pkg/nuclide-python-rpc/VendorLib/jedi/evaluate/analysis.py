@@ -80,7 +80,7 @@ def add(node_context, error_name, node, message=None, typ=Error, payload=None):
     if _check_for_exception_catch(node_context, node, exception, payload):
         return
 
-    # TODO this path is probably not right
+    # TODO this path is probably not right id:723 gh:724
     module_context = node_context.get_root_context()
     module_path = module_context.py__file__()
     instance = typ(error_name, module_path, node.start_pos, message)

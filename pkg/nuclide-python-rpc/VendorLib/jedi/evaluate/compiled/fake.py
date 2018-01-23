@@ -179,7 +179,7 @@ def _get_faked(grammar, module, obj, name=None):
         # Set the docstr which was previously not set (faked modules don't
         # contain it).
         assert result.type == 'funcdef'
-        doc = '"""%s"""' % obj.__doc__  # TODO need escapes.
+        doc = '"""%s"""' % obj.__doc__  # TODO need escapes. id:442 gh:443
         suite = result.children[-1]
         string = tree.String(doc, (0, 0), '')
         new_line = tree.Newline('\n', (0, 0))
